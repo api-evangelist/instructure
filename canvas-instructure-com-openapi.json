@@ -1,0 +1,2369 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0",
+        "title": "canvas.instructure.com",
+        "description": "",
+        "termsOfService": "http:\/\/exmple.com\/license\/"
+    },
+    "servers": [
+        "http:\/\/canvas.instructure.com\/api"
+    ],
+    "paths": {
+        "\/v1\/accounts\/{account_id}\/self_registration": {
+            "post": {
+                "summary": "Self register a user",
+                "description": "Self register and return a new user and pseudonym for an account.\n\nIf self-registration is enabled on the account, you can use this\nendpoint to self register new users.",
+                "operationId": "SelfRegisterUser",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/accounts\/{account_id}\/users": {
+            "get": {
+                "summary": "List users in account",
+                "description": "A paginated list of of users associated with this account.\n\n @example_request\n   curl https:\/\/<canvas>\/api\/v1\/accounts\/self\/users?search_term=<search value> \\\n      -X GET \\\n      -H 'Authorization: Bearer <token>'",
+                "operationId": "ListUsersInAccount",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "search_term",
+                        "in": "query",
+                        "description": "The partial name or full ID of the users to match and return in the\nresults list. Must be at least 3 characters.\n\nNote that the API will prefer matching on canonical user ID if the ID has\na numeric form. It will only search against other fields if non-numeric\nin form, or if the numeric value doesn't yield any matches. Queries by\nadministrative users will search on SIS ID, login ID, name, or email\naddress; non-administrative queries will only be compared against name."
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "The column to sort results by."
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "description": "The order to sort the given column by."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create a user",
+                "description": "Create and return a new user and pseudonym for an account.\n\nIf you don't have the \"Modify login details for users\" permission, but\nself-registration is enabled on the account, you can still use this\nendpoint to register new users. Certain fields will be required, and\nothers will be ignored (see below).",
+                "operationId": "CreateUser",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/activity_stream": {
+            "get": {
+                "summary": "List the activity stream",
+                "description": "Returns the current user's global activity stream, paginated.\n\nThere are many types of objects that can be returned in the activity\nstream. All object types have the same basic set of shared attributes:\n  !!!javascript\n  {\n    'created_at': '2011-07-13T09:12:00Z',\n    'updated_at': '2011-07-25T08:52:41Z',\n    'id': 1234,\n    'title': 'Stream Item Subject',\n    'message': 'This is the body text of the activity stream item. It is plain-text, and can be multiple paragraphs.',\n    'type': 'Discussio",
+                "operationId": "ListActivityStreamActivityStream",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/self\/activity_stream": {
+            "delete": {
+                "summary": "Hide all stream items",
+                "description": "Hide all stream items for the user",
+                "operationId": "HideAllStreamItems",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "summary": "List the activity stream",
+                "description": "Returns the current user's global activity stream, paginated.\n\nThere are many types of objects that can be returned in the activity\nstream. All object types have the same basic set of shared attributes:\n  !!!javascript\n  {\n    'created_at': '2011-07-13T09:12:00Z',\n    'updated_at': '2011-07-25T08:52:41Z',\n    'id': 1234,\n    'title': 'Stream Item Subject',\n    'message': 'This is the body text of the activity stream item. It is plain-text, and can be multiple paragraphs.',\n    'type': 'Discussio",
+                "operationId": "ListActivityStreamSelf",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/self\/activity_stream\/summary": {
+            "get": {
+                "summary": "Activity stream summary",
+                "description": "Returns a summary of the current user's global activity stream.",
+                "operationId": "ActivityStreamSummary",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/self\/activity_stream\/{id}": {
+            "delete": {
+                "summary": "Hide a stream item",
+                "description": "Hide the given stream item.",
+                "operationId": "HideStreamItem",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/self\/course_nicknames": {
+            "delete": {
+                "summary": "Clear course nicknames",
+                "description": "Remove all stored course nicknames.",
+                "operationId": "ClearCourseNicknames",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "summary": "List course nicknames",
+                "description": "Returns all course nicknames you have set.",
+                "operationId": "ListCourseNicknames",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/self\/course_nicknames\/{course_id}": {
+            "delete": {
+                "summary": "Remove course nickname",
+                "description": "Remove the nickname for the given course.\nSubsequent course API calls will return the actual name for the course.",
+                "operationId": "RemoveCourseNickname",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "course_id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "summary": "Get course nickname",
+                "description": "Returns the nickname for a specific course.",
+                "operationId": "GetCourseNickname",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "course_id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Set course nickname",
+                "description": "Set a nickname for the given course. This will replace the course's name\nin output of API calls you make subsequently, as well as in selected\nplaces in the Canvas web user interface.",
+                "operationId": "SetCourseNickname",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "course_id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/self\/pandata_events_token": {
+            "post": {
+                "summary": "Get a Pandata Events jwt token and its expiration date",
+                "description": "Returns a jwt auth and props token that can be used to send events to\nPandata.\n\nNOTE: This is currently only available to the mobile developer keys.",
+                "operationId": "GetPandataEventsJwtTokenAndItsExpirationDate",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/self\/todo": {
+            "get": {
+                "summary": "List the TODO items",
+                "description": "A paginated list of the current user's list of todo items, as seen on the user dashboard.\n\nThere is a limit to the number of items returned.\n\nThe `ignore` and `ignore_permanently` URLs can be used to update the user's\npreferences on what items will be displayed.\nPerforming a DELETE request against the `ignore` URL will hide that item\nfrom future todo item requests, until the item changes.\nPerforming a DELETE request against the `ignore_permanently` URL will hide\nthat item forever.",
+                "operationId": "ListTodoItems",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "include",
+                        "in": "query",
+                        "description": "\"ungraded_quizzes\":: Optionally include ungraded quizzes (such as practice quizzes and surveys) in the list.\n                     These will be returned under a +quiz+ key instead of an +assignment+ key in response elements."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/self\/todo_item_count": {
+            "get": {
+                "summary": "List counts for todo items",
+                "description": "Counts of different todo items such as the number of assignments needing grading as well as the number of assignments needing submitting.\n\nThere is a limit to the number of todo items this endpoint will count.\nIt will only look at the first 100 todo items for the user. If the user has more than 100 todo items this count may not be reliable.\nThe largest reliable number for both counts is 100.",
+                "operationId": "ListCountsForTodoItems",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "include",
+                        "in": "query",
+                        "description": "\"ungraded_quizzes\":: Optionally include ungraded quizzes (such as practice quizzes and surveys) in the list.\n                     These will be returned under a +quiz+ key instead of an +assignment+ key in response elements."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/self\/upcoming_events": {
+            "get": {
+                "summary": "List upcoming assignments, calendar events",
+                "description": "A paginated list of the current user's upcoming events, i.e. the same things shown\nin the dashboard 'Coming Up' sidebar.",
+                "operationId": "ListUpcomingAssignmentsCalendarEvents",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/{id}": {
+            "get": {
+                "summary": "Show user details",
+                "description": "Shows details for user.\n\nAlso includes an attribute \"permissions\", a non-comprehensive list of permissions for the user.\nExample:\n  !!!javascript\n  \"permissions\": {\n   \"can_update_name\": true, \/\/ Whether the user can update their name.\n   \"can_update_avatar\": false \/\/ Whether the user can update their avatar.\n  }",
+                "operationId": "ShowUserDetails",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Edit a user",
+                "description": "Modify an existing user. To modify a user's login, see the documentation for logins.",
+                "operationId": "EditUser",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/{id}\/colors": {
+            "get": {
+                "summary": "Get custom colors",
+                "description": "Returns all custom colors that have been saved for a user.",
+                "operationId": "GetCustomColors",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/{id}\/colors\/{asset_string}": {
+            "get": {
+                "summary": "Get custom color",
+                "description": "Returns the custom colors that have been saved for a user for a given context.\n\nThe asset_string parameter should be in the format 'context_id', for example\n'course_42'.",
+                "operationId": "GetCustomColor",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "asset_string",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update custom color",
+                "description": "Updates a custom color for a user for a given context.  This allows\ncolors for the calendar and elsewhere to be customized on a user basis.\n\nThe asset string parameter should be in the format 'context_id', for example\n'course_42'",
+                "operationId": "UpdateCustomColor",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "asset_string",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/{id}\/dashboard_positions": {
+            "get": {
+                "summary": "Get dashboard positions",
+                "description": "Returns all dashboard positions that have been saved for a user.",
+                "operationId": "GetDashboardPositions",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update dashboard positions",
+                "description": "Updates the dashboard positions for a user for a given context.  This allows\npositions for the dashboard cards and elsewhere to be customized on a per\nuser basis.\n\nThe asset string parameter should be in the format 'context_id', for example\n'course_42'",
+                "operationId": "UpdateDashboardPositions",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/{id}\/merge_into\/accounts\/{destination_account_id}\/users\/{destination_user_id}": {
+            "put": {
+                "summary": "Merge user into another user",
+                "description": "Merge a user into another user.\nTo merge users, the caller must have permissions to manage both users. This\nshould be considered irreversible. This will delete the user and move all\nthe data into the destination user.\n\nWhen finding users by SIS ids in different accounts the\ndestination_account_id is required.\n\nThe account can also be identified by passing the domain in destination_account_id.",
+                "operationId": "MergeUserIntoAnotherUserAccounts",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "destination_account_id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "destination_user_id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/{id}\/merge_into\/{destination_user_id}": {
+            "put": {
+                "summary": "Merge user into another user",
+                "description": "Merge a user into another user.\nTo merge users, the caller must have permissions to manage both users. This\nshould be considered irreversible. This will delete the user and move all\nthe data into the destination user.\n\nWhen finding users by SIS ids in different accounts the\ndestination_account_id is required.\n\nThe account can also be identified by passing the domain in destination_account_id.",
+                "operationId": "MergeUserIntoAnotherUserDestinationUserId",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "destination_user_id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/{id}\/settings": {
+            "get": {
+                "summary": "Update user settings.",
+                "description": "Update an existing user's settings.",
+                "operationId": "UpdateUserSettings",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "manual_mark_as_read",
+                        "in": "query",
+                        "description": "If true, require user to manually mark discussion posts as read (don't\nauto-mark as read)."
+                    },
+                    {
+                        "name": "collapse_global_nav",
+                        "in": "query",
+                        "description": "If true, the user's page loads with the global navigation collapsed"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/{id}\/split": {
+            "post": {
+                "summary": "Split merged users into separate users",
+                "description": "Merged users cannot be fully restored to their previous state, but this will\nattempt to split as much as possible to the previous state.\nTo split a merged user, the caller must have permissions to manage all of\nthe users logins. If there are multiple users that have been merged into one\nuser it will split each merge into a separate user.\nA split can only happen within 180 days of a user merge. A user merge deletes\nthe previous user and may be permanently deleted. In this scenario we create\na new",
+                "operationId": "SplitMergedUsersIntoSeparateUsers",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/{user_id}\/avatars": {
+            "get": {
+                "summary": "List avatar options",
+                "description": "A paginated list of the possible user avatar options that can be set with the user update endpoint. The response will be an array of avatar records. If the 'type' field is 'attachment', the record will include all the normal attachment json fields; otherwise it will include only the 'url' and 'display_name' fields. Additionally, all records will include a 'type' field and a 'token' field. The following explains each field in more detail\ntype:: [\"gravatar\"|\"attachment\"|\"no_pic\"] The type of avata",
+                "operationId": "ListAvatarOptions",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/{user_id}\/custom_data": {
+            "delete": {
+                "summary": "Delete custom data",
+                "description": "Delete custom user data.\n\nArbitrary JSON data can be stored for a User.  This API call\ndeletes that data for a given scope.  Without a scope, all custom_data is deleted.\nSee {api:UsersController#set_custom_data Store Custom Data} for details and\nexamples of storage and retrieval.\n\nAs an example, we'll store some data, then delete a subset of it.\n\nExample {api:UsersController#set_custom_data PUT} with valid JSON data:\n  curl 'https:\/\/<canvas>\/api\/v1\/users\/<user_id>\/custom_data' \\\n    -X PUT \\\n   ",
+                "operationId": "DeleteCustomData",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "ns",
+                        "in": "query",
+                        "description": "The namespace from which to delete the data.  This should be something other\nCanvas API apps aren't likely to use, such as a reverse DNS for your organization."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "summary": "Load custom data",
+                "description": "Load custom user data.\n\nArbitrary JSON data can be stored for a User.  This API call\nretrieves that data for a (optional) given scope.\nSee {api:UsersController#set_custom_data Store Custom Data} for details and\nexamples.\n\nOn success, this endpoint returns an object containing the data that was requested.\n\nResponds with status code 400 if the namespace parameter, +ns+, is missing or invalid,\nor if the specified scope does not contain any data.",
+                "operationId": "LoadCustomData",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "ns",
+                        "in": "query",
+                        "description": "The namespace from which to delete the data.  This should be something other\nCanvas API apps aren't likely to use, such as a reverse DNS for your organization."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Store custom data",
+                "description": "Store arbitrary user data as JSON.\n\nArbitrary JSON data can be stored for a User.\nA typical scenario would be an external site\/service that registers users in Canvas\nand wants to capture additional info about them.  The part of the URL that follows\n+\/custom_data\/+ defines the scope of the request, and it reflects the structure of\nthe JSON data to be stored or retrieved.\n\nThe value +self+ may be used for +user_id+ to store data associated with the calling user.\nIn order to access another user's c",
+                "operationId": "StoreCustomData",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/{user_id}\/files": {
+            "post": {
+                "summary": "Upload a file",
+                "description": "Upload a file to the user's personal files section.\n\nThis API endpoint is the first step in uploading a file to a user's files.\nSee the {file:file_uploads.html File Upload Documentation} for details on\nthe file upload workflow.\n\nNote that typically users will only be able to upload files to their\nown files section. Passing a user_id of +self+ is an easy shortcut\nto specify the current user.",
+                "operationId": "UploadFile",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/{user_id}\/missing_submissions": {
+            "get": {
+                "summary": "List Missing Submissions",
+                "description": "A paginated list of past-due assignments for which the student does not have a submission.\nThe user sending the request must either be an admin or a parent observer using the parent app",
+                "operationId": "ListMissingSubmissions",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "include",
+                        "in": "query",
+                        "description": "\"ungraded_quizzes\":: Optionally include ungraded quizzes (such as practice quizzes and surveys) in the list.\n                     These will be returned under a +quiz+ key instead of an +assignment+ key in response elements."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/{user_id}\/page_views": {
+            "get": {
+                "summary": "List user page views",
+                "description": "Return a paginated list of the user's page view history in json format,\nsimilar to the available CSV download. Page views are returned in\ndescending order, newest to oldest.",
+                "operationId": "ListUserPageViews",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "start_time",
+                        "in": "query",
+                        "description": "The beginning of the time range from which you want page views."
+                    },
+                    {
+                        "name": "end_time",
+                        "in": "query",
+                        "description": "The end of the time range from which you want page views."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/users\/{user_id}\/profile": {
+            "get": {
+                "summary": "Get user profile",
+                "description": "Returns user profile data, including user id, name, and profile pic.\n\nWhen requesting the profile for the user accessing the API, the user's\ncalendar feed URL and LTI user id will be returned as well.",
+                "operationId": "GetUserProfile",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/accounts\/{account_id}\/reports": {
+            "get": {
+                "summary": "List Available Reports",
+                "description": "Returns a paginated list of reports for the current context.",
+                "operationId": "ListAvailableReports",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/accounts\/{account_id}\/reports\/{report}": {
+            "get": {
+                "summary": "Index of Reports",
+                "description": "Shows all reports that have been run for the account of a specific type.",
+                "operationId": "IndexOfReports",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "report",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Start a Report",
+                "description": "Generates a report instance for the account. Note that \"report\" in the\nrequest must match one of the available report names. To fetch a list of\navailable report names and parameters for each report (including whether or\nnot those parameters are required), see\n{api:AccountReportsController#available_reports List Available Reports}.",
+                "operationId": "StartReport",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "report",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "parameters",
+                        "in": "formData",
+                        "description": "The parameters will vary for each report. To fetch a list\nof available parameters for each report, see {api:AccountReportsController#available_reports List Available Reports}.\nA few example parameters have been provided below. Note that the example\nparameters provided below may not be valid for every report."
+                    },
+                    {
+                        "name": "parameters[course_id]",
+                        "in": "formData",
+                        "description": "The id of the course to report on.\nNote: this parameter has been listed to serve as an example and may not be\nvalid for every report."
+                    },
+                    {
+                        "name": "parameters[users]",
+                        "in": "formData",
+                        "description": "If true, user data will be included. If\nfalse, user data will be omitted. Note: this parameter has been listed to\nserve as an example and may not be valid for every report."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/accounts\/{account_id}\/reports\/{report}\/{id}": {
+            "delete": {
+                "summary": "Delete a Report",
+                "description": "Deletes a generated report instance.",
+                "operationId": "DeleteReport",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "report",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "summary": "Status of a Report",
+                "description": "Returns the status of a report.",
+                "operationId": "StatusOfReport",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "report",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/accounts\/{account_id}\/account_notifications": {
+            "get": {
+                "summary": "Index of active global notification for the user",
+                "description": "Returns a list of all global notifications in the account for the current user\nAny notifications that have been closed by the user will not be returned",
+                "operationId": "IndexOfActiveGlobalNotificationForUser",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create a global notification",
+                "description": "Create and return a new global notification for an account.",
+                "operationId": "CreateGlobalNotification",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/accounts\/{account_id}\/account_notifications\/{id}": {
+            "delete": {
+                "summary": "Close notification for user",
+                "description": "If the current user no long wants to see this notification it can be excused with this call",
+                "operationId": "CloseNotificationForUser",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "summary": "Show a global notification",
+                "description": "Returns a global notification for the current user\nA notification that has been closed by the user will not be returned",
+                "operationId": "ShowGlobalNotification",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update a global notification",
+                "description": "Update global notification for an account.",
+                "operationId": "UpdateGlobalNotification",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/accounts": {
+            "get": {
+                "summary": "List accounts",
+                "description": "A paginated list of accounts that the current user can view or manage.\nTypically, students and even teachers will get an empty list in response,\nonly account admins can view the accounts that they are in.",
+                "operationId": "ListAccounts",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "include",
+                        "in": "query",
+                        "description": "\"ungraded_quizzes\":: Optionally include ungraded quizzes (such as practice quizzes and surveys) in the list.\n                     These will be returned under a +quiz+ key instead of an +assignment+ key in response elements."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/accounts\/{account_id}\/courses": {
+            "get": {
+                "summary": "List active courses in an account",
+                "description": "Retrieve a paginated list of courses in this account.",
+                "operationId": "ListActiveCoursesInAccount",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "with_enrollments",
+                        "in": "query",
+                        "description": "If true, include only courses with at least one enrollment.  If false,\ninclude only courses with no enrollments.  If not present, do not filter\non course enrollment status."
+                    },
+                    {
+                        "name": "enrollment_type",
+                        "in": "query",
+                        "description": "If set, only return courses that have at least one user enrolled in\nin the course with one of the specified enrollment types."
+                    },
+                    {
+                        "name": "published",
+                        "in": "query",
+                        "description": "If true, include only published courses.  If false, exclude published\ncourses.  If not present, do not filter on published status."
+                    },
+                    {
+                        "name": "completed",
+                        "in": "query",
+                        "description": "If true, include only completed courses (these may be in state\n'completed', or their enrollment term may have ended).  If false, exclude\ncompleted courses.  If not present, do not filter on completed status."
+                    },
+                    {
+                        "name": "blueprint",
+                        "in": "query",
+                        "description": "If true, include only blueprint courses. If false, exclude them.\nIf not present, do not filter on this basis."
+                    },
+                    {
+                        "name": "blueprint_associated",
+                        "in": "query",
+                        "description": "If true, include only courses that inherit content from a blueprint course.\nIf false, exclude them. If not present, do not filter on this basis."
+                    },
+                    {
+                        "name": "by_teachers",
+                        "in": "query",
+                        "description": "List of User IDs of teachers; if supplied, include only courses taught by\none of the referenced users."
+                    },
+                    {
+                        "name": "by_subaccounts",
+                        "in": "query",
+                        "description": "List of Account IDs; if supplied, include only courses associated with one\nof the referenced subaccounts."
+                    },
+                    {
+                        "name": "hide_enrollmentless_courses",
+                        "in": "query",
+                        "description": "If present, only return courses that have at least one enrollment.\nEquivalent to 'with_enrollments=true'; retained for compatibility."
+                    },
+                    {
+                        "name": "state",
+                        "in": "query",
+                        "description": "If set, only return courses that are in the given state(s). By default,\nall states but \"deleted\" are returned."
+                    },
+                    {
+                        "name": "enrollment_term_id",
+                        "in": "query",
+                        "description": "If set, only includes courses from the specified term."
+                    },
+                    {
+                        "name": "search_term",
+                        "in": "query",
+                        "description": "The partial name or full ID of the users to match and return in the\nresults list. Must be at least 3 characters.\n\nNote that the API will prefer matching on canonical user ID if the ID has\na numeric form. It will only search against other fields if non-numeric\nin form, or if the numeric value doesn't yield any matches. Queries by\nadministrative users will search on SIS ID, login ID, name, or email\naddress; non-administrative queries will only be compared against name."
+                    },
+                    {
+                        "name": "include",
+                        "in": "query",
+                        "description": "\"ungraded_quizzes\":: Optionally include ungraded quizzes (such as practice quizzes and surveys) in the list.\n                     These will be returned under a +quiz+ key instead of an +assignment+ key in response elements."
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "The column to sort results by."
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "description": "The order to sort the given column by."
+                    },
+                    {
+                        "name": "search_by",
+                        "in": "query",
+                        "description": "The filter to search by. \"course\" searches for course names, course codes,\nand SIS IDs. \"teacher\" searches for teacher names"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/accounts\/{account_id}\/permissions": {
+            "get": {
+                "summary": "Permissions",
+                "description": "Returns permission information for the calling user and the given account.\nYou may use `self` as the account id to check permissions against the domain root account.\nThe caller must have an account role or admin (teacher\/TA\/designer) enrollment in a course\nin the account. See also {api:CoursesController#permissions the Course counterpart}.",
+                "operationId": "Permissions",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "permissions",
+                        "in": "query",
+                        "description": "List of permissions to check against the authenticated user.\nPermission names are documented in the {api:RoleOverridesController#add_role Create a role} endpoint."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/accounts\/{account_id}\/sub_accounts": {
+            "get": {
+                "summary": "Get the sub-accounts of an account",
+                "description": "List accounts that are sub-accounts of the given account.",
+                "operationId": "GetSubAccountsOfAccount",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "recursive",
+                        "in": "query",
+                        "description": "If true, the entire account tree underneath\nthis account will be returned (though still paginated). If false, only\ndirect sub-accounts of this account will be returned. Defaults to false."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create a new sub-account",
+                "description": "Add a new sub-account to a given account.",
+                "operationId": "CreateNewSubAccount",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "account[name]",
+                        "in": "formData",
+                        "description": "The name of the new sub-account."
+                    },
+                    {
+                        "name": "account[sis_account_id]",
+                        "in": "formData",
+                        "description": "The account's identifier in the Student Information System."
+                    },
+                    {
+                        "name": "account[default_storage_quota_mb]",
+                        "in": "formData",
+                        "description": "The default course storage quota to be used, if not otherwise specified."
+                    },
+                    {
+                        "name": "account[default_user_storage_quota_mb]",
+                        "in": "formData",
+                        "description": "The default user storage quota to be used, if not otherwise specified."
+                    },
+                    {
+                        "name": "account[default_group_storage_quota_mb]",
+                        "in": "formData",
+                        "description": "The default group storage quota to be used, if not otherwise specified."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/accounts\/{account_id}\/sub_accounts\/{id}": {
+            "delete": {
+                "summary": "Delete a sub-account",
+                "description": "Cannot delete an account with active courses or active sub_accounts.\nCannot delete a root_account",
+                "operationId": "DeleteSubAccount",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/accounts\/{account_id}\/terms_of_service": {
+            "get": {
+                "summary": "Returns the terms of service for that account",
+                "description": "",
+                "operationId": "ReturnsTermsOfServiceForThatAccount",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/accounts\/{account_id}\/users\/{user_id}": {
+            "delete": {
+                "summary": "Delete a user from the root account",
+                "description": "Delete a user record from a Canvas root account. If a user is associated\nwith multiple root accounts (in a multi-tenant instance of Canvas), this\naction will NOT remove them from the other accounts.\n\nWARNING: This API will allow a user to remove themselves from the account.\nIf they do this, they won't be able to make API calls or log into Canvas at\nthat account.",
+                "operationId": "DeleteUserFromRootAccount",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/accounts\/{id}": {
+            "get": {
+                "summary": "Get a single account",
+                "description": "Retrieve information on an individual account, given by id or sis\nsis_account_id.",
+                "operationId": "GetSingleAccount",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update an account",
+                "description": "Update an existing account.",
+                "operationId": "UpdateAccount",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID"
+                    },
+                    {
+                        "name": "account[name]",
+                        "in": "formData",
+                        "description": "The name of the new sub-account."
+                    },
+                    {
+                        "name": "account[sis_account_id]",
+                        "in": "formData",
+                        "description": "The account's identifier in the Student Information System."
+                    },
+                    {
+                        "name": "account[default_time_zone]",
+                        "in": "formData",
+                        "description": "The default time zone of the account. Allowed time zones are\n{http:\/\/www.iana.org\/time-zones IANA time zones} or friendlier\n{http:\/\/api.rubyonrails.org\/classes\/ActiveSupport\/TimeZone.html Ruby on Rails time zones}."
+                    },
+                    {
+                        "name": "account[default_storage_quota_mb]",
+                        "in": "formData",
+                        "description": "The default course storage quota to be used, if not otherwise specified."
+                    },
+                    {
+                        "name": "account[default_user_storage_quota_mb]",
+                        "in": "formData",
+                        "description": "The default user storage quota to be used, if not otherwise specified."
+                    },
+                    {
+                        "name": "account[default_group_storage_quota_mb]",
+                        "in": "formData",
+                        "description": "The default group storage quota to be used, if not otherwise specified."
+                    },
+                    {
+                        "name": "account[settings][restrict_student_past_view][value]",
+                        "in": "formData",
+                        "description": "Restrict students from viewing courses after end date"
+                    },
+                    {
+                        "name": "account[settings][restrict_student_past_view][locked]",
+                        "in": "formData",
+                        "description": "Lock this setting for sub-accounts and courses"
+                    },
+                    {
+                        "name": "account[settings][restrict_student_future_view][value]",
+                        "in": "formData",
+                        "description": "Restrict students from viewing courses before start date"
+                    },
+                    {
+                        "name": "account[settings][restrict_student_future_view][locked]",
+                        "in": "formData",
+                        "description": "Lock this setting for sub-accounts and courses"
+                    },
+                    {
+                        "name": "account[settings][lock_all_announcements][value]",
+                        "in": "formData",
+                        "description": "Disable comments on announcements"
+                    },
+                    {
+                        "name": "account[settings][lock_all_announcements][locked]",
+                        "in": "formData",
+                        "description": "Lock this setting for sub-accounts and courses"
+                    },
+                    {
+                        "name": "account[settings][restrict_student_future_listing][value]",
+                        "in": "formData",
+                        "description": "Restrict students from viewing future enrollments in course list"
+                    },
+                    {
+                        "name": "account[settings][restrict_student_future_listing][locked]",
+                        "in": "formData",
+                        "description": "Lock this setting for sub-accounts and courses"
+                    },
+                    {
+                        "name": "account[services]",
+                        "in": "formData",
+                        "description": "Give this a set of keys and boolean values to enable or disable services matching the keys"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1\/course_accounts": {
+            "get": {
+                "summary": "List accounts for course admins",
+                "description": "A paginated list of accounts that the current user can view through their\nadmin course enrollments. (Teacher, TA, or designer enrollments).\nOnly returns \"id\", \"name\", \"workflow_state\", \"root_account_id\" and \"parent_account_id\"",
+                "operationId": "ListAccountsForCourseAdmins",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No response was specified",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Avatar": {
+                "type": "object",
+                "properties": {
+                    "content-type": {
+                        "description": "['attachment' type only] the content-type of the attachment.",
+                        "type": "string"
+                    },
+                    "display_name": {
+                        "description": "A textual description of the avatar record.",
+                        "type": "string"
+                    },
+                    "filename": {
+                        "description": "['attachment' type only] the filename of the attachment",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "['attachment' type only] the internal id of the attachment",
+                        "type": "integer"
+                    },
+                    "size": {
+                        "description": "['attachment' type only] the size of the attachment",
+                        "type": "integer"
+                    },
+                    "token": {
+                        "description": "A unique representation of the avatar record which can be used to set the avatar with the user update endpoint. Note: this is an internal representation and is subject to change without notice. It should be consumed with this api endpoint and used in the user update endpoint, and should not be constructed by the client.",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "['gravatar'|'attachment'|'no_pic'] The type of avatar record, for categorization purposes.",
+                        "type": "string"
+                    },
+                    "url": {
+                        "description": "The url of the avatar",
+                        "type": "string"
+                    }
+                }
+            },
+            "CourseNickname": {
+                "type": "object",
+                "properties": {
+                    "course_id": {
+                        "description": "the ID of the course",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "the actual name of the course",
+                        "type": "string"
+                    },
+                    "nickname": {
+                        "description": "the calling user's nickname for the course",
+                        "type": "string"
+                    }
+                }
+            },
+            "PageView": {
+                "type": "object",
+                "properties": {
+                    "action": {
+                        "description": "The rails action that handled the request",
+                        "type": "string"
+                    },
+                    "app_name": {
+                        "description": "If the request is from an API request, the app that generated the access token",
+                        "type": "string"
+                    },
+                    "asset_type": {
+                        "description": "The type of asset in the context for the request, if any",
+                        "type": "string"
+                    },
+                    "context_type": {
+                        "description": "The type of context for the request",
+                        "type": "string"
+                    },
+                    "contributed": {
+                        "description": "This field is deprecated, and will always be false",
+                        "type": "boolean"
+                    },
+                    "controller": {
+                        "description": "The rails controller that handled the request",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "When the request was made",
+                        "type": "string"
+                    },
+                    "http_method": {
+                        "description": "The HTTP method such as GET or POST",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "A UUID representing the page view.  This is also the unique request id",
+                        "type": "string"
+                    },
+                    "interaction_seconds": {
+                        "description": "An approximation of how long the user spent on the page, in seconds",
+                        "type": "number"
+                    },
+                    "links": {
+                        "description": "The page view links to define the relationships",
+                        "type": ""
+                    },
+                    "participated": {
+                        "description": "True if the request counted as participating, such as submitting homework",
+                        "type": "boolean"
+                    },
+                    "remote_ip": {
+                        "description": "The origin IP address of the request",
+                        "type": "string"
+                    },
+                    "render_time": {
+                        "description": "How long the response took to render, in seconds",
+                        "type": "number"
+                    },
+                    "url": {
+                        "description": "The url of the avatar",
+                        "type": "string"
+                    },
+                    "user_agent": {
+                        "description": "The user-agent of the browser or program that made the request",
+                        "type": "string"
+                    },
+                    "user_request": {
+                        "description": "A flag indicating whether the request was user-initiated, or automatic (such as an AJAX call)",
+                        "type": "boolean"
+                    }
+                }
+            },
+            "links": {
+                "type": "object"
+            },
+            "PageViewLinks": {
+                "type": "object",
+                "properties": {
+                    "account": {
+                        "description": "The ID of the account context for this page view",
+                        "type": "integer"
+                    },
+                    "asset": {
+                        "description": "The ID of the asset for the request, if any",
+                        "type": "integer"
+                    },
+                    "context": {
+                        "description": "The ID of the context for the request (course id if context_type is Course, etc)",
+                        "type": "integer"
+                    },
+                    "real_user": {
+                        "description": "The ID of the actual user who made this request, if the request was made by a user who was masquerading",
+                        "type": "integer"
+                    },
+                    "user": {
+                        "description": "The ID of the user for this page view",
+                        "type": "integer"
+                    }
+                }
+            },
+            "Profile": {
+                "type": "object",
+                "properties": {
+                    "avatar_url": {
+                        "description": "The avatar_url can change over time, so we recommend not caching it for more than a few hours",
+                        "type": "string"
+                    },
+                    "bio": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "calendar": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "id": {
+                        "description": "['attachment' type only] the internal id of the attachment",
+                        "type": "integer"
+                    },
+                    "locale": {
+                        "description": "The users locale.",
+                        "type": "string"
+                    },
+                    "login_id": {
+                        "description": "sample_user@example.com",
+                        "type": "string"
+                    },
+                    "lti_user_id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "the actual name of the course",
+                        "type": "string"
+                    },
+                    "primary_email": {
+                        "description": "sample_user@example.com",
+                        "type": "string"
+                    },
+                    "short_name": {
+                        "description": "Sample User",
+                        "type": "string"
+                    },
+                    "sis_user_id": {
+                        "description": "sis1",
+                        "type": "string"
+                    },
+                    "sortable_name": {
+                        "description": "user, sample",
+                        "type": "string"
+                    },
+                    "time_zone": {
+                        "description": "Optional: This field is only returned in certain API calls, and will return the IANA time zone name of the user's preferred timezone.",
+                        "type": "string"
+                    },
+                    "title": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "calendar": {
+                "type": "object"
+            },
+            "User": {
+                "type": "object",
+                "properties": {
+                    "avatar_url": {
+                        "description": "The avatar_url can change over time, so we recommend not caching it for more than a few hours",
+                        "type": "string"
+                    },
+                    "bio": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "Optional: This field can be requested with certain API calls, and will return the users primary email address.",
+                        "type": "string"
+                    },
+                    "enrollments": {
+                        "description": "Optional: This field can be requested with certain API calls, and will return a list of the users active enrollments. See the List enrollments API for more details about the format of these records.",
+                        "type": "array"
+                    },
+                    "id": {
+                        "description": "['attachment' type only] the internal id of the attachment",
+                        "type": "integer"
+                    },
+                    "integration_id": {
+                        "description": "The integration_id associated with the user.  This field is only included if the user came from a SIS import and has permissions to view SIS information.",
+                        "type": "string"
+                    },
+                    "last_login": {
+                        "description": "Optional: This field is only returned in certain API calls, and will return a timestamp representing the last time the user logged in to canvas.",
+                        "type": "string"
+                    },
+                    "locale": {
+                        "description": "The users locale.",
+                        "type": "string"
+                    },
+                    "login_id": {
+                        "description": "sample_user@example.com",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "the actual name of the course",
+                        "type": "string"
+                    },
+                    "short_name": {
+                        "description": "Sample User",
+                        "type": "string"
+                    },
+                    "sis_import_id": {
+                        "description": "The id of the SIS import.  This field is only included if the user came from a SIS import and has permissions to manage SIS information.",
+                        "type": "integer"
+                    },
+                    "sis_user_id": {
+                        "description": "sis1",
+                        "type": "string"
+                    },
+                    "sortable_name": {
+                        "description": "user, sample",
+                        "type": "string"
+                    },
+                    "time_zone": {
+                        "description": "Optional: This field is only returned in certain API calls, and will return the IANA time zone name of the user's preferred timezone.",
+                        "type": "string"
+                    }
+                }
+            },
+            "enrollments": {
+                "type": "array"
+            },
+            "UserDisplay": {
+                "type": "object",
+                "properties": {
+                    "avatar_image_url": {
+                        "description": "If avatars are enabled, this field will be included and contain a url to retrieve the user's avatar.",
+                        "type": "string"
+                    },
+                    "html_url": {
+                        "description": "URL to access user, either nested to a context or directly.",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "['attachment' type only] the internal id of the attachment",
+                        "type": "integer"
+                    },
+                    "short_name": {
+                        "description": "Sample User",
+                        "type": "string"
+                    }
+                }
+            },
+            "include": {
+                "type": "array"
+            },
+            "Report": {
+                "type": "object",
+                "properties": {
+                    "parameters": {
+                        "description": "The report parameters",
+                        "type": ""
+                    },
+                    "attachment": {
+                        "description": "The attachment api object of the report. Only available after the report has completed.",
+                        "type": "file"
+                    },
+                    "created_at": {
+                        "description": "When the request was made",
+                        "type": "string"
+                    },
+                    "current_line": {
+                        "description": "This is the current line count being written to the report. It updates every 1000 records.",
+                        "type": "integer"
+                    },
+                    "ended_at": {
+                        "description": "The date and time the report finished processing.",
+                        "type": "string"
+                    },
+                    "file_url": {
+                        "description": "The url to the report download.",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "['attachment' type only] the internal id of the attachment",
+                        "type": "integer"
+                    },
+                    "progress": {
+                        "description": "The progress of the report",
+                        "type": "integer"
+                    },
+                    "report": {
+                        "description": "The type of report.",
+                        "type": "string"
+                    },
+                    "started_at": {
+                        "description": "The date and time the report started processing.",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "The status of the report",
+                        "type": "string"
+                    },
+                    "ReportParameters": {
+                        "description": "The parameters returned will vary for each report.",
+                        "type": "object"
+                    }
+                }
+            },
+            "parameters": {
+                "type": "object"
+            },
+            "ReportParameters": {
+                "type": "object",
+                "properties": {
+                    "accounts": {
+                        "description": "If true, account data will be included. If false, account data will be omitted.",
+                        "type": "boolean"
+                    },
+                    "course_id": {
+                        "description": "the ID of the course",
+                        "type": "integer"
+                    },
+                    "courses": {
+                        "description": "If true, course data will be included. If false, course data will be omitted.",
+                        "type": "boolean"
+                    },
+                    "end_at": {
+                        "description": "The end date for submissions. Max time range is 2 weeks.",
+                        "type": "string"
+                    },
+                    "enrollment_state": {
+                        "description": "Include enrollment state. Defaults to 'all' Options: ['active'| 'invited'| 'creation_pending'| 'deleted'| 'rejected'| 'completed'| 'inactive'| 'all']",
+                        "type": "array"
+                    },
+                    "enrollment_term_id": {
+                        "description": "The canvas id of the term to get grades from",
+                        "type": "integer"
+                    },
+                    "enrollments": {
+                        "description": "If true, enrollment data will be included. If false, enrollment data will be omitted.",
+                        "type": "boolean"
+                    },
+                    "groups": {
+                        "description": "If true, group data will be included. If false, group data will be omitted.",
+                        "type": "boolean"
+                    },
+                    "include_deleted": {
+                        "description": "If true, deleted objects will be included. If false, deleted objects will be omitted.",
+                        "type": "boolean"
+                    },
+                    "include_enrollment_state": {
+                        "description": "If true, enrollment state will be included. If false, enrollment state will be omitted. Defaults to false.",
+                        "type": "boolean"
+                    },
+                    "order": {
+                        "description": "The order to sort the given column by.",
+                        "type": "string"
+                    },
+                    "sections": {
+                        "description": "If true, section data will be included. If false, section data will be omitted.",
+                        "type": "boolean"
+                    },
+                    "sis_accounts_csv": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "sis_terms_csv": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "start_at": {
+                        "description": "The beginning date for submissions. Max time range is 2 weeks.",
+                        "type": "string"
+                    },
+                    "terms": {
+                        "description": "If true, term data will be included. If false, term data will be omitted.",
+                        "type": "boolean"
+                    },
+                    "users": {
+                        "description": "If true, user data will be included. If false, user data will be omitted.",
+                        "type": "boolean"
+                    },
+                    "xlist": {
+                        "description": "If true, data for crosslisted courses will be included. If false, data for crosslisted courses will be omitted.",
+                        "type": "boolean"
+                    }
+                }
+            },
+            "enrollment_state": {
+                "type": "array"
+            },
+            "AccountNotification": {
+                "type": "object",
+                "properties": {
+                    "end_at": {
+                        "description": "The end date for submissions. Max time range is 2 weeks.",
+                        "type": "string"
+                    },
+                    "icon": {
+                        "description": "The icon to display with the message.  Defaults to warning.",
+                        "type": "string"
+                    },
+                    "message": {
+                        "description": "The message to be sent in the notification.",
+                        "type": "string"
+                    },
+                    "role_ids": {
+                        "description": "The roles to send the notification to.  If roles is not passed it defaults to all roles",
+                        "type": "array"
+                    },
+                    "roles": {
+                        "description": "(Deprecated) The roles to send the notification to.  If roles is not passed it defaults to all roles",
+                        "type": "array"
+                    },
+                    "start_at": {
+                        "description": "The beginning date for submissions. Max time range is 2 weeks.",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "The subject of the notifications",
+                        "type": "string"
+                    }
+                }
+            },
+            "role_ids": {
+                "type": "array"
+            },
+            "roles": {
+                "type": "array"
+            },
+            "Account": {
+                "type": "object",
+                "properties": {
+                    "default_group_storage_quota_mb": {
+                        "description": "The storage quota for a group in the account in megabytes, if not otherwise specified",
+                        "type": "integer"
+                    },
+                    "default_storage_quota_mb": {
+                        "description": "The storage quota for the account in megabytes, if not otherwise specified",
+                        "type": "integer"
+                    },
+                    "default_time_zone": {
+                        "description": "The default time zone of the account. Allowed time zones are {http:\/\/www.iana.org\/time-zones IANA time zones} or friendlier {http:\/\/api.rubyonrails.org\/classes\/ActiveSupport\/TimeZone.html Ruby on Rails time zones}.",
+                        "type": "string"
+                    },
+                    "default_user_storage_quota_mb": {
+                        "description": "The storage quota for a user in the account in megabytes, if not otherwise specified",
+                        "type": "integer"
+                    },
+                    "id": {
+                        "description": "['attachment' type only] the internal id of the attachment",
+                        "type": "integer"
+                    },
+                    "integration_id": {
+                        "description": "The integration_id associated with the user.  This field is only included if the user came from a SIS import and has permissions to view SIS information.",
+                        "type": "string"
+                    },
+                    "lti_guid": {
+                        "description": "The account's identifier that is sent as context_id in LTI launches.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "the actual name of the course",
+                        "type": "string"
+                    },
+                    "parent_account_id": {
+                        "description": "The account's parent ID, or null if this is the root account",
+                        "type": "integer"
+                    },
+                    "root_account_id": {
+                        "description": "The ID of the root account, or null if this is the root account",
+                        "type": "integer"
+                    },
+                    "sis_account_id": {
+                        "description": "The account's identifier in the Student Information System. Only included if the user has permission to view SIS information.",
+                        "type": "string"
+                    },
+                    "sis_import_id": {
+                        "description": "The id of the SIS import.  This field is only included if the user came from a SIS import and has permissions to manage SIS information.",
+                        "type": "integer"
+                    },
+                    "uuid": {
+                        "description": "The UUID of the account",
+                        "type": "string"
+                    },
+                    "workflow_state": {
+                        "description": "The state of the account. Can be 'active' or 'deleted'.",
+                        "type": "string"
+                    }
+                }
+            },
+            "enrollment_type": {
+                "type": "array"
+            },
+            "by_teachers": {
+                "type": "array"
+            },
+            "by_subaccounts": {
+                "type": "array"
+            },
+            "state": {
+                "type": "array"
+            },
+            "permissions": {
+                "type": "array"
+            },
+            "TermsOfService": {
+                "type": "object"
+            }
+        }
+    }
+}
