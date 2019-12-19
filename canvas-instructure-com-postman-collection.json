@@ -1,0 +1,2177 @@
+{
+    "id": "96f0d62cd3679371eb1e544fb95e57b2",
+    "name": "canvas.instructure.com",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "758db33a18b6f9c8c0b60303528c010c",
+            "name": "Self register a user",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/self_registration",
+            "description": "Self register and return a new user and pseudonym for an account.\n\nIf self-registration is enabled on the account, you can use this\nendpoint to self register new users.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "fe696bb1a5d13f8b4f888b8a602a399e",
+            "name": "List users in account",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/users",
+            "description": "A paginated list of of users associated with this account.\n\n @example_request\n   curl https:\/\/<canvas>\/api\/v1\/accounts\/self\/users?search_term=<search value> \\\n      -X GET \\\n      -H 'Authorization: Bearer <token>'",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "search_term",
+                    "description": "The partial name or full ID of the users to match and return in the\nresults list. Must be at least 3 characters.\n\nNote that the API will prefer matching on canonical user ID if the ID has\na numeric form. It will only search against other fields if non-numeric\nin form, or if the numeric value doesn't yield any matches. Queries by\nadministrative users will search on SIS ID, login ID, name, or email\naddress; non-administrative queries will only be compared against name.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort",
+                    "description": "The column to sort results by.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "order",
+                    "description": "The order to sort the given column by.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "2f0604a31e78c69d4bedbbd359b74ecd",
+            "name": "Create a user",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/users",
+            "description": "Create and return a new user and pseudonym for an account.\n\nIf you don't have the \"Modify login details for users\" permission, but\nself-registration is enabled on the account, you can still use this\nendpoint to register new users. Certain fields will be required, and\nothers will be ignored (see below).",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "5c629b9eb7316807344caf12a41899c0",
+            "name": "List the activity stream",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/activity_stream",
+            "description": "Returns the current user's global activity stream, paginated.\n\nThere are many types of objects that can be returned in the activity\nstream. All object types have the same basic set of shared attributes:\n  !!!javascript\n  {\n    'created_at': '2011-07-13T09:12:00Z',\n    'updated_at': '2011-07-25T08:52:41Z',\n    'id': 1234,\n    'title': 'Stream Item Subject',\n    'message': 'This is the body text of the activity stream item. It is plain-text, and can be multiple paragraphs.',\n    'type': 'Discussio",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "bb6b564b08a625a63f6c8683227cd88f",
+            "name": "Hide all stream items",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/activity_stream",
+            "description": "Hide all stream items for the user",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "57b1c44507ce028d14d2198e0fbc940a",
+            "name": "List the activity stream",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/activity_stream",
+            "description": "Returns the current user's global activity stream, paginated.\n\nThere are many types of objects that can be returned in the activity\nstream. All object types have the same basic set of shared attributes:\n  !!!javascript\n  {\n    'created_at': '2011-07-13T09:12:00Z',\n    'updated_at': '2011-07-25T08:52:41Z',\n    'id': 1234,\n    'title': 'Stream Item Subject',\n    'message': 'This is the body text of the activity stream item. It is plain-text, and can be multiple paragraphs.',\n    'type': 'Discussio",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "09a1e3ca13cc9ba35c0dd17f6a490d95",
+            "name": "Activity stream summary",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/activity_stream\/summary",
+            "description": "Returns a summary of the current user's global activity stream.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "c6e587d906e8733824a5bac8ddd0bd05",
+            "name": "Hide a stream item",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/activity_stream\/{id}",
+            "description": "Hide the given stream item.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "7dd14565dc0f847271542aee5ebca1fd",
+            "name": "Clear course nicknames",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/course_nicknames",
+            "description": "Remove all stored course nicknames.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "71e89a37c767e41f204ac7fff870b085",
+            "name": "List course nicknames",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/course_nicknames",
+            "description": "Returns all course nicknames you have set.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "a7bf443e8e0ece1b0eae154f81f5310e",
+            "name": "Remove course nickname",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/course_nicknames\/{course_id}",
+            "description": "Remove the nickname for the given course.\nSubsequent course API calls will return the actual name for the course.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "course_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "b261054188a45a5cbcfe9b104421c9f3",
+            "name": "Get course nickname",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/course_nicknames\/{course_id}",
+            "description": "Returns the nickname for a specific course.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "course_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "adbf6bbf03ca47a05ce473456aab9e79",
+            "name": "Set course nickname",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/course_nicknames\/{course_id}",
+            "description": "Set a nickname for the given course. This will replace the course's name\nin output of API calls you make subsequently, as well as in selected\nplaces in the Canvas web user interface.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "course_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "9880211a992cd38b4d5254518dc5be84",
+            "name": "Get a Pandata Events jwt token and its expiration date",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/pandata_events_token",
+            "description": "Returns a jwt auth and props token that can be used to send events to\nPandata.\n\nNOTE: This is currently only available to the mobile developer keys.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "17df03de17f3330b19f51a2120bd97c8",
+            "name": "List the TODO items",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/todo",
+            "description": "A paginated list of the current user's list of todo items, as seen on the user dashboard.\n\nThere is a limit to the number of items returned.\n\nThe `ignore` and `ignore_permanently` URLs can be used to update the user's\npreferences on what items will be displayed.\nPerforming a DELETE request against the `ignore` URL will hide that item\nfrom future todo item requests, until the item changes.\nPerforming a DELETE request against the `ignore_permanently` URL will hide\nthat item forever.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "include",
+                    "description": "\"ungraded_quizzes\":: Optionally include ungraded quizzes (such as practice quizzes and surveys) in the list.\n                     These will be returned under a +quiz+ key instead of an +assignment+ key in response elements.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "ebdf54286733c5470d905141c0d3e9aa",
+            "name": "List counts for todo items",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/todo_item_count",
+            "description": "Counts of different todo items such as the number of assignments needing grading as well as the number of assignments needing submitting.\n\nThere is a limit to the number of todo items this endpoint will count.\nIt will only look at the first 100 todo items for the user. If the user has more than 100 todo items this count may not be reliable.\nThe largest reliable number for both counts is 100.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "include",
+                    "description": "\"ungraded_quizzes\":: Optionally include ungraded quizzes (such as practice quizzes and surveys) in the list.\n                     These will be returned under a +quiz+ key instead of an +assignment+ key in response elements.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "3a8af7834fd402129e2b259d6f0014a5",
+            "name": "List upcoming assignments, calendar events",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/upcoming_events",
+            "description": "A paginated list of the current user's upcoming events, i.e. the same things shown\nin the dashboard 'Coming Up' sidebar.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "b3ac5585f8ad47afee1465d24048ae8f",
+            "name": "Show user details",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{id}",
+            "description": "Shows details for user.\n\nAlso includes an attribute \"permissions\", a non-comprehensive list of permissions for the user.\nExample:\n  !!!javascript\n  \"permissions\": {\n   \"can_update_name\": true, \/\/ Whether the user can update their name.\n   \"can_update_avatar\": false \/\/ Whether the user can update their avatar.\n  }",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "2b89920b5935d74f7663ba9f636669f2",
+            "name": "Edit a user",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{id}",
+            "description": "Modify an existing user. To modify a user's login, see the documentation for logins.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "90bcc15bfc16645ed5e91b3f4ec4d932",
+            "name": "Get custom colors",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{id}\/colors",
+            "description": "Returns all custom colors that have been saved for a user.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "323eb75d904a1d57d726e76e4be46c4c",
+            "name": "Get custom color",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{id}\/colors\/{asset_string}",
+            "description": "Returns the custom colors that have been saved for a user for a given context.\n\nThe asset_string parameter should be in the format 'context_id', for example\n'course_42'.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "asset_string",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "7769db354dbc8037ea06d5b01f224c76",
+            "name": "Update custom color",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{id}\/colors\/{asset_string}",
+            "description": "Updates a custom color for a user for a given context.  This allows\ncolors for the calendar and elsewhere to be customized on a user basis.\n\nThe asset string parameter should be in the format 'context_id', for example\n'course_42'",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "asset_string",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "0be011d0d42121e4e74b6437242b993c",
+            "name": "Get dashboard positions",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{id}\/dashboard_positions",
+            "description": "Returns all dashboard positions that have been saved for a user.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "492abc105394d68239cd78dcae9ed740",
+            "name": "Update dashboard positions",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{id}\/dashboard_positions",
+            "description": "Updates the dashboard positions for a user for a given context.  This allows\npositions for the dashboard cards and elsewhere to be customized on a per\nuser basis.\n\nThe asset string parameter should be in the format 'context_id', for example\n'course_42'",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "235bc6a964336bc83a608b3b5a7ec157",
+            "name": "Merge user into another user",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{id}\/merge_into\/accounts\/{destination_account_id}\/users\/{destination_user_id}",
+            "description": "Merge a user into another user.\nTo merge users, the caller must have permissions to manage both users. This\nshould be considered irreversible. This will delete the user and move all\nthe data into the destination user.\n\nWhen finding users by SIS ids in different accounts the\ndestination_account_id is required.\n\nThe account can also be identified by passing the domain in destination_account_id.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "destination_account_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "destination_user_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "4147aa216c6d0d2ed0399fd66a3c886a",
+            "name": "Merge user into another user",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{id}\/merge_into\/{destination_user_id}",
+            "description": "Merge a user into another user.\nTo merge users, the caller must have permissions to manage both users. This\nshould be considered irreversible. This will delete the user and move all\nthe data into the destination user.\n\nWhen finding users by SIS ids in different accounts the\ndestination_account_id is required.\n\nThe account can also be identified by passing the domain in destination_account_id.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "destination_user_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "b72563a911eb4bfce6a62537c8762330",
+            "name": "Update user settings.",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{id}\/settings",
+            "description": "Update an existing user's settings.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "manual_mark_as_read",
+                    "description": "If true, require user to manually mark discussion posts as read (don't\nauto-mark as read).",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "collapse_global_nav",
+                    "description": "If true, the user's page loads with the global navigation collapsed",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "1ce46108968c41bf112242599298add7",
+            "name": "Split merged users into separate users",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{id}\/split",
+            "description": "Merged users cannot be fully restored to their previous state, but this will\nattempt to split as much as possible to the previous state.\nTo split a merged user, the caller must have permissions to manage all of\nthe users logins. If there are multiple users that have been merged into one\nuser it will split each merge into a separate user.\nA split can only happen within 180 days of a user merge. A user merge deletes\nthe previous user and may be permanently deleted. In this scenario we create\na new",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "c77a6b6547011d0ed5e3efb3dc64931e",
+            "name": "List avatar options",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{user_id}\/avatars",
+            "description": "A paginated list of the possible user avatar options that can be set with the user update endpoint. The response will be an array of avatar records. If the 'type' field is 'attachment', the record will include all the normal attachment json fields; otherwise it will include only the 'url' and 'display_name' fields. Additionally, all records will include a 'type' field and a 'token' field. The following explains each field in more detail\ntype:: [\"gravatar\"|\"attachment\"|\"no_pic\"] The type of avata",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "user_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "c5351d9d9ec264286e7e6bca058bcae6",
+            "name": "Delete custom data",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{user_id}\/custom_data",
+            "description": "Delete custom user data.\n\nArbitrary JSON data can be stored for a User.  This API call\ndeletes that data for a given scope.  Without a scope, all custom_data is deleted.\nSee {api:UsersController#set_custom_data Store Custom Data} for details and\nexamples of storage and retrieval.\n\nAs an example, we'll store some data, then delete a subset of it.\n\nExample {api:UsersController#set_custom_data PUT} with valid JSON data:\n  curl 'https:\/\/<canvas>\/api\/v1\/users\/<user_id>\/custom_data' \\\n    -X PUT \\\n   ",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "user_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "ns",
+                    "description": "The namespace from which to delete the data.  This should be something other\nCanvas API apps aren't likely to use, such as a reverse DNS for your organization.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "7015b712c552f171dcd4b6648d928807",
+            "name": "Load custom data",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{user_id}\/custom_data",
+            "description": "Load custom user data.\n\nArbitrary JSON data can be stored for a User.  This API call\nretrieves that data for a (optional) given scope.\nSee {api:UsersController#set_custom_data Store Custom Data} for details and\nexamples.\n\nOn success, this endpoint returns an object containing the data that was requested.\n\nResponds with status code 400 if the namespace parameter, +ns+, is missing or invalid,\nor if the specified scope does not contain any data.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "user_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "ns",
+                    "description": "The namespace from which to delete the data.  This should be something other\nCanvas API apps aren't likely to use, such as a reverse DNS for your organization.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "9da52acd26a2262ea1ad280537699c98",
+            "name": "Store custom data",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{user_id}\/custom_data",
+            "description": "Store arbitrary user data as JSON.\n\nArbitrary JSON data can be stored for a User.\nA typical scenario would be an external site\/service that registers users in Canvas\nand wants to capture additional info about them.  The part of the URL that follows\n+\/custom_data\/+ defines the scope of the request, and it reflects the structure of\nthe JSON data to be stored or retrieved.\n\nThe value +self+ may be used for +user_id+ to store data associated with the calling user.\nIn order to access another user's c",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "user_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "2347d9a1e7ebfda124ae4a4c03d203da",
+            "name": "Upload a file",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{user_id}\/files",
+            "description": "Upload a file to the user's personal files section.\n\nThis API endpoint is the first step in uploading a file to a user's files.\nSee the {file:file_uploads.html File Upload Documentation} for details on\nthe file upload workflow.\n\nNote that typically users will only be able to upload files to their\nown files section. Passing a user_id of +self+ is an easy shortcut\nto specify the current user.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "user_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "79df3467179e91a56232bd3c71e7723a",
+            "name": "List Missing Submissions",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{user_id}\/missing_submissions",
+            "description": "A paginated list of past-due assignments for which the student does not have a submission.\nThe user sending the request must either be an admin or a parent observer using the parent app",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "user_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "include",
+                    "description": "\"ungraded_quizzes\":: Optionally include ungraded quizzes (such as practice quizzes and surveys) in the list.\n                     These will be returned under a +quiz+ key instead of an +assignment+ key in response elements.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "f24ed3ff1a4f4b6594bf275681dd73c8",
+            "name": "List user page views",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{user_id}\/page_views",
+            "description": "Return a paginated list of the user's page view history in json format,\nsimilar to the available CSV download. Page views are returned in\ndescending order, newest to oldest.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "user_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "start_time",
+                    "description": "The beginning of the time range from which you want page views.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "end_time",
+                    "description": "The end of the time range from which you want page views.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "1b8be98b9f0966bd6ec5a2c2eeedd195",
+            "name": "Get user profile",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{user_id}\/profile",
+            "description": "Returns user profile data, including user id, name, and profile pic.\n\nWhen requesting the profile for the user accessing the API, the user's\ncalendar feed URL and LTI user id will be returned as well.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "user_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "6b9483812020cf0bc4663ced5236b555",
+            "name": "List Available Reports",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/reports",
+            "description": "Returns a paginated list of reports for the current context.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "968e91ec176ca9487dcc9ff478ae0c62",
+            "name": "Index of Reports",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/reports\/{report}",
+            "description": "Shows all reports that have been run for the account of a specific type.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "report",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "62e31a274d3f74385faf14b4a64d0bf1",
+            "name": "Start a Report",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/reports\/{report}",
+            "description": "Generates a report instance for the account. Note that \"report\" in the\nrequest must match one of the available report names. To fetch a list of\navailable report names and parameters for each report (including whether or\nnot those parameters are required), see\n{api:AccountReportsController#available_reports List Available Reports}.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "report",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "parameters",
+                    "description": "The parameters will vary for each report. To fetch a list\nof available parameters for each report, see {api:AccountReportsController#available_reports List Available Reports}.\nA few example parameters have been provided below. Note that the example\nparameters provided below may not be valid for every report.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "parameters[course_id]",
+                    "description": "The id of the course to report on.\nNote: this parameter has been listed to serve as an example and may not be\nvalid for every report.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "parameters[users]",
+                    "description": "If true, user data will be included. If\nfalse, user data will be omitted. Note: this parameter has been listed to\nserve as an example and may not be valid for every report.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "f5abcb07597dec178cca2b0f0a2364df",
+            "name": "Delete a Report",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/reports\/{report}\/{id}",
+            "description": "Deletes a generated report instance.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "report",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "d2772286e5c2507242742f8a7ea4890a",
+            "name": "Status of a Report",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/reports\/{report}\/{id}",
+            "description": "Returns the status of a report.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "report",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "4ab000aa898eb423331b3e82891f64ad",
+            "name": "Index of active global notification for the user",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/account_notifications",
+            "description": "Returns a list of all global notifications in the account for the current user\nAny notifications that have been closed by the user will not be returned",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "a5971160b8b21604d615a5540dfc930f",
+            "name": "Create a global notification",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/account_notifications",
+            "description": "Create and return a new global notification for an account.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "5fae10e88a198d4b6bd259e16fc34375",
+            "name": "Close notification for user",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/account_notifications\/{id}",
+            "description": "If the current user no long wants to see this notification it can be excused with this call",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "de47183b56d0e9bbfda177226f0d71e2",
+            "name": "Show a global notification",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/account_notifications\/{id}",
+            "description": "Returns a global notification for the current user\nA notification that has been closed by the user will not be returned",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "93eda36b4d83845be1abccdb8c85bb1f",
+            "name": "Update a global notification",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/account_notifications\/{id}",
+            "description": "Update global notification for an account.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "250f7f0fbfa53ea85157afddad0317af",
+            "name": "List accounts",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts",
+            "description": "A paginated list of accounts that the current user can view or manage.\nTypically, students and even teachers will get an empty list in response,\nonly account admins can view the accounts that they are in.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "include",
+                    "description": "\"ungraded_quizzes\":: Optionally include ungraded quizzes (such as practice quizzes and surveys) in the list.\n                     These will be returned under a +quiz+ key instead of an +assignment+ key in response elements.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "4fbfe8063d25e07ee621202bfd50aaa7",
+            "name": "List active courses in an account",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/courses",
+            "description": "Retrieve a paginated list of courses in this account.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "with_enrollments",
+                    "description": "If true, include only courses with at least one enrollment.  If false,\ninclude only courses with no enrollments.  If not present, do not filter\non course enrollment status.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "enrollment_type",
+                    "description": "If set, only return courses that have at least one user enrolled in\nin the course with one of the specified enrollment types.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "published",
+                    "description": "If true, include only published courses.  If false, exclude published\ncourses.  If not present, do not filter on published status.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "completed",
+                    "description": "If true, include only completed courses (these may be in state\n'completed', or their enrollment term may have ended).  If false, exclude\ncompleted courses.  If not present, do not filter on completed status.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "blueprint",
+                    "description": "If true, include only blueprint courses. If false, exclude them.\nIf not present, do not filter on this basis.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "blueprint_associated",
+                    "description": "If true, include only courses that inherit content from a blueprint course.\nIf false, exclude them. If not present, do not filter on this basis.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "by_teachers",
+                    "description": "List of User IDs of teachers; if supplied, include only courses taught by\none of the referenced users.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "by_subaccounts",
+                    "description": "List of Account IDs; if supplied, include only courses associated with one\nof the referenced subaccounts.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hide_enrollmentless_courses",
+                    "description": "If present, only return courses that have at least one enrollment.\nEquivalent to 'with_enrollments=true'; retained for compatibility.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "state",
+                    "description": "If set, only return courses that are in the given state(s). By default,\nall states but \"deleted\" are returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "enrollment_term_id",
+                    "description": "If set, only includes courses from the specified term.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "search_term",
+                    "description": "The partial name or full ID of the users to match and return in the\nresults list. Must be at least 3 characters.\n\nNote that the API will prefer matching on canonical user ID if the ID has\na numeric form. It will only search against other fields if non-numeric\nin form, or if the numeric value doesn't yield any matches. Queries by\nadministrative users will search on SIS ID, login ID, name, or email\naddress; non-administrative queries will only be compared against name.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "include",
+                    "description": "\"ungraded_quizzes\":: Optionally include ungraded quizzes (such as practice quizzes and surveys) in the list.\n                     These will be returned under a +quiz+ key instead of an +assignment+ key in response elements.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort",
+                    "description": "The column to sort results by.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "order",
+                    "description": "The order to sort the given column by.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "search_by",
+                    "description": "The filter to search by. \"course\" searches for course names, course codes,\nand SIS IDs. \"teacher\" searches for teacher names",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "27c50199094369e6b75a6026f67c0ece",
+            "name": "Permissions",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/permissions",
+            "description": "Returns permission information for the calling user and the given account.\nYou may use `self` as the account id to check permissions against the domain root account.\nThe caller must have an account role or admin (teacher\/TA\/designer) enrollment in a course\nin the account. See also {api:CoursesController#permissions the Course counterpart}.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "permissions",
+                    "description": "List of permissions to check against the authenticated user.\nPermission names are documented in the {api:RoleOverridesController#add_role Create a role} endpoint.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "c471f12a2256d5969430c446e66f019a",
+            "name": "Get the sub-accounts of an account",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/sub_accounts",
+            "description": "List accounts that are sub-accounts of the given account.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "recursive",
+                    "description": "If true, the entire account tree underneath\nthis account will be returned (though still paginated). If false, only\ndirect sub-accounts of this account will be returned. Defaults to false.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "eb61993535a8d140d2c5af9f584e5961",
+            "name": "Create a new sub-account",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/sub_accounts",
+            "description": "Add a new sub-account to a given account.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "account[name]",
+                    "description": "The name of the new sub-account.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "account[sis_account_id]",
+                    "description": "The account's identifier in the Student Information System.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "account[default_storage_quota_mb]",
+                    "description": "The default course storage quota to be used, if not otherwise specified.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "account[default_user_storage_quota_mb]",
+                    "description": "The default user storage quota to be used, if not otherwise specified.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "account[default_group_storage_quota_mb]",
+                    "description": "The default group storage quota to be used, if not otherwise specified.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "f37d884e863454190b9c543cd56fce23",
+            "name": "Delete a sub-account",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/sub_accounts\/{id}",
+            "description": "Cannot delete an account with active courses or active sub_accounts.\nCannot delete a root_account",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "f083bec3e01bc3995a662a72abf6cf02",
+            "name": "Returns the terms of service for that account",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/terms_of_service",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "7137f7a3efa970bd7e1b6683b8b55536",
+            "name": "Delete a user from the root account",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/users\/{user_id}",
+            "description": "Delete a user record from a Canvas root account. If a user is associated\nwith multiple root accounts (in a multi-tenant instance of Canvas), this\naction will NOT remove them from the other accounts.\n\nWARNING: This API will allow a user to remove themselves from the account.\nIf they do this, they won't be able to make API calls or log into Canvas at\nthat account.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "user_id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "821ca459528ec66857cfe33c5d083305",
+            "name": "Get a single account",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{id}",
+            "description": "Retrieve information on an individual account, given by id or sis\nsis_account_id.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "6cf948d1030690c55755b98aaecea16a",
+            "name": "Update an account",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{id}",
+            "description": "Update an existing account.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "account[name]",
+                    "description": "The name of the new sub-account.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "account[sis_account_id]",
+                    "description": "The account's identifier in the Student Information System.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "account[default_time_zone]",
+                    "description": "The default time zone of the account. Allowed time zones are\n{http:\/\/www.iana.org\/time-zones IANA time zones} or friendlier\n{http:\/\/api.rubyonrails.org\/classes\/ActiveSupport\/TimeZone.html Ruby on Rails time zones}.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "account[default_storage_quota_mb]",
+                    "description": "The default course storage quota to be used, if not otherwise specified.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "account[default_user_storage_quota_mb]",
+                    "description": "The default user storage quota to be used, if not otherwise specified.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "account[default_group_storage_quota_mb]",
+                    "description": "The default group storage quota to be used, if not otherwise specified.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "account[settings][restrict_student_past_view][value]",
+                    "description": "Restrict students from viewing courses after end date",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "account[settings][restrict_student_past_view][locked]",
+                    "description": "Lock this setting for sub-accounts and courses",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "account[settings][restrict_student_future_view][value]",
+                    "description": "Restrict students from viewing courses before start date",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "account[settings][restrict_student_future_view][locked]",
+                    "description": "Lock this setting for sub-accounts and courses",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "account[settings][lock_all_announcements][value]",
+                    "description": "Disable comments on announcements",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "account[settings][lock_all_announcements][locked]",
+                    "description": "Lock this setting for sub-accounts and courses",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "account[settings][restrict_student_future_listing][value]",
+                    "description": "Restrict students from viewing future enrollments in course list",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "account[settings][restrict_student_future_listing][locked]",
+                    "description": "Lock this setting for sub-accounts and courses",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "account[services]",
+                    "description": "Give this a set of keys and boolean values to enable or disable services matching the keys",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        },
+        {
+            "id": "2a6f4876798fe15eece621bcd43ab254",
+            "name": "List accounts for course admins",
+            "url": "http:\/\/canvas.instructure.com\/api\/v1\/course_accounts",
+            "description": "A paginated list of accounts that the current user can view through their\nadmin course enrollments. (Teacher, TA, or designer enrollments).\nOnly returns \"id\", \"name\", \"workflow_state\", \"root_account_id\" and \"parent_account_id\"",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "rawModeData": ""
+        }
+    ]
+}
