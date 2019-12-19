@@ -1,0 +1,16 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "v1",
+        "title": "Instructure Canvas Polls API",
+        "description": "Canvas LMS includes a REST API for accessing and modifying data externally from the main application, in your own programs and scripts. ",
+        "termsOfService": "https:\/\/www.canvaslms.com\/policies\/api-policy"
+    },
+    "servers": [
+        "httpscanvas.instructure.com\/api\/v1"
+    ],
+    "paths": [],
+    "components": {
+        "schemas": []
+    }
+}
