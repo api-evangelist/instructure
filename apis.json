@@ -1,0 +1,354 @@
+{
+    "name": "Instructure",
+    "description": "Instructure makes software that makes smarter people. Products include Canvas LMS, Bridge and Canvas Network.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/820-instructure.jpg",
+    "tags": [
+        "api provider",
+        "have api",
+        "have swagger",
+        "lms",
+        "service api",
+        "webhook implementations"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "Instructure Canvas Utility APIs",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/820-instructure.jpg",
+            "humanURL": "http:\/\/instructure.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-utility-apis.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-utility-apis-postman-collection.json"
+                }
+            ]
+        },
+        {
+            "name": "Instructure Canvas Accounts API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/820-instructure.jpg",
+            "humanURL": "http:\/\/instructure.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-accounts-api.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-accounts-api-postman-collection.json"
+                }
+            ]
+        },
+        {
+            "name": "Instructure Canvas Appointment Groups API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/820-instructure.jpg",
+            "humanURL": "http:\/\/instructure.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-appointment-groups-api.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-appointment-groups-api-postman-collection.json"
+                }
+            ]
+        },
+        {
+            "name": "Instructure Canvas Audit API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/820-instructure.jpg",
+            "humanURL": "http:\/\/instructure.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-audit-api.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-audit-api-postman-collection.json"
+                }
+            ]
+        },
+        {
+            "name": "Instructure Canvas Calendar Events API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/820-instructure.jpg",
+            "humanURL": "http:\/\/instructure.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-calendar-events-api.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-calendar-events-api-postman-collection.json"
+                }
+            ]
+        },
+        {
+            "name": "Instructure Canvas Conversations API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/820-instructure.jpg",
+            "humanURL": "http:\/\/instructure.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-conversations-api.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-conversations-api-postman-collection.json"
+                }
+            ]
+        },
+        {
+            "name": "Instructure Canvas Courses API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/820-instructure.jpg",
+            "humanURL": "http:\/\/instructure.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-courses-api.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-courses-api-postman-collection.json"
+                }
+            ]
+        },
+        {
+            "name": "Instructure Canvas Global API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/820-instructure.jpg",
+            "humanURL": "http:\/\/instructure.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-global-api.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-global-api-postman-collection.json"
+                }
+            ]
+        },
+        {
+            "name": "Instructure Canvas Groups API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/820-instructure.jpg",
+            "humanURL": "http:\/\/instructure.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-groups-api.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-groups-api-postman-collection.json"
+                }
+            ]
+        },
+        {
+            "name": "Instructure Canvas Polls API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/820-instructure.jpg",
+            "humanURL": "http:\/\/instructure.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-polls-api.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-polls-api-postman-collection.json"
+                }
+            ]
+        },
+        {
+            "name": "Instructure Canvas Quiz Submissions API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/820-instructure.jpg",
+            "humanURL": "http:\/\/instructure.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-quiz-submissions-api.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-quiz-submissions-api-postman-collection.json"
+                }
+            ]
+        },
+        {
+            "name": "Instructure Canvas Sections API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/820-instructure.jpg",
+            "humanURL": "http:\/\/instructure.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-sections-api.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-sections-api-postman-collection.json"
+                }
+            ]
+        },
+        {
+            "name": "Instructure Canvas Users API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/820-instructure.jpg",
+            "humanURL": "http:\/\/instructure.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-users-api.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-users-api-postman-collection.json"
+                }
+            ]
+        },
+        {
+            "name": "canvas.instructure.com",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/820-instructure.jpg",
+            "humanURL": "http:\/\/instructure.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/canvas-instructure-com.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/canvas-instructure-com-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Blog",
+            "url": "http:\/\/blog.instructure.com"
+        },
+        {
+            "type": "Blog RSS",
+            "url": "http:\/\/voice.instructure.com\/CMS\/UI\/Modules\/BizBlogger\/rss.aspx?tabid=772438&moduleid=1638884&maxcount=25&t=415c2e5d197a4d6f7cdcc81385b677f1"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/instructure"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "http:\/\/www.crunchbase.com\/company\/instructure"
+        },
+        {
+            "type": "Email",
+            "url": "info@instructure.com"
+        },
+        {
+            "type": "Email",
+            "url": "jobs@instructure.com"
+        },
+        {
+            "type": "Email",
+            "url": "privacy@instructure.com"
+        },
+        {
+            "type": "Email",
+            "url": "legal@instructure.com"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/instructure"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/820-2019-09-03-20-02-54.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/820-2019-09-03-20-03-01.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/820-2019-09-04-10-53-40.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/820-2019-09-04-10-53-48.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/820-2019-09-04-10-53-55.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/820-2019-09-03-19-38-27.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/820-2019-09-04-10-54-16.json"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/instructure"
+        },
+        {
+            "type": "Webhooks",
+            "url": "https:\/\/canvas.instructure.com\/doc\/api\/webhooks_subscriptions.html"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/instructure.com"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/canvas.instructure.com\/doc\/api\/index.html"
+        }
+    ]
+}
