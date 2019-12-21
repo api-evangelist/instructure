@@ -1,5 +1,5 @@
 {
-    "id": "96f0d62cd3679371eb1e544fb95e57b2",
+    "id": "60b3c879e00884b874b185040464c098",
     "name": "canvas.instructure.com",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "758db33a18b6f9c8c0b60303528c010c",
+            "id": "6a5ad880bbdb59a0cd30c0372d7ef4d9",
             "name": "Self register a user",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/self_registration",
             "description": "Self register and return a new user and pseudonym for an account.\n\nIf self-registration is enabled on the account, you can use this\nendpoint to self register new users.",
@@ -37,11 +37,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "fe696bb1a5d13f8b4f888b8a602a399e",
+            "id": "945dc54a008ae90564db890c2c813223",
             "name": "List users in account",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/users",
             "description": "A paginated list of of users associated with this account.\n\n @example_request\n   curl https:\/\/<canvas>\/api\/v1\/accounts\/self\/users?search_term=<search value> \\\n      -X GET \\\n      -H 'Authorization: Bearer <token>'",
@@ -89,11 +89,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "2f0604a31e78c69d4bedbbd359b74ecd",
+            "id": "8e686d397560b4301f12881d7f440555",
             "name": "Create a user",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/users",
             "description": "Create and return a new user and pseudonym for an account.\n\nIf you don't have the \"Modify login details for users\" permission, but\nself-registration is enabled on the account, you can still use this\nendpoint to register new users. Certain fields will be required, and\nothers will be ignored (see below).",
@@ -120,11 +120,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "5c629b9eb7316807344caf12a41899c0",
+            "id": "318a2ea1e9a4301aa8bdb1c196dfb61d",
             "name": "List the activity stream",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/activity_stream",
             "description": "Returns the current user's global activity stream, paginated.\n\nThere are many types of objects that can be returned in the activity\nstream. All object types have the same basic set of shared attributes:\n  !!!javascript\n  {\n    'created_at': '2011-07-13T09:12:00Z',\n    'updated_at': '2011-07-25T08:52:41Z',\n    'id': 1234,\n    'title': 'Stream Item Subject',\n    'message': 'This is the body text of the activity stream item. It is plain-text, and can be multiple paragraphs.',\n    'type': 'Discussio",
@@ -143,11 +143,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "bb6b564b08a625a63f6c8683227cd88f",
+            "id": "eb86de71bab4fc3fc94467d8a5f0ffe5",
             "name": "Hide all stream items",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/activity_stream",
             "description": "Hide all stream items for the user",
@@ -166,11 +166,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "57b1c44507ce028d14d2198e0fbc940a",
+            "id": "83e8eb172e02ac38ffdb49af9956fdba",
             "name": "List the activity stream",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/activity_stream",
             "description": "Returns the current user's global activity stream, paginated.\n\nThere are many types of objects that can be returned in the activity\nstream. All object types have the same basic set of shared attributes:\n  !!!javascript\n  {\n    'created_at': '2011-07-13T09:12:00Z',\n    'updated_at': '2011-07-25T08:52:41Z',\n    'id': 1234,\n    'title': 'Stream Item Subject',\n    'message': 'This is the body text of the activity stream item. It is plain-text, and can be multiple paragraphs.',\n    'type': 'Discussio",
@@ -189,11 +189,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "09a1e3ca13cc9ba35c0dd17f6a490d95",
+            "id": "6054e0a47f9a083a3e01219da6fb3871",
             "name": "Activity stream summary",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/activity_stream\/summary",
             "description": "Returns a summary of the current user's global activity stream.",
@@ -212,11 +212,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "c6e587d906e8733824a5bac8ddd0bd05",
+            "id": "13b511b0f4c8c837ffa8ae924bca26a8",
             "name": "Hide a stream item",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/activity_stream\/{id}",
             "description": "Hide the given stream item.",
@@ -243,11 +243,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "7dd14565dc0f847271542aee5ebca1fd",
+            "id": "75e25736f4565f7ae22a0c28196726ec",
             "name": "Clear course nicknames",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/course_nicknames",
             "description": "Remove all stored course nicknames.",
@@ -266,11 +266,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "71e89a37c767e41f204ac7fff870b085",
+            "id": "ee2e0cdd599cd3ce6bf8787b9ab004a0",
             "name": "List course nicknames",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/course_nicknames",
             "description": "Returns all course nicknames you have set.",
@@ -289,11 +289,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "a7bf443e8e0ece1b0eae154f81f5310e",
+            "id": "3679b34daf89e5737c08625053301156",
             "name": "Remove course nickname",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/course_nicknames\/{course_id}",
             "description": "Remove the nickname for the given course.\nSubsequent course API calls will return the actual name for the course.",
@@ -320,11 +320,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "b261054188a45a5cbcfe9b104421c9f3",
+            "id": "0c65218ab3d49577bcd6c6c640599e4a",
             "name": "Get course nickname",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/course_nicknames\/{course_id}",
             "description": "Returns the nickname for a specific course.",
@@ -351,11 +351,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "adbf6bbf03ca47a05ce473456aab9e79",
+            "id": "1e4d1682314e2f80fad4f41f23c8dc7e",
             "name": "Set course nickname",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/course_nicknames\/{course_id}",
             "description": "Set a nickname for the given course. This will replace the course's name\nin output of API calls you make subsequently, as well as in selected\nplaces in the Canvas web user interface.",
@@ -382,11 +382,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "9880211a992cd38b4d5254518dc5be84",
+            "id": "39e5bb4abd06b13949507f96b7e44e50",
             "name": "Get a Pandata Events jwt token and its expiration date",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/pandata_events_token",
             "description": "Returns a jwt auth and props token that can be used to send events to\nPandata.\n\nNOTE: This is currently only available to the mobile developer keys.",
@@ -405,11 +405,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "17df03de17f3330b19f51a2120bd97c8",
+            "id": "a4ae9553d278b09181b01bf6e080ffa0",
             "name": "List the TODO items",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/todo",
             "description": "A paginated list of the current user's list of todo items, as seen on the user dashboard.\n\nThere is a limit to the number of items returned.\n\nThe `ignore` and `ignore_permanently` URLs can be used to update the user's\npreferences on what items will be displayed.\nPerforming a DELETE request against the `ignore` URL will hide that item\nfrom future todo item requests, until the item changes.\nPerforming a DELETE request against the `ignore_permanently` URL will hide\nthat item forever.",
@@ -436,11 +436,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "ebdf54286733c5470d905141c0d3e9aa",
+            "id": "3f9bc1d8d2962b2d41a9e26e7c334fa8",
             "name": "List counts for todo items",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/todo_item_count",
             "description": "Counts of different todo items such as the number of assignments needing grading as well as the number of assignments needing submitting.\n\nThere is a limit to the number of todo items this endpoint will count.\nIt will only look at the first 100 todo items for the user. If the user has more than 100 todo items this count may not be reliable.\nThe largest reliable number for both counts is 100.",
@@ -467,11 +467,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "3a8af7834fd402129e2b259d6f0014a5",
+            "id": "45e1e2d03f7d092ccaf4bc40f1587c32",
             "name": "List upcoming assignments, calendar events",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/self\/upcoming_events",
             "description": "A paginated list of the current user's upcoming events, i.e. the same things shown\nin the dashboard 'Coming Up' sidebar.",
@@ -490,11 +490,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "b3ac5585f8ad47afee1465d24048ae8f",
+            "id": "a8330e303938cb574b8982bd746d0923",
             "name": "Show user details",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{id}",
             "description": "Shows details for user.\n\nAlso includes an attribute \"permissions\", a non-comprehensive list of permissions for the user.\nExample:\n  !!!javascript\n  \"permissions\": {\n   \"can_update_name\": true, \/\/ Whether the user can update their name.\n   \"can_update_avatar\": false \/\/ Whether the user can update their avatar.\n  }",
@@ -521,11 +521,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "2b89920b5935d74f7663ba9f636669f2",
+            "id": "7ca05b8327ce6022ccf63cf8a8a432ec",
             "name": "Edit a user",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{id}",
             "description": "Modify an existing user. To modify a user's login, see the documentation for logins.",
@@ -552,11 +552,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "90bcc15bfc16645ed5e91b3f4ec4d932",
+            "id": "8f785c0d828ca4312bc46a0c57339d03",
             "name": "Get custom colors",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{id}\/colors",
             "description": "Returns all custom colors that have been saved for a user.",
@@ -583,11 +583,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "323eb75d904a1d57d726e76e4be46c4c",
+            "id": "b7cbfbe68c8ef63cf27a877cbb3917b8",
             "name": "Get custom color",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{id}\/colors\/{asset_string}",
             "description": "Returns the custom colors that have been saved for a user for a given context.\n\nThe asset_string parameter should be in the format 'context_id', for example\n'course_42'.",
@@ -621,11 +621,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "7769db354dbc8037ea06d5b01f224c76",
+            "id": "dea0ea0ddc7ddcda9801ded1ade5fba0",
             "name": "Update custom color",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{id}\/colors\/{asset_string}",
             "description": "Updates a custom color for a user for a given context.  This allows\ncolors for the calendar and elsewhere to be customized on a user basis.\n\nThe asset string parameter should be in the format 'context_id', for example\n'course_42'",
@@ -659,11 +659,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "0be011d0d42121e4e74b6437242b993c",
+            "id": "acfa9d1fae69fbd593e96e5ca90018dd",
             "name": "Get dashboard positions",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{id}\/dashboard_positions",
             "description": "Returns all dashboard positions that have been saved for a user.",
@@ -690,11 +690,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "492abc105394d68239cd78dcae9ed740",
+            "id": "1c2b803a1df1a70fd6218419bdfd3e6e",
             "name": "Update dashboard positions",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{id}\/dashboard_positions",
             "description": "Updates the dashboard positions for a user for a given context.  This allows\npositions for the dashboard cards and elsewhere to be customized on a per\nuser basis.\n\nThe asset string parameter should be in the format 'context_id', for example\n'course_42'",
@@ -721,11 +721,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "235bc6a964336bc83a608b3b5a7ec157",
+            "id": "98f64ca97fb21d15d7ef4a3062614d7f",
             "name": "Merge user into another user",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{id}\/merge_into\/accounts\/{destination_account_id}\/users\/{destination_user_id}",
             "description": "Merge a user into another user.\nTo merge users, the caller must have permissions to manage both users. This\nshould be considered irreversible. This will delete the user and move all\nthe data into the destination user.\n\nWhen finding users by SIS ids in different accounts the\ndestination_account_id is required.\n\nThe account can also be identified by passing the domain in destination_account_id.",
@@ -766,11 +766,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "4147aa216c6d0d2ed0399fd66a3c886a",
+            "id": "652b7b7c275ae7227a974e99ea559a03",
             "name": "Merge user into another user",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{id}\/merge_into\/{destination_user_id}",
             "description": "Merge a user into another user.\nTo merge users, the caller must have permissions to manage both users. This\nshould be considered irreversible. This will delete the user and move all\nthe data into the destination user.\n\nWhen finding users by SIS ids in different accounts the\ndestination_account_id is required.\n\nThe account can also be identified by passing the domain in destination_account_id.",
@@ -804,11 +804,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "b72563a911eb4bfce6a62537c8762330",
+            "id": "6205887f177adb163f28d25ba52433d1",
             "name": "Update user settings.",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{id}\/settings",
             "description": "Update an existing user's settings.",
@@ -849,11 +849,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "1ce46108968c41bf112242599298add7",
+            "id": "6f57ecb09c6cf4eb402ee2461891a25c",
             "name": "Split merged users into separate users",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{id}\/split",
             "description": "Merged users cannot be fully restored to their previous state, but this will\nattempt to split as much as possible to the previous state.\nTo split a merged user, the caller must have permissions to manage all of\nthe users logins. If there are multiple users that have been merged into one\nuser it will split each merge into a separate user.\nA split can only happen within 180 days of a user merge. A user merge deletes\nthe previous user and may be permanently deleted. In this scenario we create\na new",
@@ -880,11 +880,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "c77a6b6547011d0ed5e3efb3dc64931e",
+            "id": "c5edaebed2c213096a00376a819626b5",
             "name": "List avatar options",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{user_id}\/avatars",
             "description": "A paginated list of the possible user avatar options that can be set with the user update endpoint. The response will be an array of avatar records. If the 'type' field is 'attachment', the record will include all the normal attachment json fields; otherwise it will include only the 'url' and 'display_name' fields. Additionally, all records will include a 'type' field and a 'token' field. The following explains each field in more detail\ntype:: [\"gravatar\"|\"attachment\"|\"no_pic\"] The type of avata",
@@ -911,11 +911,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "c5351d9d9ec264286e7e6bca058bcae6",
+            "id": "388e8df67c381170e15bca698aecf24b",
             "name": "Delete custom data",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{user_id}\/custom_data",
             "description": "Delete custom user data.\n\nArbitrary JSON data can be stored for a User.  This API call\ndeletes that data for a given scope.  Without a scope, all custom_data is deleted.\nSee {api:UsersController#set_custom_data Store Custom Data} for details and\nexamples of storage and retrieval.\n\nAs an example, we'll store some data, then delete a subset of it.\n\nExample {api:UsersController#set_custom_data PUT} with valid JSON data:\n  curl 'https:\/\/<canvas>\/api\/v1\/users\/<user_id>\/custom_data' \\\n    -X PUT \\\n   ",
@@ -949,11 +949,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "7015b712c552f171dcd4b6648d928807",
+            "id": "7bd6e0e16738f62403cb3f72c97fda3f",
             "name": "Load custom data",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{user_id}\/custom_data",
             "description": "Load custom user data.\n\nArbitrary JSON data can be stored for a User.  This API call\nretrieves that data for a (optional) given scope.\nSee {api:UsersController#set_custom_data Store Custom Data} for details and\nexamples.\n\nOn success, this endpoint returns an object containing the data that was requested.\n\nResponds with status code 400 if the namespace parameter, +ns+, is missing or invalid,\nor if the specified scope does not contain any data.",
@@ -987,11 +987,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "9da52acd26a2262ea1ad280537699c98",
+            "id": "d692ace8a2f9301f26fff8492bf724c4",
             "name": "Store custom data",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{user_id}\/custom_data",
             "description": "Store arbitrary user data as JSON.\n\nArbitrary JSON data can be stored for a User.\nA typical scenario would be an external site\/service that registers users in Canvas\nand wants to capture additional info about them.  The part of the URL that follows\n+\/custom_data\/+ defines the scope of the request, and it reflects the structure of\nthe JSON data to be stored or retrieved.\n\nThe value +self+ may be used for +user_id+ to store data associated with the calling user.\nIn order to access another user's c",
@@ -1018,11 +1018,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "2347d9a1e7ebfda124ae4a4c03d203da",
+            "id": "fdebc27179e3655b06ea0b50d4219054",
             "name": "Upload a file",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{user_id}\/files",
             "description": "Upload a file to the user's personal files section.\n\nThis API endpoint is the first step in uploading a file to a user's files.\nSee the {file:file_uploads.html File Upload Documentation} for details on\nthe file upload workflow.\n\nNote that typically users will only be able to upload files to their\nown files section. Passing a user_id of +self+ is an easy shortcut\nto specify the current user.",
@@ -1049,11 +1049,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "79df3467179e91a56232bd3c71e7723a",
+            "id": "5c2695f415ee091cdf98aa29268338d6",
             "name": "List Missing Submissions",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{user_id}\/missing_submissions",
             "description": "A paginated list of past-due assignments for which the student does not have a submission.\nThe user sending the request must either be an admin or a parent observer using the parent app",
@@ -1087,11 +1087,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "f24ed3ff1a4f4b6594bf275681dd73c8",
+            "id": "95ce61b8210b1e5e2d9855ba39024b62",
             "name": "List user page views",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{user_id}\/page_views",
             "description": "Return a paginated list of the user's page view history in json format,\nsimilar to the available CSV download. Page views are returned in\ndescending order, newest to oldest.",
@@ -1132,11 +1132,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "1b8be98b9f0966bd6ec5a2c2eeedd195",
+            "id": "93c17a182762b47b441ea39c67f656ef",
             "name": "Get user profile",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/users\/{user_id}\/profile",
             "description": "Returns user profile data, including user id, name, and profile pic.\n\nWhen requesting the profile for the user accessing the API, the user's\ncalendar feed URL and LTI user id will be returned as well.",
@@ -1163,11 +1163,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "6b9483812020cf0bc4663ced5236b555",
+            "id": "5ad9f1393f3dbe5bdcc41c9526ecd958",
             "name": "List Available Reports",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/reports",
             "description": "Returns a paginated list of reports for the current context.",
@@ -1194,11 +1194,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "968e91ec176ca9487dcc9ff478ae0c62",
+            "id": "562ba623c7a02c400b5845648eb82579",
             "name": "Index of Reports",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/reports\/{report}",
             "description": "Shows all reports that have been run for the account of a specific type.",
@@ -1232,11 +1232,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "62e31a274d3f74385faf14b4a64d0bf1",
+            "id": "f3b2c5cba3dbb1323f423180ae83183f",
             "name": "Start a Report",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/reports\/{report}",
             "description": "Generates a report instance for the account. Note that \"report\" in the\nrequest must match one of the available report names. To fetch a list of\navailable report names and parameters for each report (including whether or\nnot those parameters are required), see\n{api:AccountReportsController#available_reports List Available Reports}.",
@@ -1291,11 +1291,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "f5abcb07597dec178cca2b0f0a2364df",
+            "id": "3e8a920a2999b0cc1d2d1f3fa1b717a1",
             "name": "Delete a Report",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/reports\/{report}\/{id}",
             "description": "Deletes a generated report instance.",
@@ -1336,11 +1336,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "d2772286e5c2507242742f8a7ea4890a",
+            "id": "8e7a5389309de346aec47924170381fe",
             "name": "Status of a Report",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/reports\/{report}\/{id}",
             "description": "Returns the status of a report.",
@@ -1381,11 +1381,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "4ab000aa898eb423331b3e82891f64ad",
+            "id": "c865ec1255864c445da7d163b7b50dc3",
             "name": "Index of active global notification for the user",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/account_notifications",
             "description": "Returns a list of all global notifications in the account for the current user\nAny notifications that have been closed by the user will not be returned",
@@ -1412,11 +1412,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "a5971160b8b21604d615a5540dfc930f",
+            "id": "108dabf68a10d964b99ca37acb05d8a6",
             "name": "Create a global notification",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/account_notifications",
             "description": "Create and return a new global notification for an account.",
@@ -1443,11 +1443,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "5fae10e88a198d4b6bd259e16fc34375",
+            "id": "d8d8f0d921471f401bb1be90d3fb1b85",
             "name": "Close notification for user",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/account_notifications\/{id}",
             "description": "If the current user no long wants to see this notification it can be excused with this call",
@@ -1481,11 +1481,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "de47183b56d0e9bbfda177226f0d71e2",
+            "id": "203d892d477b85bd66a7494a495b2b19",
             "name": "Show a global notification",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/account_notifications\/{id}",
             "description": "Returns a global notification for the current user\nA notification that has been closed by the user will not be returned",
@@ -1519,11 +1519,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "93eda36b4d83845be1abccdb8c85bb1f",
+            "id": "12504fc3545b0a5bfbd8e4577696fce8",
             "name": "Update a global notification",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/account_notifications\/{id}",
             "description": "Update global notification for an account.",
@@ -1557,11 +1557,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "250f7f0fbfa53ea85157afddad0317af",
+            "id": "32c1a96ab3c27100bf779e33fc59a9ae",
             "name": "List accounts",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts",
             "description": "A paginated list of accounts that the current user can view or manage.\nTypically, students and even teachers will get an empty list in response,\nonly account admins can view the accounts that they are in.",
@@ -1588,11 +1588,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "4fbfe8063d25e07ee621202bfd50aaa7",
+            "id": "be5c832092d1f25e6cda521224e02392",
             "name": "List active courses in an account",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/courses",
             "description": "Retrieve a paginated list of courses in this account.",
@@ -1731,11 +1731,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "27c50199094369e6b75a6026f67c0ece",
+            "id": "e9a9b4fbd14508f4eebdaa0a6c9b49de",
             "name": "Permissions",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/permissions",
             "description": "Returns permission information for the calling user and the given account.\nYou may use `self` as the account id to check permissions against the domain root account.\nThe caller must have an account role or admin (teacher\/TA\/designer) enrollment in a course\nin the account. See also {api:CoursesController#permissions the Course counterpart}.",
@@ -1769,11 +1769,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "c471f12a2256d5969430c446e66f019a",
+            "id": "f85208748ae03408252612f5363d7f61",
             "name": "Get the sub-accounts of an account",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/sub_accounts",
             "description": "List accounts that are sub-accounts of the given account.",
@@ -1807,11 +1807,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "eb61993535a8d140d2c5af9f584e5961",
+            "id": "3d3f9fca5f0fe0df90b2938feb7ab305",
             "name": "Create a new sub-account",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/sub_accounts",
             "description": "Add a new sub-account to a given account.",
@@ -1873,11 +1873,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "f37d884e863454190b9c543cd56fce23",
+            "id": "66affb3563ca0447399dd810cf6c5976",
             "name": "Delete a sub-account",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/sub_accounts\/{id}",
             "description": "Cannot delete an account with active courses or active sub_accounts.\nCannot delete a root_account",
@@ -1911,11 +1911,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "f083bec3e01bc3995a662a72abf6cf02",
+            "id": "a8da463d20718f89eaed908f980488fc",
             "name": "Returns the terms of service for that account",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/terms_of_service",
             "description": "",
@@ -1942,11 +1942,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "7137f7a3efa970bd7e1b6683b8b55536",
+            "id": "c4ff160ba03420863a4b70536a38e76f",
             "name": "Delete a user from the root account",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{account_id}\/users\/{user_id}",
             "description": "Delete a user record from a Canvas root account. If a user is associated\nwith multiple root accounts (in a multi-tenant instance of Canvas), this\naction will NOT remove them from the other accounts.\n\nWARNING: This API will allow a user to remove themselves from the account.\nIf they do this, they won't be able to make API calls or log into Canvas at\nthat account.",
@@ -1980,11 +1980,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "821ca459528ec66857cfe33c5d083305",
+            "id": "5d89468eac61b9adc3f51aa4b26ef440",
             "name": "Get a single account",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{id}",
             "description": "Retrieve information on an individual account, given by id or sis\nsis_account_id.",
@@ -2011,11 +2011,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "6cf948d1030690c55755b98aaecea16a",
+            "id": "a6994aaa15b8f496ec9b3d9044cdff2e",
             "name": "Update an account",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/accounts\/{id}",
             "description": "Update an existing account.",
@@ -2147,11 +2147,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         },
         {
-            "id": "2a6f4876798fe15eece621bcd43ab254",
+            "id": "6332b40e176fb571b92ff7679afcd2f1",
             "name": "List accounts for course admins",
             "url": "http:\/\/canvas.instructure.com\/api\/v1\/course_accounts",
             "description": "A paginated list of accounts that the current user can view through their\nadmin course enrollments. (Teacher, TA, or designer enrollments).\nOnly returns \"id\", \"name\", \"workflow_state\", \"root_account_id\" and \"parent_account_id\"",
@@ -2170,7 +2170,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "96f0d62cd3679371eb1e544fb95e57b2",
+            "collectionId": "60b3c879e00884b874b185040464c098",
             "rawModeData": ""
         }
     ]
