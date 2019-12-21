@@ -10,8 +10,8 @@
         "service api",
         "webhook implementations"
     ],
-    "created": "2019-12-19",
-    "modified": "2019-12-19",
+    "created": "2019-12-21",
+    "modified": "2019-12-21",
     "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/apis.json",
     "specificationVersion": "0.14",
     "apis": [
@@ -28,8 +28,12 @@
                     "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-utility-apis.json"
                 },
                 {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-utility-apis-openapi.json"
+                },
+                {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-utility-apis-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-utility-apis-postman-collection.json"
                 }
             ]
         },
@@ -46,8 +50,12 @@
                     "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-accounts-api.json"
                 },
                 {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-accounts-api-openapi.json"
+                },
+                {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-accounts-api-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-accounts-api-postman-collection.json"
                 }
             ]
         },
@@ -64,8 +72,12 @@
                     "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-appointment-groups-api.json"
                 },
                 {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-appointment-groups-api-openapi.json"
+                },
+                {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-appointment-groups-api-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-appointment-groups-api-postman-collection.json"
                 }
             ]
         },
@@ -82,8 +94,12 @@
                     "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-audit-api.json"
                 },
                 {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-audit-api-openapi.json"
+                },
+                {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-audit-api-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-audit-api-postman-collection.json"
                 }
             ]
         },
@@ -100,8 +116,12 @@
                     "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-calendar-events-api.json"
                 },
                 {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-calendar-events-api-openapi.json"
+                },
+                {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-calendar-events-api-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-calendar-events-api-postman-collection.json"
                 }
             ]
         },
@@ -118,8 +138,12 @@
                     "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-conversations-api.json"
                 },
                 {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-conversations-api-openapi.json"
+                },
+                {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-conversations-api-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-conversations-api-postman-collection.json"
                 }
             ]
         },
@@ -136,8 +160,12 @@
                     "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-courses-api.json"
                 },
                 {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-courses-api-openapi.json"
+                },
+                {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-courses-api-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-courses-api-postman-collection.json"
                 }
             ]
         },
@@ -154,8 +182,12 @@
                     "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-global-api.json"
                 },
                 {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-global-api-openapi.json"
+                },
+                {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-global-api-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-global-api-postman-collection.json"
                 }
             ]
         },
@@ -172,8 +204,12 @@
                     "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-groups-api.json"
                 },
                 {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-groups-api-openapi.json"
+                },
+                {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-groups-api-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-groups-api-postman-collection.json"
                 }
             ]
         },
@@ -190,8 +226,12 @@
                     "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-polls-api.json"
                 },
                 {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-polls-api-openapi.json"
+                },
+                {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-polls-api-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-polls-api-postman-collection.json"
                 }
             ]
         },
@@ -205,11 +245,15 @@
             "properties": [
                 {
                     "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-quiz-submissions-api-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
                     "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-quiz-submissions-api.json"
                 },
                 {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-quiz-submissions-api-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-quiz-submissions-api-postman-collection.json"
                 }
             ]
         },
@@ -223,11 +267,15 @@
             "properties": [
                 {
                     "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-sections-api-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
                     "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-sections-api.json"
                 },
                 {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-sections-api-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-sections-api-postman-collection.json"
                 }
             ]
         },
@@ -241,11 +289,15 @@
             "properties": [
                 {
                     "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-users-api-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
                     "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/instructure-canvas-users-api.json"
                 },
                 {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/instructure-canvas-users-api-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/instructure-canvas-users-api-postman-collection.json"
                 }
             ]
         },
@@ -259,17 +311,25 @@
             "properties": [
                 {
                     "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/canvas-instructure-com-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
                     "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/canvas-instructure-com.json"
                 },
                 {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/canvas-instructure-com-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/instructure\/master\/canvas-instructure-com-postman-collection.json"
                 }
             ]
         }
     ],
     "include": [],
     "x-common": [
+        {
+            "type": "APIs.json",
+            "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/apis.json"
+        },
         {
             "type": "Blog",
             "url": "http:\/\/blog.instructure.com"
