@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/instructure/main/json-schema/Lti-AccountLookup-GET-response.json",
+  "title": "Lti Accountlookup Get Response",
+  "description": "JSON Schema for Instructure Canvas LTI Lti-AccountLookup-GET-response",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "workflow_state": {
+      "type": "string"
+    },
+    "parent_account_id": {
+      "nullable": true
+    },
+    "root_account_id": {
+      "nullable": true
+    },
+    "uuid": {
+      "type": "string"
+    },
+    "default_time_zone": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "workflow_state",
+    "parent_account_id",
+    "root_account_id",
+    "uuid",
+    "default_time_zone"
+  ]
+}

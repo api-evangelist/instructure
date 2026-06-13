@@ -120,6 +120,8 @@ apis:
     properties:
       - type: Documentation
         url: https://developerdocs.instructure.com/
+      - type: OpenAPI
+        url: openapi/instructure-canvas-lti-openapi.yml
   - aid: instructure:canvas-studio-api
     name: Canvas Studio API
     description: >-
@@ -160,6 +162,10 @@ common:
     url: rate-limits/instructure-rate-limits.yml
   - type: FinOps
     url: finops/instructure-finops.yml
+  - type: Vocabulary
+    url: vocabulary/instructure-vocabulary.yml
+  - type: JSONLDContext
+    url: json-ld/instructure-context.jsonld
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

@@ -1,0 +1,175 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema": "https://schema.org/",
+    "instructure": "https://www.instructure.com/vocab#",
+    "lti": "http://www.imsglobal.org/spec/lti/v1p3/#",
+    "canvas": "https://canvas.instructure.com/lti/",
+
+    "Canvas": "instructure:Canvas",
+    "Course": {
+      "@id": "schema:Course",
+      "@type": "@id"
+    },
+    "Enrollment": "instructure:Enrollment",
+    "Assignment": "instructure:Assignment",
+    "Submission": "instructure:Submission",
+    "Grade": "instructure:Grade",
+    "Module": "instructure:Module",
+    "Section": "instructure:Section",
+    "Discussion": "instructure:Discussion",
+    "User": "schema:Person",
+    "Group": "schema:Organization",
+
+    "LTI": "lti:LTI",
+    "LineItem": "lti:LineItem",
+    "Result": "lti:Result",
+    "ExternalTool": "lti:ExternalTool",
+    "DeveloperKey": "instructure:DeveloperKey",
+    "Registration": "lti:Registration",
+    "DataService": "instructure:DataService",
+    "Membership": "lti:Membership",
+
+    "id": "@id",
+    "type": "@type",
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+
+    "courseId": {
+      "@id": "instructure:courseId",
+      "@type": "xsd:integer"
+    },
+    "accountId": {
+      "@id": "instructure:accountId",
+      "@type": "xsd:string"
+    },
+    "userId": {
+      "@id": "instructure:userId",
+      "@type": "xsd:string"
+    },
+    "groupId": {
+      "@id": "instructure:groupId",
+      "@type": "xsd:integer"
+    },
+    "workflowState": "instructure:workflowState",
+    "rootAccountId": {
+      "@id": "instructure:rootAccountId",
+      "@type": "xsd:integer"
+    },
+    "parentAccountId": {
+      "@id": "instructure:parentAccountId",
+      "@type": "xsd:integer"
+    },
+
+    "scoreOf": {
+      "@id": "lti:scoreOf",
+      "@type": "@id"
+    },
+    "resultScore": {
+      "@id": "lti:resultScore",
+      "@type": "xsd:number"
+    },
+    "resultMaximum": {
+      "@id": "lti:resultMaximum",
+      "@type": "xsd:number"
+    },
+    "activityProgress": "lti:activityProgress",
+    "gradingProgress": "lti:gradingProgress",
+    "timestamp": {
+      "@id": "lti:timestamp",
+      "@type": "xsd:dateTime"
+    },
+    "comment": "lti:comment",
+
+    "label": "lti:label",
+    "tag": "lti:tag",
+    "resourceId": "lti:resourceId",
+    "scoreMaximum": {
+      "@id": "lti:scoreMaximum",
+      "@type": "xsd:number"
+    },
+    "endDateTime": {
+      "@id": "lti:endDateTime",
+      "@type": "xsd:dateTime"
+    },
+    "startDateTime": {
+      "@id": "lti:startDateTime",
+      "@type": "xsd:dateTime"
+    },
+
+    "roles": "lti:roles",
+    "status": "lti:status",
+    "message": "lti:message",
+
+    "uuid": "instructure:uuid",
+    "token": "instructure:token",
+    "oidcConfigurationUrl": {
+      "@id": "instructure:oidcConfigurationUrl",
+      "@type": "@id"
+    },
+    "clientId": "lti:clientId",
+    "deploymentId": "lti:deploymentId",
+    "targetLinkUri": {
+      "@id": "lti:targetLinkUri",
+      "@type": "@id"
+    },
+
+    "domain": "schema:domainIncludes",
+    "consumerKey": "instructure:consumerKey",
+    "privacyLevel": "instructure:privacyLevel",
+    "isRubricExternalTool": "instructure:isRubricExternalTool",
+    "toolId": "instructure:toolId",
+
+    "contextId": "instructure:contextId",
+    "contextType": "instructure:contextType",
+    "eventTypes": "instructure:eventTypes",
+    "format": "schema:encodingFormat",
+    "ownerId": "instructure:ownerId",
+    "transportType": "instructure:transportType",
+    "transportMetadata": "instructure:transportMetadata",
+
+    "kty": "instructure:kty",
+    "alg": "instructure:alg",
+    "use": "instructure:use",
+    "kid": "instructure:kid",
+    "e": "instructure:e",
+    "n": "instructure:n",
+
+    "issuer": "instructure:issuer",
+    "authorizationEndpoint": {
+      "@id": "instructure:authorizationEndpoint",
+      "@type": "@id"
+    },
+    "jwksUri": {
+      "@id": "instructure:jwksUri",
+      "@type": "@id"
+    },
+    "tokenEndpoint": {
+      "@id": "instructure:tokenEndpoint",
+      "@type": "@id"
+    },
+    "registrationEndpoint": {
+      "@id": "instructure:registrationEndpoint",
+      "@type": "@id"
+    },
+    "scopesSupported": "instructure:scopesSupported",
+    "responseTypesSupported": "instructure:responseTypesSupported",
+    "claimsSupported": "instructure:claimsSupported",
+    "ltiPlatformConfiguration": "canvas:platform_configuration",
+    "messagesSupported": "canvas:messages_supported",
+    "variablesSupported": "canvas:variables_supported",
+
+    "toolConfiguration": "instructure:toolConfiguration",
+    "developerKey": "instructure:developerKey",
+    "developerKeyId": {
+      "@id": "instructure:developerKeyId",
+      "@type": "xsd:integer"
+    }
+  }
+}

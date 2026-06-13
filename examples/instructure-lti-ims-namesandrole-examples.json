@@ -1,0 +1,169 @@
+{
+  "domain": "lti-ims-namesandrole",
+  "examples": [
+    {
+      "type": "response",
+      "operation": "GET /api/lti/courses/{course_id}/names_and_roles",
+      "summary": "course_index",
+      "status_code": "200",
+      "content_type": "application/vnd.ims.lti-nrps.v2.membershipcontainer+json",
+      "example": {
+        "id": "http://test.host/api/lti/courses/880213/names_and_roles?rlid=f282bbe38e6d83524012bb96e0af2f9af9590547",
+        "context": {
+          "id": "f282bbe38e6d83524012bb96e0af2f9af9590547",
+          "label": "Unnamed",
+          "title": "Unnamed Course"
+        },
+        "members": [
+          {
+            "status": "Active",
+            "name": "Marta Perkins",
+            "picture": "http://school.edu/image/url.png",
+            "given_name": "Marta",
+            "family_name": "Perkins",
+            "email": "marta.perkins@school.edu",
+            "lis_person_sourcedid": "user-1-sis-user-id-1",
+            "user_id": "27446e34-fd89-42f6-ae6c-bcb32bfa8b9e",
+            "lti11_legacy_user_id": "ea1a3f1f43b49387e308f437b811af5857232c1c",
+            "roles": [
+              "http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor"
+            ],
+            "message": [
+              {
+                "https://purl.imsglobal.org/spec/lti/claim/message_type": "LtiResourceLinkRequest",
+                "locale": "de",
+                "https://purl.imsglobal.org/spec/lti/claim/custom": {
+                  "person_name_full": "Marta Perkins",
+                  "person_name_display": "Marta Perkins",
+                  "person_name_family": "Perkins",
+                  "person_name_given": "Marta",
+                  "user_image": "http://school.edu/image/url.png",
+                  "user_id": 196739,
+                  "canvas_user_id": 196739,
+                  "vnd_instructure_user_uuid": "PeD59XLw7mJSXyDSYDdUZrZP2mFljDAQxYqdZnUX",
+                  "canvas_user_globalid": 196739,
+                  "canvas_user_sissourceid": "user-1-sis-user-id-1",
+                  "person_sourced_id": "user-1-sis-user-id-1",
+                  "message_locale": "de",
+                  "vnd_canvas_person_email_sis": "sis@example.com",
+                  "person_email_primary": "marta.perkins@school.edu",
+                  "person_address_timezone": "Europe/Berlin",
+                  "user_username": "sis@example.com",
+                  "canvas_user_sisintegrationid": "user-1-sis-integration-id-1",
+                  "canvas_user_loginid": "sis@example.com",
+                  "canvas_xapi_url": "http://test.host/api/lti/v1/xapi/407087-196739-880184-1702618795-03e11960d048169a-3e3b02fa846a9c5cfdf8ec15c8e4ff52d490b34c",
+                  "caliper_url": "http://test.host/api/lti/v1/caliper/407087-196739-880184-1702618795-2d66bc36035c9368-0e14a40cb616910c2d888c1efe4085b3475b1a92",
+                  "unsupported_param_1": "$unsupported.param.1",
+                  "unsupported_param_2": "$unsupported.param.2"
+                },
+                "https://purl.imsglobal.org/spec/lti/claim/lti11_legacy_user_id": "ea1a3f1f43b49387e308f437b811af5857232c1c",
+                "https://purl.imsglobal.org/spec/lti/claim/lti1p1": {
+                  "user_id": "ea1a3f1f43b49387e308f437b811af5857232c1c"
+                }
+              }
+            ]
+          },
+          {
+            "status": "Active",
+            "name": "User",
+            "picture": "http://localhost/images/messages/avatar-50.png",
+            "given_name": "User",
+            "family_name": "",
+            "user_id": "a06077c2-97ad-43e3-b46e-3efa38677e55",
+            "lti11_legacy_user_id": "0db0a6bb6567a1305d293e9b456793167fceccbc",
+            "roles": [
+              "http://purl.imsglobal.org/vocab/lis/v2/membership#Learner"
+            ],
+            "message": [
+              {
+                "https://purl.imsglobal.org/spec/lti/claim/message_type": "LtiResourceLinkRequest",
+                "locale": "en",
+                "https://purl.imsglobal.org/spec/lti/claim/custom": {},
+                "https://purl.imsglobal.org/spec/lti/claim/lti11_legacy_user_id": "0db0a6bb6567a1305d293e9b456793167fceccbc",
+                "https://purl.imsglobal.org/spec/lti/claim/lti1p1": {
+                  "user_id": "0db0a6bb6567a1305d293e9b456793167fceccbc"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "response",
+      "operation": "GET /api/lti/groups/{group_id}/names_and_roles",
+      "summary": "group_index",
+      "status_code": "200",
+      "content_type": "application/vnd.ims.lti-nrps.v2.membershipcontainer+json",
+      "example": {
+        "id": "http://test.host/api/lti/groups/716159/names_and_roles?pass=thru&role=http%3A%2F%2Fpurl.imsglobal.org%2Fvocab%2Flis%2Fv2%2Fmembership%23Member",
+        "context": {
+          "id": "43849229e5c886f6aafc5bb36fe4c3b33cb3df17",
+          "title": "2xUeyCRQz6yjVTWiI2SyNtbOikAZGRX9SzfIvgrR"
+        },
+        "members": [
+          {
+            "status": "Active",
+            "name": "value for name",
+            "picture": "http://localhost/images/messages/avatar-50.png",
+            "given_name": "value for",
+            "family_name": "name",
+            "user_id": "dfd1f6b6-887d-421a-85bb-f553a6922dbc",
+            "lti11_legacy_user_id": "245a4bb33da4baab24fa34772e633c9bd4b7177f",
+            "roles": [
+              "http://purl.imsglobal.org/vocab/lis/v2/membership#Member",
+              "http://purl.imsglobal.org/vocab/lis/v2/membership#Manager"
+            ]
+          },
+          {
+            "status": "Active",
+            "name": "Marta Perkins",
+            "picture": "http://localhost/images/messages/avatar-50.png",
+            "given_name": "Marta",
+            "family_name": "Perkins",
+            "user_id": "48f6ef9f-8dfb-42ca-9fd4-6bd23b6c0a07",
+            "lti11_legacy_user_id": "6d12dd551c852cb1b5039130b4faa255c8cce75d",
+            "roles": [
+              "http://purl.imsglobal.org/vocab/lis/v2/membership#Member"
+            ],
+            "message": [
+              {
+                "https://purl.imsglobal.org/spec/lti/claim/message_type": "LtiResourceLinkRequest",
+                "locale": "en",
+                "https://purl.imsglobal.org/spec/lti/claim/custom": {},
+                "https://purl.imsglobal.org/spec/lti/claim/lti11_legacy_user_id": "6d12dd551c852cb1b5039130b4faa255c8cce75d",
+                "https://purl.imsglobal.org/spec/lti/claim/lti1p1": {
+                  "user_id": "6d12dd551c852cb1b5039130b4faa255c8cce75d"
+                }
+              }
+            ]
+          },
+          {
+            "status": "Active",
+            "name": "User",
+            "picture": "http://localhost/images/messages/avatar-50.png",
+            "given_name": "User",
+            "family_name": "",
+            "user_id": "46402316-6175-41d3-9022-d2dffd5f9042",
+            "lti11_legacy_user_id": "d5bca1b80d33ba6599feb3138ec119454f9dd597",
+            "roles": [
+              "http://purl.imsglobal.org/vocab/lis/v2/membership#Member",
+              "http://purl.imsglobal.org/vocab/lis/v2/membership#Manager"
+            ],
+            "message": [
+              {
+                "https://purl.imsglobal.org/spec/lti/claim/message_type": "LtiResourceLinkRequest",
+                "locale": "en",
+                "https://purl.imsglobal.org/spec/lti/claim/custom": {},
+                "https://purl.imsglobal.org/spec/lti/claim/lti11_legacy_user_id": "d5bca1b80d33ba6599feb3138ec119454f9dd597",
+                "https://purl.imsglobal.org/spec/lti/claim/lti1p1": {
+                  "user_id": "d5bca1b80d33ba6599feb3138ec119454f9dd597"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

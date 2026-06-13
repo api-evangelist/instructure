@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/instructure/main/json-schema/Lti-MembershipService-GET-response.json",
+  "title": "Lti Membershipservice Get Response",
+  "description": "JSON Schema for Instructure Canvas LTI Lti-MembershipService-GET-response",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "nullable": true
+    },
+    "@type": {
+      "type": "string"
+    },
+    "@context": {
+      "type": "string"
+    },
+    "differences": {
+      "nullable": true
+    },
+    "nextPage": {
+      "type": "string",
+      "nullable": true
+    },
+    "pageOf": {
+      "type": "object",
+      "properties": {
+        "membershipPredicate": {
+          "type": "string"
+        },
+        "membershipSubject": {
+          "type": "object",
+          "properties": {
+            "@id": {
+              "nullable": true
+            },
+            "name": {
+              "type": "string"
+            },
+            "@type": {
+              "type": "string"
+            },
+            "contextId": {
+              "type": "string"
+            },
+            "membership": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "@id": {
+                    "nullable": true
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "member": {
+                    "type": "object",
+                    "properties": {
+                      "@id": {
+                        "nullable": true
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "img": {
+                        "nullable": true
+                      },
+                      "email": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "familyName": {
+                        "type": "string"
+                      },
+                      "givenName": {
+                        "type": "string"
+                      },
+                      "resultSourcedId": {
+                        "nullable": true
+                      },
+                      "sourcedId": {
+                        "nullable": true
+                      },
+                      "userId": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "@id",
+                      "name",
+                      "img",
+                      "email",
+                      "familyName",
+                      "givenName",
+                      "resultSourcedId",
+                      "sourcedId",
+                      "userId"
+                    ]
+                  }
+                },
+                "required": [
+                  "@id",
+                  "status",
+                  "role",
+                  "member"
+                ]
+              }
+            }
+          },
+          "required": [
+            "@id",
+            "name",
+            "@type",
+            "contextId",
+            "membership"
+          ]
+        },
+        "@id": {
+          "nullable": true
+        },
+        "@context": {
+          "type": "string"
+        },
+        "@type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "membershipPredicate",
+        "membershipSubject",
+        "@id",
+        "@context",
+        "@type"
+      ]
+    }
+  },
+  "required": [
+    "@id",
+    "@type",
+    "@context",
+    "differences",
+    "nextPage",
+    "pageOf"
+  ]
+}

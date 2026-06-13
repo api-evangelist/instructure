@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/instructure/main/json-schema/Lti-IMS-DynamicRegistration-GET-response.json",
+  "title": "Lti Ims Dynamicregistration Get Response",
+  "description": "JSON Schema for Instructure Canvas LTI Lti-IMS-DynamicRegistration-GET-response",
+  "type": "object",
+  "properties": {
+    "uuid": {
+      "type": "string"
+    },
+    "oidc_configuration_url": {
+      "type": "string"
+    },
+    "token": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "uuid",
+    "oidc_configuration_url",
+    "token"
+  ]
+}

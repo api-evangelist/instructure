@@ -1,0 +1,21 @@
+{
+  "domain": "lti-dataservice",
+  "examples": [
+    {
+      "type": "response",
+      "operation": "GET /api/lti/accounts/{account_id}/data_services",
+      "summary": "index",
+      "status_code": "200",
+      "content_type": "application/vnd.canvas.dataservices+json",
+      "example": "{\"ContextId\":\"xCoyrm3KhO7W6h8yizdZrujDf9OATC7AnLKe62DN\",\"ContextType\":\"root_account\",\"EventTypes\":[\"discussion_topic_created\"],\"Format\":\"live-event\",\"TransportMetadata\":{\"Url\":\"sqs.example\"},\"TransportType\":\"sqs\"}"
+    },
+    {
+      "type": "response",
+      "operation": "GET /api/lti/accounts/{account_id}/data_services/{id}",
+      "summary": "show",
+      "status_code": "200",
+      "content_type": "application/vnd.canvas.dataservices+json",
+      "example": "{\"ContextId\":\"xCoyrm3KhO7W6h8yizdZrujDf9OATC7AnLKe62DN\",\"ContextType\":\"root_account\",\"EventTypes\":[\"discussion_topic_created\"],\"Format\":\"live-event\",\"TransportMetadata\":{\"Url\":\"sqs.example\"},\"TransportType\":\"sqs\"}"
+    }
+  ]
+}

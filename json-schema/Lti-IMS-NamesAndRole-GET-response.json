@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/instructure/main/json-schema/Lti-IMS-NamesAndRole-GET-response.json",
+  "title": "Lti Ims Namesandrole Get Response",
+  "description": "JSON Schema for Instructure Canvas LTI Lti-IMS-NamesAndRole-GET-response",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "context": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title"
+      ]
+    },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "picture": {
+            "type": "string"
+          },
+          "given_name": {
+            "type": "string"
+          },
+          "family_name": {
+            "type": "string"
+          },
+          "user_id": {
+            "type": "string"
+          },
+          "lti11_legacy_user_id": {
+            "type": "string"
+          },
+          "roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "message": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "https://purl.imsglobal.org/spec/lti/claim/message_type": {
+                  "type": "string"
+                },
+                "locale": {
+                  "type": "string"
+                },
+                "https://purl.imsglobal.org/spec/lti/claim/custom": {
+                  "type": "object",
+                  "properties": {
+                    "baz": {
+                      "type": "string"
+                    },
+                    "foo": {
+                      "type": "string"
+                    },
+                    "person_name_full": {
+                      "type": "string"
+                    },
+                    "person_name_display": {
+                      "type": "string"
+                    },
+                    "person_name_family": {
+                      "type": "string"
+                    },
+                    "person_name_given": {
+                      "type": "string"
+                    },
+                    "user_image": {
+                      "type": "string"
+                    },
+                    "user_id": {
+                      "type": "integer"
+                    },
+                    "canvas_user_id": {
+                      "type": "integer"
+                    },
+                    "vnd_instructure_user_uuid": {
+                      "type": "string"
+                    },
+                    "canvas_user_globalid": {
+                      "type": "integer"
+                    },
+                    "canvas_user_sissourceid": {
+                      "type": "string"
+                    },
+                    "person_sourced_id": {
+                      "type": "string"
+                    },
+                    "message_locale": {
+                      "type": "string"
+                    },
+                    "vnd_canvas_person_email_sis": {
+                      "type": "string"
+                    },
+                    "person_email_primary": {
+                      "type": "string"
+                    },
+                    "person_address_timezone": {
+                      "type": "string"
+                    },
+                    "user_username": {
+                      "type": "string"
+                    },
+                    "canvas_user_sisintegrationid": {
+                      "type": "string"
+                    },
+                    "canvas_user_loginid": {
+                      "type": "string"
+                    },
+                    "canvas_xapi_url": {
+                      "type": "string"
+                    },
+                    "caliper_url": {
+                      "type": "string"
+                    },
+                    "unsupported_param_1": {
+                      "type": "string"
+                    },
+                    "unsupported_param_2": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "person_name_full",
+                    "person_name_display",
+                    "person_name_family",
+                    "person_name_given",
+                    "user_image",
+                    "user_id",
+                    "canvas_user_id",
+                    "vnd_instructure_user_uuid",
+                    "canvas_user_globalid",
+                    "canvas_user_sissourceid",
+                    "person_sourced_id",
+                    "message_locale",
+                    "vnd_canvas_person_email_sis",
+                    "person_email_primary",
+                    "person_address_timezone",
+                    "user_username",
+                    "canvas_user_sisintegrationid",
+                    "canvas_user_loginid",
+                    "canvas_xapi_url",
+                    "caliper_url",
+                    "unsupported_param_1",
+                    "unsupported_param_2"
+                  ]
+                },
+                "https://purl.imsglobal.org/spec/lti/claim/lti11_legacy_user_id": {
+                  "type": "string"
+                },
+                "https://purl.imsglobal.org/spec/lti/claim/lti1p1": {
+                  "type": "object",
+                  "properties": {
+                    "user_id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "user_id"
+                  ]
+                }
+              },
+              "required": [
+                "https://purl.imsglobal.org/spec/lti/claim/message_type",
+                "locale",
+                "https://purl.imsglobal.org/spec/lti/claim/custom",
+                "https://purl.imsglobal.org/spec/lti/claim/lti11_legacy_user_id",
+                "https://purl.imsglobal.org/spec/lti/claim/lti1p1"
+              ]
+            }
+          },
+          "email": {
+            "type": "string"
+          },
+          "lis_person_sourcedid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "name",
+          "picture",
+          "given_name",
+          "family_name",
+          "user_id",
+          "lti11_legacy_user_id",
+          "roles",
+          "message",
+          "email",
+          "lis_person_sourcedid"
+        ]
+      }
+    }
+  },
+  "required": [
+    "id",
+    "context",
+    "members"
+  ]
+}

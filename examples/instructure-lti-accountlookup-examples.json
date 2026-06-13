@@ -1,0 +1,21 @@
+{
+  "domain": "lti-accountlookup",
+  "examples": [
+    {
+      "type": "response",
+      "operation": "GET /api/lti/accounts/{account_id}",
+      "summary": "show",
+      "status_code": "200",
+      "content_type": "application/vnd.canvas.accountlookup+json",
+      "example": {
+        "id": 8145,
+        "name": "Default Account",
+        "workflow_state": "active",
+        "parent_account_id": null,
+        "root_account_id": null,
+        "uuid": "vYmDAUennzTRV43z1Oo4v0MYaY2pMJ3Dr1GaH3Mn",
+        "default_time_zone": "Etc/UTC"
+      }
+    }
+  ]
+}

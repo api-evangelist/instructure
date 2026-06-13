@@ -1,0 +1,236 @@
+vocabulary:
+  provider: instructure
+  title: Instructure Canvas API Vocabulary
+  description: >-
+    Domain vocabulary for Instructure Canvas LMS and related services APIs.
+    Covers LMS concepts, LTI integrations, data access, and educational workflows.
+  version: '1.0'
+  source: https://developerdocs.instructure.com/
+  terms:
+    # Core Canvas LMS concepts
+    - term: Canvas
+      definition: >-
+        Instructure's flagship learning management system (LMS), an open-source platform
+        used by thousands of educational institutions worldwide.
+      category: product
+      related: [LMS, Course, Enrollment]
+
+    - term: LMS
+      definition: >-
+        Learning Management System — a software application for administering, documenting,
+        tracking, reporting, and delivering educational courses and programs.
+      category: concept
+      related: [Canvas, Course, Assignment]
+
+    - term: Course
+      definition: >-
+        A structured educational offering in Canvas, containing modules, assignments,
+        discussions, grades, and enrolled users.
+      category: resource
+      related: [Enrollment, Module, Assignment, Section]
+
+    - term: Enrollment
+      definition: >-
+        The association of a user with a specific course in a specific role
+        (student, teacher, observer, TA, designer).
+      category: resource
+      related: [Course, User, Section]
+
+    - term: Assignment
+      definition: >-
+        A task or assessment within a Canvas course that can be submitted by students
+        and graded by instructors.
+      category: resource
+      related: [Submission, Grade, LineItem]
+
+    - term: Grade
+      definition: >-
+        A score or evaluation applied to a student's submission for an assignment.
+      category: resource
+      related: [Assignment, Submission, LineItem, Result]
+
+    - term: Module
+      definition: >-
+        A collection of course content items (pages, files, assignments) organized
+        sequentially within a Canvas course.
+      category: resource
+      related: [Course, Assignment]
+
+    - term: Section
+      definition: >-
+        A subdivision of a course in Canvas, allowing different groups of students
+        within the same course to have distinct settings or schedules.
+      category: resource
+      related: [Course, Enrollment]
+
+    - term: Discussion
+      definition: >-
+        A threaded forum topic within a Canvas course that enables asynchronous
+        conversation between students and instructors.
+      category: resource
+      related: [Course, User]
+
+    - term: Submission
+      definition: >-
+        A student's completed response to an assignment, which can include files,
+        text, media, or URLs.
+      category: resource
+      related: [Assignment, Grade]
+
+    # LTI concepts
+    - term: LTI
+      definition: >-
+        Learning Tools Interoperability — an IMS Global standard that defines how
+        external tools can integrate securely within an LMS like Canvas.
+      category: standard
+      related: [LTI-1.3, DeepLinking, NRPS, AGS]
+
+    - term: LTI-1.3
+      definition: >-
+        The latest major version of the LTI specification, using OAuth 2.0 with
+        JWT-signed messages for secure tool launch and service interactions.
+      category: standard
+      related: [LTI, DeveloperKey, Registration]
+
+    - term: DeepLinking
+      definition: >-
+        An LTI service that allows external tools to return content items (links,
+        files, HTML) to be embedded in Canvas course content.
+      category: service
+      related: [LTI-1.3, ExternalTool]
+
+    - term: NRPS
+      definition: >-
+        Names and Roles Provisioning Service — an LTI service that allows tools to
+        retrieve the roster (names, roles, and status) of course participants.
+      category: service
+      related: [LTI-1.3, Membership, Enrollment]
+
+    - term: AGS
+      definition: >-
+        Assignment and Grade Services — an LTI service that enables external tools
+        to create grade columns (LineItems) and submit student scores (Results).
+      category: service
+      related: [LTI-1.3, LineItem, Result, Grade]
+
+    - term: LineItem
+      definition: >-
+        An AGS resource representing a grade column or scoring opportunity associated
+        with an LTI tool launch within a course.
+      category: resource
+      related: [AGS, Result, Assignment]
+
+    - term: Result
+      definition: >-
+        An AGS resource representing a student's score for a specific LineItem,
+        including the raw score and maximum possible score.
+      category: resource
+      related: [AGS, LineItem, Grade]
+
+    - term: DeveloperKey
+      definition: >-
+        A Canvas credential (client ID + secret) that authorizes an external application
+        or LTI tool to interact with Canvas APIs.
+      category: security
+      related: [OAuth2, LTI-1.3, Registration]
+
+    - term: Registration
+      definition: >-
+        The dynamic LTI 1.3 process by which an external tool registers itself with
+        a Canvas instance by exchanging OIDC configuration metadata.
+      category: process
+      related: [LTI-1.3, DeveloperKey, OIDC]
+
+    - term: ExternalTool
+      definition: >-
+        A third-party application integrated into Canvas via LTI, appearing as a
+        navigation link, assignment submission type, or embedded content.
+      category: resource
+      related: [LTI, DeveloperKey, DeepLinking]
+
+    # Data & analytics
+    - term: DAP
+      definition: >-
+        Data Access Platform — Instructure's service for bulk data queries against
+        Canvas data, designed for reporting and data warehousing use cases.
+      category: product
+      related: [Canvas, Analytics, DataService]
+
+    - term: DataService
+      definition: >-
+        An LTI subscription mechanism allowing tools to receive Canvas live events
+        via SQS or other transports when specified Canvas events occur.
+      category: service
+      related: [LiveEvents, DAP]
+
+    - term: LiveEvents
+      definition: >-
+        Canvas real-time event streaming feature that publishes events (e.g.,
+        discussion_topic_created, submission_created) to configured endpoints.
+      category: feature
+      related: [DataService, DAP]
+
+    # Auth & security
+    - term: OAuth2
+      definition: >-
+        The authorization framework used by Canvas APIs, supporting authorization
+        code flow for user-delegated access and client credentials for service accounts.
+      category: security
+      related: [AccessToken, DeveloperKey, OIDC]
+
+    - term: AccessToken
+      definition: >-
+        A bearer token issued by Canvas OAuth2 that grants access to API resources
+        on behalf of a user or service account.
+      category: security
+      related: [OAuth2, DeveloperKey]
+
+    - term: OIDC
+      definition: >-
+        OpenID Connect — the authentication layer used in LTI 1.3 for tool launches
+        and dynamic registration flows.
+      category: security
+      related: [LTI-1.3, DeveloperKey, JWKS]
+
+    - term: JWKS
+      definition: >-
+        JSON Web Key Set — a JSON structure containing public keys used by Canvas
+        to verify JWT signatures from LTI tools.
+      category: security
+      related: [OIDC, LTI-1.3]
+
+    # Products
+    - term: CanvasStudio
+      definition: >-
+        Instructure's video and media platform integrated within Canvas, supporting
+        media upload, captions, analytics, and course embedding.
+      category: product
+      related: [Canvas, Media]
+
+    - term: NewQuizzes
+      definition: >-
+        Canvas's next-generation assessment engine supporting advanced question types,
+        accommodations, and detailed analytics.
+      category: product
+      related: [Canvas, Assignment, Grade]
+
+    - term: Catalog
+      definition: >-
+        Instructure's course catalog product enabling public discovery and enrollment
+        in Canvas courses, with e-commerce and certificate support.
+      category: product
+      related: [Canvas, Course, Enrollment]
+
+    - term: GraphQL
+      definition: >-
+        A flexible query language API provided by Canvas that allows clients to
+        request exactly the data they need from Canvas resources.
+      category: technology
+      related: [Canvas, REST]
+
+    - term: RateLimit
+      definition: >-
+        Canvas enforces per-token dynamic rate limits on REST API requests; the
+        limit is returned in the X-Rate-Limit-Remaining response header.
+      category: policy
+      related: [AccessToken, OAuth2]

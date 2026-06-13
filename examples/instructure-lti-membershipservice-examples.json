@@ -1,0 +1,51 @@
+{
+  "domain": "lti-membershipservice",
+  "examples": [
+    {
+      "type": "response",
+      "operation": "GET /api/lti/groups/{group_id}/membership_service",
+      "summary": "group_index",
+      "status_code": "200",
+      "content_type": "application/json",
+      "example": {
+        "@id": null,
+        "@type": "Page",
+        "@context": "http://purl.imsglobal.org/ctx/lis/v2/MembershipContainer",
+        "differences": null,
+        "nextPage": null,
+        "pageOf": {
+          "membershipPredicate": "http://www.w3.org/ns/org#membership",
+          "membershipSubject": {
+            "@id": null,
+            "name": "Group 1",
+            "@type": "Context",
+            "contextId": "43849229e5c886f6aafc5bb36fe4c3b33cb3df17",
+            "membership": [
+              {
+                "@id": null,
+                "status": "Active",
+                "role": [
+                  "urn:lti:role:ims/lis/Member"
+                ],
+                "member": {
+                  "@id": null,
+                  "name": "value for name",
+                  "img": null,
+                  "email": "nobody@example.com",
+                  "familyName": "name",
+                  "givenName": "value for",
+                  "resultSourcedId": null,
+                  "sourcedId": null,
+                  "userId": "f911f4d388aeff99d2c123bc20a157eff4ef0430"
+                }
+              }
+            ]
+          },
+          "@id": null,
+          "@context": "http://purl.imsglobal.org/ctx/lis/v2/MembershipContainer",
+          "@type": "LISMembershipContainer"
+        }
+      }
+    }
+  ]
+}

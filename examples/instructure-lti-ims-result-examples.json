@@ -1,0 +1,91 @@
+{
+  "domain": "lti-ims-result",
+  "examples": [
+    {
+      "type": "response",
+      "operation": "GET /api/lti/courses/{course_id}/line_items/{line_item_id}/results",
+      "summary": "index",
+      "status_code": "200",
+      "content_type": "application/vnd.ims.lis.v2.resultcontainer+json",
+      "example": [
+        {
+          "id": "http://test.host/api/lti/courses/880195/line_items/1017686/results/1012373",
+          "scoreOf": "http://test.host/api/lti/courses/880195/line_items/1017686",
+          "userId": "c5ce1e03-a139-4ef4-b772-f5a940e31baf",
+          "resultScore": 0.5,
+          "resultMaximum": 1.0
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880195/line_items/1017686/results/1012374",
+          "scoreOf": "http://test.host/api/lti/courses/880195/line_items/1017686",
+          "userId": "0f1250ca-b41c-42a3-a37c-4eff05e1dacb",
+          "resultScore": 0.5,
+          "resultMaximum": 1.0
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880195/line_items/1017686/results/1012375",
+          "scoreOf": "http://test.host/api/lti/courses/880195/line_items/1017686",
+          "userId": "43238a77-2ecb-4fd4-a87a-e0d18f84af48",
+          "resultScore": 0.5,
+          "resultMaximum": 1.0
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880195/line_items/1017686/results/1012376",
+          "scoreOf": "http://test.host/api/lti/courses/880195/line_items/1017686",
+          "userId": "0233ca3d-809c-4511-a243-94cee32fcef1",
+          "resultScore": 0.5,
+          "resultMaximum": 1.0
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880205/line_items/1017686/results/1012373",
+          "scoreOf": "http://test.host/api/lti/courses/880205/line_items/1017686",
+          "userId": "fa27312e-3ae7-4934-9ec4-f7df8f6bffc2",
+          "resultScore": 0.5,
+          "resultMaximum": 1.0
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880205/line_items/1017686/results/1012374",
+          "scoreOf": "http://test.host/api/lti/courses/880205/line_items/1017686",
+          "userId": "b294717b-5aa3-413b-a4e2-179a1bc7ee96",
+          "resultScore": 0.5,
+          "resultMaximum": 1.0
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880205/line_items/1017686/results/1012375",
+          "scoreOf": "http://test.host/api/lti/courses/880205/line_items/1017686",
+          "userId": "9821aa6b-231c-4c93-8ff0-bb2379fcc7e7",
+          "resultScore": 0.5,
+          "resultMaximum": 1.0
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880205/line_items/1017686/results/1012376",
+          "scoreOf": "http://test.host/api/lti/courses/880205/line_items/1017686",
+          "userId": "babbc1a9-b2f6-464d-9c6a-ab664179c1bb",
+          "resultScore": 0.5,
+          "resultMaximum": 1.0
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880146/line_items/1017686/results/1012373",
+          "scoreOf": "http://test.host/api/lti/courses/880146/line_items/1017686",
+          "userId": "d527abb3-294a-4afa-a204-9737e00aab3e",
+          "resultScore": 0.5,
+          "resultMaximum": 1.0
+        }
+      ]
+    },
+    {
+      "type": "response",
+      "operation": "GET /api/lti/courses/{course_id}/line_items/{line_item_id}/results/{id}",
+      "summary": "show",
+      "status_code": "200",
+      "content_type": "application/vnd.ims.lis.v2.resultcontainer+json",
+      "example": {
+        "id": "http://test.host/api/lti/courses/880227/line_items/1017687/results/1012374",
+        "scoreOf": "http://test.host/api/lti/courses/880227/line_items/1017687",
+        "userId": "b03618a7-7b58-461d-a894-7e69c6951270",
+        "resultScore": 0.5,
+        "resultMaximum": 1.0
+      }
+    }
+  ]
+}

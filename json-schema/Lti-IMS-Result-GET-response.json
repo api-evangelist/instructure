@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/instructure/main/json-schema/Lti-IMS-Result-GET-response.json",
+  "title": "Lti Ims Result Get Response",
+  "description": "JSON Schema for Instructure Canvas LTI Lti-IMS-Result-GET-response",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "scoreOf": {
+      "type": "string"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "resultScore": {
+      "type": "number",
+      "format": "float"
+    },
+    "resultMaximum": {
+      "type": "number",
+      "format": "float"
+    }
+  },
+  "required": [
+    "id",
+    "scoreOf",
+    "userId",
+    "resultScore",
+    "resultMaximum"
+  ]
+}

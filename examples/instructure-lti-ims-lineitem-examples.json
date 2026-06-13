@@ -1,0 +1,167 @@
+{
+  "domain": "lti-ims-lineitem",
+  "examples": [
+    {
+      "type": "response",
+      "operation": "GET /api/lti/courses/{course_id}/line_items",
+      "summary": "index",
+      "status_code": "200",
+      "content_type": "application/vnd.ims.lis.v2.lineitemcontainer+json",
+      "example": [
+        {
+          "id": "http://test.host/api/lti/courses/880203/line_items/1017695",
+          "scoreMaximum": 10.0,
+          "label": "Test Line Item",
+          "resourceId": "orig-123",
+          "tag": "some_tag"
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880193/line_items/1017688",
+          "scoreMaximum": 1.5,
+          "label": "value for title",
+          "endDateTime": "2023-12-15T05:40:04Z",
+          "resourceLinkId": "1a70e093-9f90-4b1d-ba9b-ac4911a624b0"
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880193/line_items/1017689",
+          "scoreMaximum": 10.0,
+          "label": "Test Line Item",
+          "tag": "some_tag"
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880193/line_items/1017690",
+          "scoreMaximum": 10.0,
+          "label": "Test Line Item",
+          "resourceId": "orig-123"
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880193/line_items/1017691",
+          "scoreMaximum": 10.0,
+          "label": "Test Line Item",
+          "resourceLinkId": "1a70e093-9f90-4b1d-ba9b-ac4911a624b0"
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880184/line_items/1017688",
+          "scoreMaximum": 1.5,
+          "label": "value for title",
+          "endDateTime": "2023-12-15T05:40:04Z",
+          "resourceLinkId": "59677abf-4041-496e-8a4c-58f628995348"
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880184/line_items/1017689",
+          "scoreMaximum": 10.0,
+          "label": "Test Line Item",
+          "tag": "some_tag"
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880184/line_items/1017690",
+          "scoreMaximum": 10.0,
+          "label": "Test Line Item",
+          "resourceId": "orig-123"
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880184/line_items/1017691",
+          "scoreMaximum": 10.0,
+          "label": "Test Line Item",
+          "resourceLinkId": "59677abf-4041-496e-8a4c-58f628995348"
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880226/line_items/1017689",
+          "scoreMaximum": 10.0,
+          "label": "Test Line Item",
+          "tag": "some_tag"
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880204/line_items/1017689",
+          "scoreMaximum": 1.5,
+          "label": "value for title",
+          "endDateTime": "2023-12-15T05:40:03Z",
+          "resourceLinkId": "b040ebc7-b383-4b85-a65b-fe53e84a002e"
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880204/line_items/1017690",
+          "scoreMaximum": 10.0,
+          "label": "Test Line Item",
+          "tag": "some_tag"
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880204/line_items/1017691",
+          "scoreMaximum": 10.0,
+          "label": "Test Line Item",
+          "resourceId": "orig-123"
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880204/line_items/1017692",
+          "scoreMaximum": 10.0,
+          "label": "Test Line Item",
+          "resourceLinkId": "b040ebc7-b383-4b85-a65b-fe53e84a002e"
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880235/line_items/1017689",
+          "scoreMaximum": 1.5,
+          "label": "value for title",
+          "endDateTime": "2023-12-15T05:40:05Z",
+          "resourceLinkId": "7ebd45a3-2c52-4d0b-9a99-6e2002add3c3"
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880235/line_items/1017690",
+          "scoreMaximum": 10.0,
+          "label": "Test Line Item",
+          "tag": "some_tag"
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880235/line_items/1017691",
+          "scoreMaximum": 10.0,
+          "label": "Test Line Item",
+          "resourceId": "orig-123"
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880235/line_items/1017692",
+          "scoreMaximum": 10.0,
+          "label": "Test Line Item",
+          "resourceLinkId": "7ebd45a3-2c52-4d0b-9a99-6e2002add3c3"
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880187/line_items/1017689",
+          "scoreMaximum": 1.5,
+          "label": "value for title",
+          "endDateTime": "2023-12-15T05:40:00Z",
+          "resourceLinkId": "660e0172-c157-4fc4-88f2-2208e1f58fae"
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880187/line_items/1017690",
+          "scoreMaximum": 10.0,
+          "label": "Test Line Item",
+          "tag": "some_tag"
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880187/line_items/1017691",
+          "scoreMaximum": 10.0,
+          "label": "Test Line Item",
+          "resourceId": "orig-123"
+        },
+        {
+          "id": "http://test.host/api/lti/courses/880187/line_items/1017692",
+          "scoreMaximum": 10.0,
+          "label": "Test Line Item",
+          "resourceLinkId": "660e0172-c157-4fc4-88f2-2208e1f58fae"
+        }
+      ]
+    },
+    {
+      "type": "response",
+      "operation": "GET /api/lti/courses/{course_id}/line_items/{id}",
+      "summary": "show",
+      "status_code": "200",
+      "content_type": "application/vnd.ims.lis.v2.lineitem+json",
+      "example": {
+        "id": "http://test.host/api/lti/courses/880239/line_items/1017694",
+        "scoreMaximum": 88.2,
+        "label": "value for title",
+        "endDateTime": "2023-12-15T05:40:07Z",
+        "resourceLinkId": "0d5efeae-6f80-4d75-bb26-d2998fb105e9",
+        "tag": "some_tag"
+      }
+    }
+  ]
+}

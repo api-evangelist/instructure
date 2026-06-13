@@ -1,0 +1,219 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/instructure/main/json-schema/Lti-AccountExternalTool-GET-response.json",
+  "title": "Lti Accountexternaltool Get Response",
+  "description": "JSON Schema for Instructure Canvas LTI Lti-AccountExternalTool-GET-response",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "domain": {
+      "nullable": true
+    },
+    "url": {
+      "type": "string"
+    },
+    "consumer_key": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "nullable": true
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "privacy_level": {
+      "type": "string"
+    },
+    "custom_fields": {
+      "nullable": true
+    },
+    "workflow_state": {
+      "type": "string"
+    },
+    "account_navigation": {
+      "nullable": true
+    },
+    "assignment_edit": {
+      "nullable": true
+    },
+    "assignment_group_menu": {
+      "nullable": true
+    },
+    "assignment_index_menu": {
+      "nullable": true
+    },
+    "assignment_menu": {
+      "nullable": true
+    },
+    "assignment_selection": {
+      "nullable": true
+    },
+    "assignment_view": {
+      "nullable": true
+    },
+    "collaboration": {
+      "nullable": true
+    },
+    "course_assignments_menu": {
+      "nullable": true
+    },
+    "course_home_sub_navigation": {
+      "nullable": true
+    },
+    "course_navigation": {
+      "nullable": true
+    },
+    "course_settings_sub_navigation": {
+      "nullable": true
+    },
+    "discussion_topic_index_menu": {
+      "nullable": true
+    },
+    "discussion_topic_menu": {
+      "nullable": true
+    },
+    "file_index_menu": {
+      "nullable": true
+    },
+    "file_menu": {
+      "nullable": true
+    },
+    "global_navigation": {
+      "nullable": true
+    },
+    "homework_submission": {
+      "nullable": true
+    },
+    "link_selection": {
+      "nullable": true
+    },
+    "migration_selection": {
+      "nullable": true
+    },
+    "module_group_menu": {
+      "nullable": true
+    },
+    "module_index_menu": {
+      "nullable": true
+    },
+    "module_index_menu_modal": {
+      "nullable": true
+    },
+    "module_menu_modal": {
+      "nullable": true
+    },
+    "module_menu": {
+      "nullable": true
+    },
+    "post_grades": {
+      "nullable": true
+    },
+    "quiz_index_menu": {
+      "nullable": true
+    },
+    "quiz_menu": {
+      "nullable": true
+    },
+    "resource_selection": {
+      "nullable": true
+    },
+    "similarity_detection": {
+      "nullable": true
+    },
+    "student_context_card": {
+      "nullable": true
+    },
+    "submission_type_selection": {
+      "nullable": true
+    },
+    "tool_configuration": {
+      "nullable": true
+    },
+    "user_navigation": {
+      "nullable": true
+    },
+    "wiki_index_menu": {
+      "nullable": true
+    },
+    "wiki_page_menu": {
+      "nullable": true
+    },
+    "editor_button": {
+      "nullable": true
+    },
+    "not_selectable": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    },
+    "developer_key_id": {
+      "type": "integer"
+    },
+    "deployment_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "domain",
+    "name",
+    "url",
+    "consumer_key",
+    "description",
+    "id",
+    "created_at",
+    "updated_at",
+    "privacy_level",
+    "custom_fields",
+    "workflow_state",
+    "account_navigation",
+    "assignment_edit",
+    "assignment_group_menu",
+    "assignment_index_menu",
+    "assignment_menu",
+    "assignment_selection",
+    "assignment_view",
+    "collaboration",
+    "course_assignments_menu",
+    "course_home_sub_navigation",
+    "course_navigation",
+    "course_settings_sub_navigation",
+    "discussion_topic_index_menu",
+    "discussion_topic_menu",
+    "file_index_menu",
+    "file_menu",
+    "global_navigation",
+    "homework_submission",
+    "link_selection",
+    "migration_selection",
+    "module_group_menu",
+    "module_index_menu",
+    "module_index_menu_modal",
+    "module_menu_modal",
+    "module_menu",
+    "post_grades",
+    "quiz_index_menu",
+    "quiz_menu",
+    "resource_selection",
+    "similarity_detection",
+    "student_context_card",
+    "submission_type_selection",
+    "tool_configuration",
+    "user_navigation",
+    "wiki_index_menu",
+    "wiki_page_menu",
+    "editor_button",
+    "not_selectable",
+    "version",
+    "developer_key_id",
+    "deployment_id"
+  ]
+}
