@@ -1,0 +1,101 @@
+name: Instructure Canvas FinOps Framework
+description: >-
+  FinOps considerations for organizations consuming Instructure Canvas APIs and
+  platform services. Canvas LMS follows an institutional licensing model where
+  API access is bundled with the subscription tier rather than metered
+  separately. Cost optimization focuses on appropriate tier selection, add-on
+  product management, and efficient API usage to avoid rate limit penalties
+  that could degrade application performance.
+specificationVersion: '1.0'
+focusVersion: '1.0'
+currency: USD
+costDrivers:
+  - name: Institutional License Tier
+    description: >-
+      The primary cost driver is the Canvas tier (Core, Plus, or Next)
+      licensed at a per-user-per-year rate based on FTE enrollment. API
+      access is included in all tiers with no separate API usage charges.
+    model: per-user-annual
+    unitMetric: active-FTE
+    estimatedRange:
+      low: 3.00
+      high: 12.00
+      currency: USD
+      per: user/year
+      note: >-
+        Smaller institutions (under 5,000 users) typically pay $8–$12/user.
+        Larger institutions (20,000+) typically pay $3–$6/user.
+  - name: Add-On Products
+    description: >-
+      Optional add-ons such as Canvas Studio (video), Catalog, Credentials,
+      Impact (analytics), and Mastery Connect are licensed separately and
+      each expose their own APIs. Each add-on increases total platform cost.
+    model: per-product-per-user-annual
+    examples:
+      - product: Canvas Studio
+        description: Video and media platform API access
+      - product: Data Access Platform (DAP)
+        description: Bulk data query API; may be separately licensed or bundled
+      - product: Impact by Instructure
+        description: Analytics and adoption analytics API
+  - name: Professional Services
+    description: >-
+      Integration development, LTI tool certification, and Data Sync
+      partner onboarding may involve professional services fees.
+    model: project-based
+    contact: https://www.instructure.com/contact
+optimization:
+  - name: Right-Size Tier Selection
+    description: >-
+      Evaluate whether Canvas Core is sufficient for API-integration use cases
+      before committing to Canvas Plus or Next. API access is identical across
+      tiers; higher tiers primarily add AI and analytics features.
+    category: cost-avoidance
+  - name: Consolidate Add-On Licensing
+    description: >-
+      Audit which add-on products (Studio, Catalog, Credentials, Impact,
+      Mastery) are actively being consumed via API. Remove unused add-ons at
+      renewal time to reduce unnecessary licensing cost.
+    category: waste-reduction
+  - name: Efficient API Usage to Avoid Rate Limiting
+    description: >-
+      Design integrations to use sequential requests rather than parallel
+      bursts. Parallel requests incur pre-flight quota penalties that can
+      exhaust per-token quotas, requiring retry logic and degrading
+      performance without reducing cost. Efficient design reduces
+      operational overhead and SLA risk.
+    category: efficiency
+  - name: DAP for Bulk Data vs Repeated REST Calls
+    description: >-
+      Use the Data Access Platform (DAP) API for bulk data needs rather
+      than issuing thousands of individual REST API calls. DAP is optimized
+      for large dataset retrieval and avoids exhausting REST API rate limits.
+    category: efficiency
+  - name: Multi-Year Contract Negotiation
+    description: >-
+      Multi-year agreements with Instructure typically yield more favorable
+      per-user pricing. Evaluate whether institutional roadmaps support
+      2–3 year commitments to reduce annual cost per FTE.
+    category: cost-reduction
+  - name: FTE Enrollment Accuracy
+    description: >-
+      Canvas licenses are priced on FTE enrollment. Ensure enrollment counts
+      used for licensing negotiations reflect actual active users rather than
+      total institutional headcount, as inactive accounts inflating FTE counts
+      will increase licensing cost unnecessarily.
+    category: cost-avoidance
+visibility:
+  - name: License Utilization Tracking
+    description: >-
+      Canvas does not expose per-call billing dashboards since API usage is
+      not metered. Track utilization through Canvas's built-in admin analytics,
+      Impact by Instructure, or the DAP API to understand user activity levels
+      relative to licensed FTE counts.
+  - name: DAP Query Cost Awareness
+    description: >-
+      Monitor DAP API usage against rate limits (5 calls/minute for table
+      listings and canvas_logs queries). Exceeding these may signal that
+      architectures need optimization even though there is no per-call cost.
+pricingPage: https://www.instructure.com/canvas/pricing
+contactSales: https://www.instructure.com/contact
+statusPage: https://status.instructure.com/

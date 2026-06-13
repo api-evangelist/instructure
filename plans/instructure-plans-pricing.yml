@@ -1,0 +1,81 @@
+name: Instructure Canvas Plans and Pricing
+description: >-
+  Instructure Canvas LMS pricing follows an institutional licensing model based
+  on FTE enrollment. Instructure introduced three tiered product bundles in 2026
+  — Core, Plus, and Next — each offering progressively expanded AI features and
+  capabilities through IgniteAI. API access is included as part of all Canvas
+  tiers. Pricing is negotiated per institution and not publicly listed; typical
+  rates range from $3 to $12 per active user annually depending on size,
+  contract length, and add-ons. Add-on products include Canvas Studio, Catalog,
+  Credentials, Impact, and Mastery.
+specificationVersion: '0.1'
+plans:
+  - name: Canvas Core
+    description: >-
+      Foundational LMS functionality with essential AI features automatically
+      included for all existing Canvas customers. Includes the full REST and
+      GraphQL API, LTI integrations, OAuth2 developer keys, and basic IgniteAI
+      accessibility features.
+    url: https://www.instructure.com/press-release/instructure-introduces-simplified-canvas-tiers-and-ecosystem-updates-new-next
+    features:
+      - Full Canvas REST API access
+      - GraphQL API access
+      - OAuth2 developer keys and scopes
+      - LTI 1.3 integration support
+      - Essential IgniteAI accessibility features
+      - Community support via community.canvaslms.com
+    pricingModel: per-user-annual
+    pricingNote: >-
+      Institutional licensing; custom quotes based on FTE enrollment and
+      contract length. Typically $8–$12 per user for smaller deployments
+      (under 5,000 users).
+  - name: Canvas Plus
+    description: >-
+      Expanded engagement tools, advanced analytics, and AI features for
+      teaching and feedback workflows. Includes everything in Canvas Core plus
+      enhanced reporting, teaching tools powered by IgniteAI, and access to
+      additional Canvas platform capabilities.
+    url: https://www.instructure.com/press-release/instructure-introduces-simplified-canvas-tiers-and-ecosystem-updates-new-next
+    features:
+      - All Canvas Core features
+      - Advanced analytics and reporting
+      - Enhanced IgniteAI teaching and feedback tools
+      - Expanded engagement tools
+    pricingModel: per-user-annual
+    pricingNote: >-
+      Institutional licensing; custom quotes. Volume discounts available for
+      larger institutions (20,000+ users typically $3–$6 per user).
+  - name: Canvas Next
+    description: >-
+      The highest tier with expanded access to the latest and most advanced
+      AI-supported capabilities including agentic assistance through IgniteAI.
+      Suitable for institutions seeking cutting-edge educational technology
+      with maximum AI integration.
+    url: https://www.instructure.com/press-release/instructure-introduces-simplified-canvas-tiers-and-ecosystem-updates-new-next
+    features:
+      - All Canvas Plus features
+      - Advanced agentic IgniteAI assistance
+      - Latest AI-supported capabilities
+      - Priority access to new features
+    pricingModel: per-user-annual
+    pricingNote: >-
+      Institutional licensing; custom quotes. Contact Instructure sales for
+      pricing details.
+addons:
+  - name: Canvas Studio
+    description: Video and media platform for Canvas
+    url: https://www.instructure.com/canvas/resources/all/canvas-studio
+  - name: Canvas Catalog
+    description: Course catalog and registration management
+    url: https://www.instructure.com/higher-education/products/canvas/canvas-catalog
+  - name: Canvas Credentials
+    description: Digital badges and credentials (Parchment)
+    url: https://www.instructure.com/canvas/resources/all/canvas-credentials
+  - name: Impact by Instructure
+    description: Analytics and adoption insights platform
+    url: https://www.instructure.com/canvas/impact
+  - name: Mastery Connect
+    description: Assessment and outcomes management
+    url: https://www.instructure.com/k-12/products/mastery/mastery-connect
+contactSales: https://www.instructure.com/contact
+pricingPage: https://www.instructure.com/canvas/pricing

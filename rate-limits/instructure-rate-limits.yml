@@ -1,0 +1,68 @@
+name: Instructure Canvas API Rate Limits
+description: >-
+  Instructure Canvas employs a dynamic token-bucket style rate limiting system
+  for its REST and GraphQL APIs. Rate limits are enforced per user access token
+  rather than per account, ensuring that applications serving multiple users are
+  not throttled at the developer key level. The Data Access Platform (DAP) API
+  uses fixed endpoint-specific rate limits distinct from the Canvas REST API.
+specificationVersion: '0.1'
+rateLimits:
+  - api: Canvas LMS REST API
+    description: >-
+      Dynamic throttling that automatically adjusts as more concurrent and/or
+      expensive requests occur. Each request deducts from a per-token quota that
+      replenishes over time at a faster-than-real-time rate. The exact quota
+      size and replenishment rate are not publicly published.
+    scope: per-access-token
+    mechanism: token-bucket
+    responseHeaders:
+      - name: X-Request-Cost
+        description: The quota cost deducted by the current request (proportional to processing time)
+      - name: X-Rate-Limit-Remaining
+        description: Remaining quota for the current access token; only present when throttling applies
+    throttledResponse:
+      statusCode: 429
+      message: Rate Limit Exceeded
+    concurrentRequestPenalty: >-
+      Concurrent (parallel) requests incur an additional pre-flight quota
+      penalty that is refunded once each request completes. Sequential requests
+      are unlikely to trigger throttling given the fast replenishment rate.
+    notes:
+      - Rate limiting is enforced per user access token (OAuth2 bearer token)
+      - Applications acting on behalf of multiple users get isolated per-user quotas
+      - Self-hosted Canvas administrators may configure custom limits
+    documentation: https://developerdocs.instructure.com/services/canvas/basics/file.throttling
+  - api: Canvas GraphQL API
+    description: >-
+      Shares the same dynamic token-bucket throttling mechanism as the REST API.
+      Rate limits are enforced per access token with the same X-Request-Cost
+      and X-Rate-Limit-Remaining headers.
+    scope: per-access-token
+    mechanism: token-bucket
+    throttledResponse:
+      statusCode: 429
+      message: Rate Limit Exceeded
+    documentation: https://developerdocs.instructure.com/services/canvas/basics/file.graphql
+  - api: Data Access Platform (DAP) API
+    description: >-
+      The DAP API uses fixed rate limits per endpoint category, independent of
+      the Canvas REST API rate limiting system.
+    scope: per-developer-key
+    mechanism: fixed-window
+    limits:
+      - endpoint: GET table listings
+        rate: 5 calls/minute
+      - endpoint: GET table schemas
+        rate: 500 calls/minute
+      - endpoint: POST data queries (canvas namespace)
+        rate: 500 calls/minute
+      - endpoint: POST data queries (canvas_logs namespace)
+        rate: 5 calls/minute
+    documentation: https://developerdocs.instructure.com/services/dap/limits-policies
+policy:
+  url: https://www.instructure.com/policies/canvas-api-policy
+  summary: >-
+    Canvas API usage must minimize load on the system; applications should
+    avoid excessive parallel requests and unnecessary repeated calls.
+    Prohibited uses include attempts to circumvent rate limits or overload
+    Canvas infrastructure.
