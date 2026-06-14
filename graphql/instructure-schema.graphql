@@ -1,0 +1,1325 @@
+"""
+Canvas LMS GraphQL API Schema
+Source: https://github.com/instructure/canvas-lms/tree/master/app/graphql
+Endpoint: https://{canvas_domain}/api/graphql
+"""
+
+interface Node {
+  id: ID!
+}
+
+interface Timestamps {
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+interface LegacyNode {
+  _id: ID!
+}
+
+scalar DateTime
+scalar URL
+scalar ISO8601Duration
+
+enum CourseWorkflowState {
+  created
+  claimed
+  available
+  completed
+  deleted
+}
+
+enum EnrollmentWorkflowState {
+  invited
+  creation_pending
+  active
+  rejected
+  completed
+  inactive
+}
+
+enum EnrollmentType {
+  StudentEnrollment
+  TeacherEnrollment
+  TaEnrollment
+  ObserverEnrollment
+  DesignerEnrollment
+  StudentViewEnrollment
+}
+
+enum GradingType {
+  pass_fail
+  percent
+  letter_grade
+  gpa_scale
+  points
+  not_graded
+}
+
+enum AssignmentState {
+  published
+  unpublished
+  deleted
+}
+
+enum DiscussionFilterType {
+  all
+  unread
+  deleted
+}
+
+enum DiscussionTopicAnonymousStateType {
+  off
+  partial_anonymity
+  full_anonymity
+}
+
+enum GroupStateType {
+  available
+  closed
+  deleted
+}
+
+enum OrderDirection {
+  ascending
+  descending
+}
+
+type Query {
+  node(id: ID!): Node
+  legacyNode(type: String!, _id: ID!): Node
+  account(id: ID, sisId: String): Account
+  user(id: ID!): User
+  course(id: ID, sisId: String): Course
+  assignment(id: ID, sisId: String): Assignment
+  rubric(id: ID!): Rubric
+  folder(id: ID!): Folder
+  myInboxSettings: InboxSettings
+  institutionalTag(id: ID!): InstitutionalTag
+  institutionalTagCategory(id: ID!): InstitutionalTagCategory
+  internalSetting(id: ID, name: String): InternalSetting
+  internalSettings: [InternalSetting!]
+  accountNotifications(accountId: ID): [AccountNotification!]!
+  enrollmentInvitations(includeEnrollmentUuid: String): [Enrollment!]!
+}
+
+type Account implements Node & LegacyNode & Timestamps {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  name: String
+  workflowState: String!
+  sisId: String
+  outcomeProficiency: OutcomeProficiency
+  outcomeCalculationMethod: OutcomeCalculationMethod
+  coursesConnection(after: String, first: Int, before: String, last: Int): CourseConnection
+  customGradeStatusesConnection(after: String, first: Int, before: String, last: Int): CustomGradeStatusConnection
+  standardGradeStatusesConnection(after: String, first: Int, before: String, last: Int): StandardGradeStatusConnection
+  subAccountsConnection(after: String, first: Int, before: String, last: Int): AccountConnection
+  parentAccountsConnection(after: String, first: Int, before: String, last: Int): AccountConnection!
+  usersConnection(after: String, first: Int, before: String, last: Int): UserConnection
+  rubricConnection(after: String, first: Int, before: String, last: Int): RubricConnection
+  rootOutcomeGroup: LearningOutcomeGroup!
+}
+
+type Course implements Node & LegacyNode & Timestamps {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  name: String!
+  courseCode: String
+  state: CourseWorkflowState!
+  syllabusBody: String
+  sisId: String
+  horizonCourse: Boolean
+  applyGroupWeights: Boolean
+  allowFinalGradeOverride: Boolean
+  imageUrl: URL
+  term: Term
+  account: Account
+  permissions: CoursePermissions
+  postPolicy: PostPolicy
+  settings: CourseSettings
+  gradeStatuses: [String!]!
+  assignmentGroupsConnection(after: String, first: Int, before: String, last: Int): AssignmentGroupConnection!
+  assignmentsConnection(filter: AssignmentFilter, after: String, first: Int, before: String, last: Int): AssignmentConnection
+  submissionsConnection(studentIds: [ID!], orderBy: [SubmissionOrderCriteria!], filter: SubmissionFilterInput, after: String, first: Int, before: String, last: Int): SubmissionConnection
+  sectionsConnection(filter: CourseSectionsFilter, after: String, first: Int, before: String, last: Int): SectionConnection!
+  modulesConnection(filter: ModuleFilterInput, after: String, first: Int, before: String, last: Int): ModuleConnection
+  groupsConnection(includeNonCollaborative: Boolean, after: String, first: Int, before: String, last: Int): GroupConnection
+  groupSetsConnection(includeNonCollaborative: Boolean, after: String, first: Int, before: String, last: Int): GroupSetConnection
+  usersConnection(userIds: [ID!], filter: CourseUsersFilter, sort: CourseUsersSortInput, after: String, first: Int, before: String, last: Int): UserConnection
+  enrollmentsConnection(filter: EnrollmentFilterInput, after: String, first: Int, before: String, last: Int): EnrollmentConnection
+  gradingPeriodsConnection(after: String, first: Int, before: String, last: Int): GradingPeriodConnection!
+  rubricConnection(id: ID, after: String, first: Int, before: String, last: Int): RubricConnection
+  foldersConnection(after: String, first: Int, before: String, last: Int): FolderConnection
+  discussionsConnection(filter: DiscussionFilter, after: String, first: Int, before: String, last: Int): DiscussionConnection
+  filesConnection(filter: FileFilter, after: String, first: Int, before: String, last: Int): FileConnection
+  pagesConnection(filter: PageFilter, after: String, first: Int, before: String, last: Int): PageConnection
+  quizzesConnection(filter: QuizFilter, after: String, first: Int, before: String, last: Int): QuizConnection
+  submissionStatistics(observedUserId: ID): SubmissionStatistics
+  moduleProgressionStatistics: ModuleProgressionStatistics
+  gradingStandard: GradingStandard
+  relevantGradingPeriodGroup: GradingPeriodGroup
+  rootOutcomeGroup: LearningOutcomeGroup!
+  outcomeAlignmentStats: CourseOutcomeAlignmentStats
+  dashboardCard: CourseDashboardCard
+  activityStream: ActivityStream
+}
+
+type User implements Node & LegacyNode & Timestamps {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  name: String
+  firstName: String
+  lastName: String
+  shortName: String
+  sortableName: String
+  pronouns: String
+  email: String
+  avatarUrl: URL
+  htmlUrl: URL
+  uuid: String
+  sisId: String
+  integrationId: String
+  loginId: String
+  discussionsSplitscreenView: Boolean!
+  inboxLabels: [String!]
+  enrollments(courseId: ID, currentOnly: Boolean): [Enrollment!]!
+  enrollmentsConnection(filter: EnrollmentFilterInput, after: String, first: Int, before: String, last: Int): EnrollmentConnection
+  groups: [Group!]
+  groupMemberships: [GroupMembership!]!
+  notificationPreferences: NotificationPreferences
+  notificationPreferencesEnabled(accountId: ID!, type: String!): Boolean!
+  conversationsConnection(after: String, first: Int, before: String, last: Int): ConversationParticipantConnection
+  summaryAnalytics(courseId: ID!): StudentSummaryAnalytics
+  courseWorkSubmissionsConnection(courseId: ID, after: String, first: Int, before: String, last: Int): SubmissionConnection
+  commentBankItemsConnection(query: String, after: String, first: Int, before: String, last: Int): CommentBankItemConnection
+  courseRoles(courseId: ID, roleTypes: [String!]): [String!]
+  courseProgression(courseId: ID!): CourseProgression
+  activityStream: ActivityStream
+}
+
+type Assignment implements Node & LegacyNode & Timestamps {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  name: String
+  description: String
+  pointsPossible: Float
+  position: Int
+  state: AssignmentState!
+  gradingType: GradingType
+  dueAt: DateTime
+  lockAt: DateTime
+  unlockAt: DateTime
+  allowedAttempts: Int
+  anonymousGrading: Boolean
+  anonymousInstructorAnnotations: Boolean
+  canDuplicate: Boolean
+  expectsSubmission: Boolean
+  expectsExternalSubmission: Boolean
+  gradedSubmissionsExist: Boolean
+  gradeGroupStudentsIndividually: Boolean
+  hasMultipleDueDates: Boolean
+  hasSubmittedSubmissions: Boolean
+  omitFromFinalGrade: Boolean
+  postToSis: Boolean
+  inClosedGradingPeriod: Boolean
+  nonDigitalSubmission: Boolean
+  importantDates: Boolean
+  gradesPublishedAt: String
+  groupCategoryId: Int
+  rubricAssessment: AssignmentRubricAssessment
+  peerReviews: AssignmentPeerReviews
+  moderatedGrading: AssignmentModeratedGrading
+  course: Course
+  rubric: Rubric
+  submissionsConnection(filter: SubmissionFilterInput, after: String, first: Int, before: String, last: Int): SubmissionConnection
+  assignmentGroup: AssignmentGroup
+  lockInfo: LockInfo
+}
+
+type Submission implements Node & LegacyNode & Timestamps {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  score: Float
+  grade: String
+  enteredScore: Float
+  enteredGrade: String
+  excused: Boolean
+  missing: Boolean
+  late: Boolean
+  latePolicyStatus: String
+  submittedAt: DateTime
+  gradedAt: DateTime
+  attempt: Int
+  body: String
+  url: String
+  workflowState: String
+  submissionType: String
+  readState: String
+  gradingPeriodId: ID
+  studentEnteredScore: Float
+  redoRequest: Boolean
+  userId: ID
+  user: User
+  assignment: Assignment
+  course: Course
+  commentsConnection(after: String, first: Int, before: String, last: Int): SubmissionCommentConnection
+  submissionHistoriesConnection(filter: SubmissionHistoryFilterInput, after: String, first: Int, before: String, last: Int): SubmissionHistoryConnection!
+  enrollmentsConnection(after: String, first: Int, before: String, last: Int): EnrollmentConnection
+  subAssignmentTag: String
+  rubricAssessmentsConnection(after: String, first: Int, before: String, last: Int): RubricAssessmentConnection
+  autoGradeEligibility: AutoGradeEligibility
+}
+
+type Enrollment implements Node & LegacyNode & Timestamps {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  state: EnrollmentWorkflowState!
+  enrollmentState: EnrollmentWorkflowState!
+  type: String
+  userId: ID
+  courseSectionId: ID
+  user: User
+  associatedUser: User
+  course: Course
+  section: Section
+  grades: Grades
+  sisId: String
+}
+
+type Term implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  name: String
+  startAt: DateTime
+  endAt: DateTime
+  sisTermId: ID
+  sisId: String
+  coursesConnection(after: String, first: Int, before: String, last: Int): CourseConnection
+}
+
+type GradingPeriod implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  title: String
+  startDate: DateTime
+  endDate: DateTime
+  closeDate: DateTime
+  weight: Float
+  isLast: Boolean!
+  isClosed: Boolean!
+  displayTotals: Boolean!
+}
+
+type GradingPeriodGroup implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  title: String
+  weighted: Boolean
+  displayTotals: Boolean
+  gradingPeriodsConnection(after: String, first: Int, before: String, last: Int): GradingPeriodConnection
+}
+
+type Module implements Node & LegacyNode & Timestamps {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  name: String
+  position: Integer
+  unlockAt: DateTime
+  published: Boolean
+  requireSequentialProgress: Boolean
+  requirementCount: Integer
+  prerequisites: [ModulePrerequisite!]
+  completionRequirements: [ModuleCompletionRequirement!]
+  moduleItems: [ModuleItem!]
+  moduleItemsConnection(after: String, first: Int, before: String, last: Int): ModuleItemConnection
+  moduleItemsTotalCount: Int!
+  submissionStatistics: ModuleStatistics
+  estimatedDuration: ISO8601Duration
+  progression: ModuleProgression
+  hasActiveOverrides: Boolean!
+}
+
+type ModuleItem implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  title: String
+  position: Int
+  indent: Int
+  url: URL
+  moduleItemUrl: URL
+  newTab: Boolean
+  published: Boolean
+  estimatedDuration: ISO8601Duration
+  module: Module
+  content: ModuleItemContent
+  next: ModuleItem
+  previous: ModuleItem
+  masterCourseRestrictions: ModuleItemMasterCourseRestriction
+  masteryPaths: ModuleItemMasteryPathInfo
+}
+
+type Rubric implements Node & LegacyNode & Timestamps {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  title: String
+  pointsPossible: Float
+  criteria: [RubricCriterion!]!
+  criteriaCount: Int!
+  freeFormCriterionComments: Boolean!
+  hideScoreTotal: Boolean!
+  hidePoints: Boolean
+  unassessed: Boolean!
+  hasRubricAssociations: Boolean!
+  canUpdateRubric: Boolean!
+  buttonDisplay: String!
+  ratingOrder: String!
+  workflowState: String!
+  rubricAssociationForContext: RubricAssociation
+}
+
+type Section implements Node & LegacyNode & Timestamps {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  name: String!
+  userCount: Int!
+  sisId: String
+  gradesPosted: Boolean!
+  gradesPresent: Boolean!
+  students(after: String, first: Int, before: String, last: Int): UserConnection
+  allStudents(after: String, first: Int, before: String, last: Int): UserConnection
+}
+
+type Discussion implements Node & LegacyNode & Timestamps {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  title: String
+  message: String
+  allowRating: Boolean
+  anonymousState: DiscussionTopicAnonymousStateType
+  canGroup: Boolean
+  contextId: ID!
+  contextType: String!
+  delayedPostAt: DateTime
+  discussionType: String
+  editedAt: DateTime
+  expanded: Boolean
+  expandedLocked: Boolean
+  isAnnouncement: Boolean!
+  isAnonymousAuthor: Boolean
+  published: Boolean
+  locked: Boolean
+  pinned: Boolean
+  author: User
+  entriesConnection(after: String, first: Int, before: String, last: Int): DiscussionEntryConnection
+  rootEntriesTotalCount: Int
+}
+
+type DiscussionEntry implements Node & LegacyNode & Timestamps {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  message: String
+  previewMessage: String
+  deleted: Boolean
+  edited: Boolean
+  editedAt: DateTime
+  pinned: Boolean
+  ratingCount: Int
+  ratingSum: Int
+  parentId: ID
+  rootEntryId: ID
+  discussionTopicId: ID!
+  rootEntryPageNumber: Int
+  author: User
+  anonymousAuthor: AnonymousUser
+  editor: User
+  pinnedBy: User
+  quotedEntry: DiscussionEntry
+  discussionTopic: Discussion!
+  discussionSubentriesConnection(after: String, first: Int, before: String, last: Int): DiscussionEntryConnection
+  rootEntryParticipantCounts: DiscussionEntryCounts
+}
+
+type Group implements Node & LegacyNode & Timestamps {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  name: String
+  membersCount: Int
+  nonCollaborative: Boolean
+  state: GroupStateType!
+  canMessage: Boolean!
+  sisId: String
+  membersConnection(after: String, first: Int, before: String, last: Int): GroupMembershipConnection
+  member(userId: ID!): GroupMembership
+  groupCategory: GroupSet
+  activityStream: ActivityStream
+}
+
+type GroupMembership implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  user: User
+  group: Group
+  workflowState: String
+}
+
+type Page implements Node & LegacyNode & Timestamps {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  title: String
+  todoDate: DateTime
+  body: String
+  published: Boolean
+  url: String
+}
+
+type Folder implements Node & LegacyNode & Timestamps {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  name: String
+  fullName: String
+  position: Int
+  parentFolderId: ID
+}
+
+type AssignmentGroup implements Node & LegacyNode & Timestamps {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  name: String
+  position: Int
+  groupWeight: Float
+  assignmentsConnection(after: String, first: Int, before: String, last: Int): AssignmentConnection
+}
+
+type RubricCriterion {
+  id: ID
+  description: String
+  longDescription: String
+  points: Float
+  criterion_use_range: Boolean
+  ratings: [RubricRating!]
+}
+
+type RubricRating {
+  id: ID
+  description: String
+  longDescription: String
+  points: Float
+}
+
+type RubricAssociation implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  associationId: ID
+  associationType: String
+  useForGrading: Boolean
+  rubric: Rubric
+}
+
+type RubricAssessment implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  assessmentType: String
+  score: Float
+  ratings: [RubricAssessmentRating!]
+  rubric: Rubric
+  assessor: User
+}
+
+type RubricAssessmentRating {
+  points: Float
+  description: String
+  comments: String
+  criterionId: ID
+}
+
+type Grades {
+  currentScore: Float
+  currentGrade: String
+  finalScore: Float
+  finalGrade: String
+  overrideScore: Float
+  overrideGrade: String
+}
+
+type GradingStandard implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  title: String
+  data: [GradingStandardDataRow!]
+}
+
+type GradingStandardDataRow {
+  letterGrade: String
+  baseValue: Float
+}
+
+type PostPolicy implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  postManually: Boolean!
+  assignment: Assignment
+  course: Course
+}
+
+type LockInfo {
+  isLocked: Boolean!
+  lockAt: DateTime
+  unlockAt: DateTime
+  canView: Boolean
+}
+
+type AssignmentPeerReviews {
+  enabled: Boolean
+  count: Int
+  dueAt: DateTime
+  intraReviews: Boolean
+  anonymousReviews: Boolean
+  automaticReviews: Boolean
+}
+
+type AssignmentModeratedGrading {
+  enabled: Boolean
+  graderCount: Int
+  graderCommentsVisibleToGraders: Boolean
+  graderNamesVisibleToFinalGrader: Boolean
+  gradersAnonymousToGraders: Boolean
+  finalGrader: User
+}
+
+type AssignmentRubricAssessment {
+  hideScoreTotal: Boolean
+  rubric: Rubric
+}
+
+type CoursePermissions {
+  addDesignerToTerm: Boolean
+  createAnnouncement: Boolean
+  createDiscussionTopic: Boolean
+  manageAssignments: Boolean
+  manageGrades: Boolean
+  manageGroupsAdd: Boolean
+  manageWiki: Boolean
+  readSis: Boolean
+  sendMessages: Boolean
+  viewAllGrades: Boolean
+}
+
+type CourseSettings {
+  allowStudentDiscussionTopics: Boolean
+  allowStudentForumAttachments: Boolean
+  allowStudentDiscussionEditing: Boolean
+  filterSpeedGraderByStudentGroup: Boolean
+  gradePassbackSetting: String
+  homePageAnnouncements: Boolean
+  syllabusCourseSummary: Boolean
+}
+
+type OutcomeProficiency implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  proficiencyRatingsConnection(after: String, first: Int, before: String, last: Int): ProficiencyRatingConnection
+}
+
+type OutcomeCalculationMethod implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  calculationMethod: String
+  calculationInt: Int
+}
+
+type ProficiencyRating {
+  description: String
+  points: Float
+  mastery: Boolean
+  color: String
+}
+
+type LearningOutcomeGroup implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  title: String
+  description: String
+  outcomesCount: Int
+  childGroupsCount: Int
+}
+
+type CourseOutcomeAlignmentStats {
+  totalOutcomes: Int
+  alignedOutcomes: Int
+  totalAlignments: Int
+  totalArtifacts: Int
+  alignedArtifacts: Int
+  artifactAlignments: Int
+}
+
+type ModulePrerequisite {
+  id: ID
+  name: String
+  type: String
+}
+
+type ModuleCompletionRequirement {
+  id: ID
+  type: String
+  minScore: Float
+  completed: Boolean
+}
+
+type ModuleStatistics {
+  completedCount: Int
+  incompleteCount: Int
+  completedModuleItemsCount: Int
+  incompleteModuleItemsCount: Int
+}
+
+type ModuleProgression {
+  id: ID
+  workflowState: String
+  completedAt: DateTime
+  collapsed: Boolean
+}
+
+type ModuleProgressionStatistics {
+  totalModuleCount: Int
+  completedModuleCount: Int
+}
+
+type ModuleItemMasterCourseRestriction {
+  contentTags: Boolean
+  points: Boolean
+  dueDate: Boolean
+  availabilityDates: Boolean
+}
+
+type ModuleItemMasteryPathInfo {
+  isStudentInMasteryPath: Boolean
+  isMasteryPathTriggered: Boolean
+}
+
+type SubmissionStatistics {
+  overdueAssignmentsCount: Int
+  missingSubmissionsCount: Int
+  submittedAssignmentsCount: Int
+  gradedAssignmentsCount: Int
+}
+
+type SubmissionComment implements Node & LegacyNode & Timestamps {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  comment: String
+  author: User
+  mediaObject: MediaObject
+}
+
+type SubmissionHistory {
+  attempt: Int
+  score: Float
+  grade: String
+  submittedAt: DateTime
+  body: String
+  submissionType: String
+}
+
+type DiscussionEntryCounts {
+  unreadCount: Int!
+  repliesCount: Int!
+}
+
+type StudentSummaryAnalytics {
+  pageViews: PageViewAnalytics
+  participations: ParticipationAnalytics
+  tardiness: TardinessBreakdown
+}
+
+type PageViewAnalytics {
+  total: Int
+  max: Int
+  level: Int
+}
+
+type ParticipationAnalytics {
+  total: Int
+  max: Int
+  level: Int
+}
+
+type TardinessBreakdown {
+  onTime: Float
+  late: Float
+  missing: Float
+  total: Int
+}
+
+type CourseProgression {
+  nextRequirement: String
+  completedRequirements: Int
+  totalRequirements: Int
+  percentComplete: Float
+}
+
+type ActivityStream {
+  summary: [ActivityStreamSummary!]
+}
+
+type ActivityStreamSummary {
+  type: String
+  count: Int
+  notificationCategory: String
+  unreadCount: Int
+}
+
+type InboxSettings {
+  useSignature: Boolean
+  signature: String
+  useOutOfOffice: Boolean
+  outOfOfficeMessage: String
+  outOfOfficeSubject: String
+  outOfOfficeFirstDate: DateTime
+  outOfOfficeLastDate: DateTime
+}
+
+type AnonymousUser {
+  id: ID!
+  avatarUrl: URL
+  shortName: String
+}
+
+type GroupSet implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  name: String
+  selfSignup: String
+  autoLeader: String
+  groupsCount: Int
+  groupsConnection(after: String, first: Int, before: String, last: Int): GroupConnection
+}
+
+type AccountNotification {
+  id: ID
+  subject: String
+  message: String
+  startAt: DateTime
+  endAt: DateTime
+  icon: String
+}
+
+type MediaObject implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  title: String
+  mediaType: String
+  mediaSources: [MediaSource!]
+}
+
+type MediaSource {
+  url: URL
+  contentType: String
+  height: String
+  width: String
+}
+
+type InternalSetting implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  name: String!
+  value: String
+  secret: Boolean!
+}
+
+type InstitutionalTag implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  name: String
+}
+
+type InstitutionalTagCategory implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  name: String
+}
+
+type CommentBankItem implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  comment: String!
+}
+
+type ConversationParticipant implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  workflowState: String
+  label: String
+  subscribed: Boolean
+  conversation: Conversation
+}
+
+type Conversation implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  subject: String
+  isPrivate: Boolean
+  starred: Boolean
+  messagesConnection(after: String, first: Int, before: String, last: Int): ConversationMessageConnection
+}
+
+type ConversationMessage implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime
+  body: String
+  author: User
+}
+
+type NotificationPreferences {
+  channels: [CommunicationChannel!]
+}
+
+type CommunicationChannel implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  path: String!
+  pathType: String!
+  notificationPolicies(contextType: String): [NotificationPolicy!]
+}
+
+type NotificationPolicy {
+  communicationChannel: CommunicationChannel
+  frequency: String!
+  notification: Notification
+}
+
+type Notification {
+  name: String
+  category: String
+}
+
+type AutoGradeEligibility {
+  eligible: Boolean!
+  issues: [EligibilityIssue!]
+}
+
+type EligibilityIssue {
+  type: String
+  message: String
+}
+
+type CustomGradeStatus implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  name: String!
+  color: String!
+}
+
+type StandardGradeStatus implements Node & LegacyNode {
+  id: ID!
+  _id: ID!
+  name: String!
+  color: String
+}
+
+type CourseDashboardCard {
+  id: ID
+  assetString: String
+  courseCode: String
+  shortName: String
+  href: URL
+  term: String
+  enrollmentType: String
+  published: Boolean
+  canChangeCourseState: Boolean
+  defaultView: String
+  pagesUrl: URL
+  frontPageTitle: String
+}
+
+union ModuleItemContent = Assignment | Discussion | Page | Rubric | Folder
+
+"""Relay-style pagination connection for Accounts"""
+type AccountConnection {
+  nodes: [Account!]
+  edges: [AccountEdge!]
+  pageInfo: PageInfo!
+}
+type AccountEdge { node: Account; cursor: String! }
+
+"""Relay-style pagination connection for Courses"""
+type CourseConnection {
+  nodes: [Course!]
+  edges: [CourseEdge!]
+  pageInfo: PageInfo!
+}
+type CourseEdge { node: Course; cursor: String! }
+
+"""Relay-style pagination connection for Users"""
+type UserConnection {
+  nodes: [User!]
+  edges: [UserEdge!]
+  pageInfo: PageInfo!
+}
+type UserEdge { node: User; cursor: String! }
+
+"""Relay-style pagination connection for Assignments"""
+type AssignmentConnection {
+  nodes: [Assignment!]
+  edges: [AssignmentEdge!]
+  pageInfo: PageInfo!
+}
+type AssignmentEdge { node: Assignment; cursor: String! }
+
+"""Relay-style pagination connection for Submissions"""
+type SubmissionConnection {
+  nodes: [Submission!]
+  edges: [SubmissionEdge!]
+  pageInfo: PageInfo!
+}
+type SubmissionEdge { node: Submission; cursor: String! }
+
+"""Relay-style pagination connection for Enrollments"""
+type EnrollmentConnection {
+  nodes: [Enrollment!]
+  edges: [EnrollmentEdge!]
+  pageInfo: PageInfo!
+}
+type EnrollmentEdge { node: Enrollment; cursor: String! }
+
+"""Relay-style pagination connection for Sections"""
+type SectionConnection {
+  nodes: [Section!]
+  edges: [SectionEdge!]
+  pageInfo: PageInfo!
+}
+type SectionEdge { node: Section; cursor: String! }
+
+"""Relay-style pagination connection for Modules"""
+type ModuleConnection {
+  nodes: [Module!]
+  edges: [ModuleEdge!]
+  pageInfo: PageInfo!
+}
+type ModuleEdge { node: Module; cursor: String! }
+
+"""Relay-style pagination connection for ModuleItems"""
+type ModuleItemConnection {
+  nodes: [ModuleItem!]
+  edges: [ModuleItemEdge!]
+  pageInfo: PageInfo!
+}
+type ModuleItemEdge { node: ModuleItem; cursor: String! }
+
+"""Relay-style pagination connection for Rubrics"""
+type RubricConnection {
+  nodes: [Rubric!]
+  edges: [RubricEdge!]
+  pageInfo: PageInfo!
+}
+type RubricEdge { node: Rubric; cursor: String! }
+
+"""Relay-style pagination connection for Groups"""
+type GroupConnection {
+  nodes: [Group!]
+  edges: [GroupEdge!]
+  pageInfo: PageInfo!
+}
+type GroupEdge { node: Group; cursor: String! }
+
+"""Relay-style pagination connection for GroupSets"""
+type GroupSetConnection {
+  nodes: [GroupSet!]
+  edges: [GroupSetEdge!]
+  pageInfo: PageInfo!
+}
+type GroupSetEdge { node: GroupSet; cursor: String! }
+
+"""Relay-style pagination connection for GroupMemberships"""
+type GroupMembershipConnection {
+  nodes: [GroupMembership!]
+  edges: [GroupMembershipEdge!]
+  pageInfo: PageInfo!
+}
+type GroupMembershipEdge { node: GroupMembership; cursor: String! }
+
+"""Relay-style pagination connection for Discussions"""
+type DiscussionConnection {
+  nodes: [Discussion!]
+  edges: [DiscussionEdge!]
+  pageInfo: PageInfo!
+}
+type DiscussionEdge { node: Discussion; cursor: String! }
+
+"""Relay-style pagination connection for DiscussionEntries"""
+type DiscussionEntryConnection {
+  nodes: [DiscussionEntry!]
+  edges: [DiscussionEntryEdge!]
+  pageInfo: PageInfo!
+}
+type DiscussionEntryEdge { node: DiscussionEntry; cursor: String! }
+
+"""Relay-style pagination connection for GradingPeriods"""
+type GradingPeriodConnection {
+  nodes: [GradingPeriod!]
+  edges: [GradingPeriodEdge!]
+  pageInfo: PageInfo!
+}
+type GradingPeriodEdge { node: GradingPeriod; cursor: String! }
+
+"""Relay-style pagination connection for AssignmentGroups"""
+type AssignmentGroupConnection {
+  nodes: [AssignmentGroup!]
+  edges: [AssignmentGroupEdge!]
+  pageInfo: PageInfo!
+}
+type AssignmentGroupEdge { node: AssignmentGroup; cursor: String! }
+
+"""Relay-style pagination connection for Pages"""
+type PageConnection {
+  nodes: [Page!]
+  edges: [PageEdge!]
+  pageInfo: PageInfo!
+}
+type PageEdge { node: Page; cursor: String! }
+
+"""Relay-style pagination connection for Folders"""
+type FolderConnection {
+  nodes: [Folder!]
+  edges: [FolderEdge!]
+  pageInfo: PageInfo!
+}
+type FolderEdge { node: Folder; cursor: String! }
+
+"""Relay-style pagination connection for Files"""
+type FileConnection {
+  nodes: [File!]
+  edges: [FileEdge!]
+  pageInfo: PageInfo!
+}
+type FileEdge { node: File; cursor: String! }
+
+"""Relay-style pagination connection for Quizzes"""
+type QuizConnection {
+  nodes: [Quiz!]
+  edges: [QuizEdge!]
+  pageInfo: PageInfo!
+}
+type QuizEdge { node: Quiz; cursor: String! }
+
+"""Relay-style pagination connection for ProficiencyRatings"""
+type ProficiencyRatingConnection {
+  nodes: [ProficiencyRating!]
+  edges: [ProficiencyRatingEdge!]
+  pageInfo: PageInfo!
+}
+type ProficiencyRatingEdge { node: ProficiencyRating; cursor: String! }
+
+"""Relay-style pagination connection for SubmissionComments"""
+type SubmissionCommentConnection {
+  nodes: [SubmissionComment!]
+  edges: [SubmissionCommentEdge!]
+  pageInfo: PageInfo!
+}
+type SubmissionCommentEdge { node: SubmissionComment; cursor: String! }
+
+"""Relay-style pagination connection for SubmissionHistories"""
+type SubmissionHistoryConnection {
+  nodes: [SubmissionHistory!]
+  edges: [SubmissionHistoryEdge!]
+  pageInfo: PageInfo!
+}
+type SubmissionHistoryEdge { node: SubmissionHistory; cursor: String! }
+
+"""Relay-style pagination connection for RubricAssessments"""
+type RubricAssessmentConnection {
+  nodes: [RubricAssessment!]
+  edges: [RubricAssessmentEdge!]
+  pageInfo: PageInfo!
+}
+type RubricAssessmentEdge { node: RubricAssessment; cursor: String! }
+
+"""Relay-style pagination connection for ConversationParticipants"""
+type ConversationParticipantConnection {
+  nodes: [ConversationParticipant!]
+  edges: [ConversationParticipantEdge!]
+  pageInfo: PageInfo!
+}
+type ConversationParticipantEdge { node: ConversationParticipant; cursor: String! }
+
+"""Relay-style pagination connection for ConversationMessages"""
+type ConversationMessageConnection {
+  nodes: [ConversationMessage!]
+  edges: [ConversationMessageEdge!]
+  pageInfo: PageInfo!
+}
+type ConversationMessageEdge { node: ConversationMessage; cursor: String! }
+
+"""Relay-style pagination connection for CommentBankItems"""
+type CommentBankItemConnection {
+  nodes: [CommentBankItem!]
+  edges: [CommentBankItemEdge!]
+  pageInfo: PageInfo!
+}
+type CommentBankItemEdge { node: CommentBankItem; cursor: String! }
+
+"""Relay-style pagination connection for CustomGradeStatuses"""
+type CustomGradeStatusConnection {
+  nodes: [CustomGradeStatus!]
+  edges: [CustomGradeStatusEdge!]
+  pageInfo: PageInfo!
+}
+type CustomGradeStatusEdge { node: CustomGradeStatus; cursor: String! }
+
+"""Relay-style pagination connection for StandardGradeStatuses"""
+type StandardGradeStatusConnection {
+  nodes: [StandardGradeStatus!]
+  edges: [StandardGradeStatusEdge!]
+  pageInfo: PageInfo!
+}
+type StandardGradeStatusEdge { node: StandardGradeStatus; cursor: String! }
+
+type PageInfo {
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+"""Placeholder types referenced but not fully expanded"""
+type File implements Node & LegacyNode & Timestamps {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  displayName: String
+  filename: String
+  contentType: String
+  url: URL
+  size: Int
+  thumbnailUrl: URL
+  hidden: Boolean
+  locked: Boolean
+}
+
+type Quiz implements Node & LegacyNode & Timestamps {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  title: String
+  description: String
+  pointsPossible: Float
+  timeLimit: Int
+  allowedAttempts: Int
+  shuffleAnswers: Boolean
+  published: Boolean
+  questionCount: Int
+}
+
+input CourseUsersFilter {
+  enrollmentStates: [EnrollmentWorkflowState!]
+  enrollmentTypes: [EnrollmentType!]
+  enrollmentRoleIds: [ID!]
+  excludeTestStudents: Boolean
+  searchTerm: String
+  userIds: [ID!]
+}
+
+input CourseSectionsFilter {
+  assignmentId: ID
+}
+
+input EnrollmentFilterInput {
+  states: [EnrollmentWorkflowState!]
+  associatedUserIds: [ID!]
+  userIds: [ID!]
+  types: [EnrollmentType!]
+}
+
+input SubmissionFilterInput {
+  states: [String!]
+  submittedSince: DateTime
+  gradedSince: DateTime
+  updatedSince: DateTime
+  dueBetween: DateTimeRange
+  includePeerReviewSubmissions: Boolean
+}
+
+input DateTimeRange {
+  start: DateTime
+  end: DateTime
+}
+
+input SubmissionOrderCriteria {
+  field: SubmissionOrderField!
+  direction: OrderDirection
+}
+
+enum SubmissionOrderField {
+  _id
+  gradedAt
+}
+
+input ModuleFilterInput {
+  completionStatus: String
+  userId: ID
+}
+
+input AssignmentFilter {
+  gradingPeriodId: ID
+  userId: ID
+}
+
+input DiscussionFilter {
+  type: DiscussionFilterType
+}
+
+input FileFilter {
+  contentType: String
+}
+
+input PageFilter {
+  published: Boolean
+}
+
+input QuizFilter {
+  published: Boolean
+}
+
+input SubmissionHistoryFilterInput {
+  attempts: [Int!]
+}
+
+input CourseUsersSortInput {
+  field: String
+  direction: OrderDirection
+}

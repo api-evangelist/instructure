@@ -1,15 +1,14 @@
 aid: instructure
 name: Instructure
-description: >-
-  Instructure is an EdTech company best known for Canvas LMS, a widely adopted
-  learning management system used by thousands of educational institutions and
-  organizations worldwide. The platform provides a comprehensive REST API and
-  GraphQL API enabling developers to programmatically access and manage courses,
-  enrollments, assignments, grades, discussions, and institutional data.
-  Instructure also offers the Data Access Platform (DAP) for bulk data queries,
-  New Quizzes API, Canvas Studio API, and support for LTI 1.3 integrations.
-  Authentication is handled via OAuth2 with per-token dynamic rate limiting,
-  and all API responses are returned in JSON over HTTPS.
+description: Instructure is an EdTech company best known for Canvas LMS, a widely
+  adopted learning management system used by thousands of educational institutions
+  and organizations worldwide. The platform provides a comprehensive REST API and
+  GraphQL API enabling developers to programmatically access and manage courses, enrollments,
+  assignments, grades, discussions, and institutional data. Instructure also offers
+  the Data Access Platform (DAP) for bulk data queries, New Quizzes API, Canvas Studio
+  API, and support for LTI 1.3 integrations. Authentication is handled via OAuth2
+  with per-token dynamic rate limiting, and all API responses are returned in JSON
+  over HTTPS.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/instructure/refs/heads/main/apis.yml
@@ -17,155 +16,151 @@ created: '2026-06-13'
 modified: '2026-06-13'
 specificationVersion: '0.19'
 tags:
-  - EdTech
-  - Education
-  - LMS
-  - Canvas
+- EdTech
+- Education
+- LMS
+- Canvas
+- Courses
+- Enrollments
+- Assignments
+- Grades
+- Discussions
+- GraphQL
+- LTI
+- Learning Management
+apis:
+- aid: instructure:canvas-lms-rest-api
+  name: Canvas LMS REST API
+  description: The Canvas LMS REST API provides programmatic access to all core LMS
+    functionality including courses, enrollments, assignments, grades, discussions,
+    users, groups, modules, and institutional management. All requests are made over
+    HTTPS against the institution's Canvas domain and responses are returned in JSON
+    format with 64-bit integer IDs.
+  humanURL: https://developerdocs.instructure.com/services/canvas
+  baseURL: https://{canvas_domain}/api/v1
+  tags:
   - Courses
   - Enrollments
   - Assignments
   - Grades
+  - Users
+  - Groups
+  - Modules
   - Discussions
+  - Sections
+  - Tabs
+  properties:
+  - type: Documentation
+    url: https://developerdocs.instructure.com/services/canvas
+  - type: OpenAPI
+    url: https://github.com/instructure/canvas-lms/blob/master/public/doc/openapi/canvas.openapi.yaml
+  contact:
+  - FN: Instructure Support
+    email: support@instructure.com
+- aid: instructure:canvas-graphql-api
+  name: Canvas GraphQL API
+  description: The Canvas GraphQL API provides a flexible query interface for Canvas
+    LMS data, allowing developers to request exactly the fields they need and reduce
+    over-fetching. It follows the Relay Object Identification spec and includes an
+    interactive GraphiQL browser accessible by appending /graphiql to the Canvas production
+    URL.
+  humanURL: https://developerdocs.instructure.com/services/canvas/basics/file.graphql
+  baseURL: https://{canvas_domain}/api/graphql
+  tags:
   - GraphQL
+  - Courses
+  - Users
+  - Assignments
+  - Grades
+  properties:
+  - type: Documentation
+    url: https://developerdocs.instructure.com/services/canvas/basics/file.graphql
+  - url: graphql/instructure-schema.graphql
+    type: GraphQLSchema
+  - url: graphql/instructure-graphql.md
+    type: GraphQL
+- aid: instructure:data-access-platform-api
+  name: Data Access Platform (DAP) API
+  description: The Instructure Data Access Platform API provides bulk data query capabilities
+    for Canvas data, enabling institutions and developers to access large datasets
+    for analytics, reporting, and data warehousing. It includes table listing, schema
+    inspection, and data query endpoints with distinct rate limits per operation type.
+  humanURL: https://developerdocs.instructure.com/services/dap
+  baseURL: https://api-gateway.instructure.com/dap
+  tags:
+  - Data
+  - Analytics
+  - Bulk Data
+  - Reporting
+  properties:
+  - type: Documentation
+    url: https://developerdocs.instructure.com/services/dap
+  - type: RateLimits
+    url: https://developerdocs.instructure.com/services/dap/limits-policies
+  contact:
+  - FN: DAP Support
+    email: canvasdatahelp@instructure.com
+- aid: instructure:canvas-lti-api
+  name: Canvas LTI 1.3 API
+  description: Canvas supports Learning Tools Interoperability (LTI) 1.3 integrations,
+    enabling third-party tools to embed securely within the Canvas LMS. The LTI implementation
+    covers deep linking, Names and Roles Provisioning Service, and Assignment and
+    Grades services following 1EdTech specifications.
+  humanURL: https://developerdocs.instructure.com/
+  baseURL: https://{canvas_domain}
+  tags:
   - LTI
-  - Learning Management
-apis:
-  - aid: instructure:canvas-lms-rest-api
-    name: Canvas LMS REST API
-    description: >-
-      The Canvas LMS REST API provides programmatic access to all core LMS
-      functionality including courses, enrollments, assignments, grades,
-      discussions, users, groups, modules, and institutional management.
-      All requests are made over HTTPS against the institution's Canvas domain
-      and responses are returned in JSON format with 64-bit integer IDs.
-    humanURL: https://developerdocs.instructure.com/services/canvas
-    baseURL: https://{canvas_domain}/api/v1
-    tags:
-      - Courses
-      - Enrollments
-      - Assignments
-      - Grades
-      - Users
-      - Groups
-      - Modules
-      - Discussions
-      - Sections
-      - Tabs
-    properties:
-      - type: Documentation
-        url: https://developerdocs.instructure.com/services/canvas
-      - type: OpenAPI
-        url: https://github.com/instructure/canvas-lms/blob/master/public/doc/openapi/canvas.openapi.yaml
-    contact:
-      - FN: Instructure Support
-        email: support@instructure.com
-  - aid: instructure:canvas-graphql-api
-    name: Canvas GraphQL API
-    description: >-
-      The Canvas GraphQL API provides a flexible query interface for Canvas LMS
-      data, allowing developers to request exactly the fields they need and
-      reduce over-fetching. It follows the Relay Object Identification spec
-      and includes an interactive GraphiQL browser accessible by appending
-      /graphiql to the Canvas production URL.
-    humanURL: https://developerdocs.instructure.com/services/canvas/basics/file.graphql
-    baseURL: https://{canvas_domain}/api/graphql
-    tags:
-      - GraphQL
-      - Courses
-      - Users
-      - Assignments
-      - Grades
-    properties:
-      - type: Documentation
-        url: https://developerdocs.instructure.com/services/canvas/basics/file.graphql
-  - aid: instructure:data-access-platform-api
-    name: Data Access Platform (DAP) API
-    description: >-
-      The Instructure Data Access Platform API provides bulk data query
-      capabilities for Canvas data, enabling institutions and developers to
-      access large datasets for analytics, reporting, and data warehousing.
-      It includes table listing, schema inspection, and data query endpoints
-      with distinct rate limits per operation type.
-    humanURL: https://developerdocs.instructure.com/services/dap
-    baseURL: https://api-gateway.instructure.com/dap
-    tags:
-      - Data
-      - Analytics
-      - Bulk Data
-      - Reporting
-    properties:
-      - type: Documentation
-        url: https://developerdocs.instructure.com/services/dap
-      - type: RateLimits
-        url: https://developerdocs.instructure.com/services/dap/limits-policies
-    contact:
-      - FN: DAP Support
-        email: canvasdatahelp@instructure.com
-  - aid: instructure:canvas-lti-api
-    name: Canvas LTI 1.3 API
-    description: >-
-      Canvas supports Learning Tools Interoperability (LTI) 1.3 integrations,
-      enabling third-party tools to embed securely within the Canvas LMS.
-      The LTI implementation covers deep linking, Names and Roles Provisioning
-      Service, and Assignment and Grades services following 1EdTech
-      specifications.
-    humanURL: https://developerdocs.instructure.com/
-    baseURL: https://{canvas_domain}
-    tags:
-      - LTI
-      - Integrations
-      - Deep Linking
-      - Grades
-      - Names and Roles
-    properties:
-      - type: Documentation
-        url: https://developerdocs.instructure.com/
-      - type: OpenAPI
-        url: openapi/instructure-canvas-lti-openapi.yml
-  - aid: instructure:canvas-studio-api
-    name: Canvas Studio API
-    description: >-
-      The Canvas Studio API provides programmatic access to Canvas Studio,
-      Instructure's video and media platform, enabling account administrators
-      and developers to manage media assets, captions, analytics, and
-      user data within the Studio product.
-    humanURL: https://github.com/instructure/canvas-studio-api-examples
-    baseURL: https://{studio_domain}/api
-    tags:
-      - Studio
-      - Video
-      - Media
-      - Education
-    properties:
-      - type: Documentation
-        url: https://github.com/instructure/canvas-studio-api-examples
-common:
-  - type: Website
-    url: https://www.instructure.com
+  - Integrations
+  - Deep Linking
+  - Grades
+  - Names and Roles
+  properties:
   - type: Documentation
     url: https://developerdocs.instructure.com/
-  - type: GitHubOrg
-    url: https://github.com/instructure
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/instructure
-  - type: Blog
-    url: https://www.instructure.com/resources/blog
-  - type: Pricing
-    url: https://www.instructure.com/canvas/pricing
-  - type: StatusPage
-    url: https://status.instructure.com/
-  - type: X
-    url: https://x.com/instructure
-  - type: Plans
-    url: plans/instructure-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/instructure-rate-limits.yml
-  - type: FinOps
-    url: finops/instructure-finops.yml
-  - type: Vocabulary
-    url: vocabulary/instructure-vocabulary.yml
-  - type: JSONLDContext
-    url: json-ld/instructure-context.jsonld
+  - type: OpenAPI
+    url: openapi/instructure-canvas-lti-openapi.yml
+- aid: instructure:canvas-studio-api
+  name: Canvas Studio API
+  description: The Canvas Studio API provides programmatic access to Canvas Studio,
+    Instructure's video and media platform, enabling account administrators and developers
+    to manage media assets, captions, analytics, and user data within the Studio product.
+  humanURL: https://github.com/instructure/canvas-studio-api-examples
+  baseURL: https://{studio_domain}/api
+  tags:
+  - Studio
+  - Video
+  - Media
+  - Education
+  properties:
+  - type: Documentation
+    url: https://github.com/instructure/canvas-studio-api-examples
+common:
+- type: Website
+  url: https://www.instructure.com
+- type: Documentation
+  url: https://developerdocs.instructure.com/
+- type: GitHubOrg
+  url: https://github.com/instructure
+- type: LinkedIn
+  url: https://www.linkedin.com/company/instructure
+- type: Blog
+  url: https://www.instructure.com/resources/blog
+- type: Pricing
+  url: https://www.instructure.com/canvas/pricing
+- type: StatusPage
+  url: https://status.instructure.com/
+- type: X
+  url: https://x.com/instructure
+- type: Plans
+  url: plans/instructure-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/instructure-rate-limits.yml
+- type: FinOps
+  url: finops/instructure-finops.yml
+- type: Vocabulary
+  url: vocabulary/instructure-vocabulary.yml
+- type: JSONLDContext
+  url: json-ld/instructure-context.jsonld
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
