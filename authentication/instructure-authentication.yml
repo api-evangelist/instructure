@@ -1,0 +1,26 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/instructure-canvas-lti-openapi.yml
+summary:
+  types:
+  - http
+  - oauth2
+  oauth2_flows:
+  - authorizationCode
+schemes:
+- name: oauth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://{canvas_domain}/login/oauth2/auth
+    tokenUrl: https://{canvas_domain}/login/oauth2/token
+    scopes: 0
+  description: OAuth 2.0 authentication
+  sources:
+  - openapi/instructure-canvas-lti-openapi.yml
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: Bearer token (access token)
+  sources:
+  - openapi/instructure-canvas-lti-openapi.yml

@@ -135,6 +135,14 @@ apis:
   - type: Documentation
     url: https://github.com/instructure/canvas-studio-api-examples
 common:
+- type: TrustCenter
+  url: security/instructure-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/instructure-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/instructure-domain-security.yml
+- type: Authentication
+  url: authentication/instructure-authentication.yml
 - type: OAuthScopes
   url: scopes/instructure-scopes.yml
 - type: Website
