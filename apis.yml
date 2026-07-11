@@ -135,6 +135,8 @@ apis:
   - type: Documentation
     url: https://github.com/instructure/canvas-studio-api-examples
 common:
+- type: OAuthScopes
+  url: scopes/instructure-scopes.yml
 - type: Website
   url: https://www.instructure.com
 - type: Documentation
