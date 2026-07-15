@@ -135,6 +135,8 @@ apis:
   - type: Documentation
     url: https://github.com/instructure/canvas-studio-api-examples
 common:
+- type: AgenticAccess
+  url: agentic-access/instructure-agentic-access.yml
 - type: TrustCenter
   url: security/instructure-trust-center.yml
 - type: VulnerabilityDisclosure
