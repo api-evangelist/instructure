@@ -1,0 +1,454 @@
+openapi: 3.0.3
+info:
+  title: Canvas LMS LTI ExternalTool Lti::IMS::LineItem API
+  description: Canvas LTI 1.3 API endpoints including Dynamic Registration, IMS Names and Roles, Line Items, Data Services, and Security endpoints.
+  version: 1.0.0
+  contact:
+    name: Instructure Support
+    url: https://developerdocs.instructure.com/
+    email: support@instructure.com
+  license:
+    name: AGPL-3.0
+    url: https://github.com/instructure/canvas-lms/blob/master/LICENSE
+servers:
+- url: https://{canvas_domain}
+  description: Canvas institution domain
+  variables:
+    canvas_domain:
+      default: canvas.instructure.com
+      description: The institution-specific Canvas domain
+tags:
+- name: Lti::IMS::LineItem
+paths:
+  /api/lti/courses/{course_id}/line_items:
+    get:
+      summary: index
+      tags:
+      - Lti::IMS::LineItem
+      parameters:
+      - name: course_id
+        in: path
+        required: true
+        schema:
+          type: integer
+        example: 880330
+      - name: endDateTime
+        in: query
+        required: false
+        schema:
+          type: string
+        example: '2023-12-15T05:40:07Z'
+      - name: https://canvas.instructure.com/lti/submission_type
+        in: query
+        required: false
+        schema:
+          type: object
+          properties:
+            external_tool_url:
+              type: string
+            type:
+              type: string
+          required:
+          - external_tool_url
+          - type
+        example:
+          external_tool_url: http://www.tool.com/launch
+          type: external_tool
+      - name: label
+        in: query
+        required: false
+        schema:
+          type: string
+        example: Originality Score
+      - name: resourceId
+        in: query
+        required: false
+        schema:
+          type: string
+        example: orig-123
+      - name: resourceLinkId
+        in: query
+        required: false
+        schema:
+          type: string
+        example: d46ef8af-a2ce-486d-8891-d3115bff947e
+      - name: scoreMaximum
+        in: query
+        required: false
+        schema:
+          type: integer
+        example: 50
+      - name: tag
+        in: query
+        required: false
+        schema:
+          type: string
+        example: some_tag
+      - name: resource_id
+        in: query
+        required: false
+        schema:
+          type: string
+        example: orig-123
+      responses:
+        '401':
+          description: returns 401 unauthorized and complains about missing tool
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                    - type
+                    - message
+                required:
+                - errors
+              example:
+                errors:
+                  type: unauthorized
+                  message: Access Token not linked to a Tool associated with this Context
+        '201':
+          description: properly formats the response
+          content:
+            application/vnd.ims.lis.v2.lineitem+json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  scoreMaximum:
+                    type: number
+                    format: float
+                  label:
+                    type: string
+                  resourceId:
+                    type: string
+                  tag:
+                    type: string
+                  endDateTime:
+                    type: string
+                  https://canvas.instructure.com/lti/submission_type:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                      external_tool_url:
+                        type: string
+                    required:
+                    - type
+                    - external_tool_url
+                  resourceLinkId:
+                    type: string
+                required:
+                - id
+                - scoreMaximum
+                - label
+                - resourceId
+                - tag
+                - endDateTime
+                - resourceLinkId
+                - https://canvas.instructure.com/lti/submission_type
+              example:
+                id: http://test.host/api/lti/courses/880189/line_items/1017691
+                scoreMaximum: 50.0
+                label: Originality Score
+                resourceId: orig-123
+                tag: some_tag
+                endDateTime: '2023-12-15T05:40:07Z'
+                https://canvas.instructure.com/lti/submission_type:
+                  type: external_tool
+                  external_tool_url: http://www.google.com
+                resourceLinkId: 57427bfe-cb04-412a-9d7c-171bc8111073
+        '200':
+          description: allows querying by multiple valid fields at the same time
+          content:
+            application/vnd.ims.lis.v2.lineitemcontainer+json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    scoreMaximum:
+                      type: number
+                      format: float
+                    label:
+                      type: string
+                    resourceId:
+                      type: string
+                    tag:
+                      type: string
+                    endDateTime:
+                      type: string
+                    resourceLinkId:
+                      type: string
+                  required:
+                  - id
+                  - scoreMaximum
+                  - label
+                  - resourceId
+                  - tag
+                  - endDateTime
+                  - resourceLinkId
+              example:
+              - id: http://test.host/api/lti/courses/880203/line_items/1017695
+                scoreMaximum: 10.0
+                label: Test Line Item
+                resourceId: orig-123
+                tag: some_tag
+              - id: http://test.host/api/lti/courses/880193/line_items/1017688
+                scoreMaximum: 1.5
+                label: value for title
+                endDateTime: '2023-12-15T05:40:04Z'
+                resourceLinkId: 1a70e093-9f90-4b1d-ba9b-ac4911a624b0
+              - id: http://test.host/api/lti/courses/880193/line_items/1017689
+                scoreMaximum: 10.0
+                label: Test Line Item
+                tag: some_tag
+              - id: http://test.host/api/lti/courses/880193/line_items/1017690
+                scoreMaximum: 10.0
+                label: Test Line Item
+                resourceId: orig-123
+              - id: http://test.host/api/lti/courses/880193/line_items/1017691
+                scoreMaximum: 10.0
+                label: Test Line Item
+                resourceLinkId: 1a70e093-9f90-4b1d-ba9b-ac4911a624b0
+              - id: http://test.host/api/lti/courses/880184/line_items/1017688
+                scoreMaximum: 1.5
+                label: value for title
+                endDateTime: '2023-12-15T05:40:04Z'
+                resourceLinkId: 59677abf-4041-496e-8a4c-58f628995348
+              - id: http://test.host/api/lti/courses/880184/line_items/1017689
+                scoreMaximum: 10.0
+                label: Test Line Item
+                tag: some_tag
+              - id: http://test.host/api/lti/courses/880184/line_items/1017690
+                scoreMaximum: 10.0
+                label: Test Line Item
+                resourceId: orig-123
+              - id: http://test.host/api/lti/courses/880184/line_items/1017691
+                scoreMaximum: 10.0
+                label: Test Line Item
+                resourceLinkId: 59677abf-4041-496e-8a4c-58f628995348
+              - id: http://test.host/api/lti/courses/880226/line_items/1017689
+                scoreMaximum: 10.0
+                label: Test Line Item
+                tag: some_tag
+              - id: http://test.host/api/lti/courses/880204/line_items/1017689
+                scoreMaximum: 1.5
+                label: value for title
+                endDateTime: '2023-12-15T05:40:03Z'
+                resourceLinkId: b040ebc7-b383-4b85-a65b-fe53e84a002e
+              - id: http://test.host/api/lti/courses/880204/line_items/1017690
+                scoreMaximum: 10.0
+                label: Test Line Item
+                tag: some_tag
+              - id: http://test.host/api/lti/courses/880204/line_items/1017691
+                scoreMaximum: 10.0
+                label: Test Line Item
+                resourceId: orig-123
+              - id: http://test.host/api/lti/courses/880204/line_items/1017692
+                scoreMaximum: 10.0
+                label: Test Line Item
+                resourceLinkId: b040ebc7-b383-4b85-a65b-fe53e84a002e
+              - id: http://test.host/api/lti/courses/880235/line_items/1017689
+                scoreMaximum: 1.5
+                label: value for title
+                endDateTime: '2023-12-15T05:40:05Z'
+                resourceLinkId: 7ebd45a3-2c52-4d0b-9a99-6e2002add3c3
+              - id: http://test.host/api/lti/courses/880235/line_items/1017690
+                scoreMaximum: 10.0
+                label: Test Line Item
+                tag: some_tag
+              - id: http://test.host/api/lti/courses/880235/line_items/1017691
+                scoreMaximum: 10.0
+                label: Test Line Item
+                resourceId: orig-123
+              - id: http://test.host/api/lti/courses/880235/line_items/1017692
+                scoreMaximum: 10.0
+                label: Test Line Item
+                resourceLinkId: 7ebd45a3-2c52-4d0b-9a99-6e2002add3c3
+              - id: http://test.host/api/lti/courses/880187/line_items/1017689
+                scoreMaximum: 1.5
+                label: value for title
+                endDateTime: '2023-12-15T05:40:00Z'
+                resourceLinkId: 660e0172-c157-4fc4-88f2-2208e1f58fae
+              - id: http://test.host/api/lti/courses/880187/line_items/1017690
+                scoreMaximum: 10.0
+                label: Test Line Item
+                tag: some_tag
+              - id: http://test.host/api/lti/courses/880187/line_items/1017691
+                scoreMaximum: 10.0
+                label: Test Line Item
+                resourceId: orig-123
+              - id: http://test.host/api/lti/courses/880187/line_items/1017692
+                scoreMaximum: 10.0
+                label: Test Line Item
+                resourceLinkId: 660e0172-c157-4fc4-88f2-2208e1f58fae
+        '500':
+          description: returns 500 not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        message:
+                          type: string
+                        error_code:
+                          type: string
+                      required:
+                      - message
+                      - error_code
+                  error_report_id:
+                    type: integer
+                required:
+                - errors
+                - error_report_id
+              example:
+                errors:
+                - message: An error occurred.
+                  error_code: internal_server_error
+                error_report_id: 127856
+        '404':
+          description: does not return ims mime_type
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+                required:
+                - errors
+              example: {}
+  /api/lti/courses/{course_id}/line_items/{id}:
+    get:
+      summary: show
+      tags:
+      - Lti::IMS::LineItem
+      parameters:
+      - name: course_id
+        in: path
+        required: true
+        schema:
+          type: integer
+        example: 880199
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+        example: 1017689
+      responses:
+        '401':
+          description: does not return ims mime_type
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                    - type
+                    - message
+                required:
+                - errors
+              example:
+                errors:
+                  type: unauthorized
+                  message: Access Token not linked to a Tool associated with this Context
+        '200':
+          description: updates the assignment points_possible
+          content:
+            application/vnd.ims.lis.v2.lineitem+json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  scoreMaximum:
+                    type: number
+                    format: float
+                  label:
+                    type: string
+                  endDateTime:
+                    type: string
+                  resourceLinkId:
+                    type: string
+                  tag:
+                    type: string
+                required:
+                - id
+                - scoreMaximum
+                - label
+                - endDateTime
+                - resourceLinkId
+              example:
+                id: http://test.host/api/lti/courses/880239/line_items/1017694
+                scoreMaximum: 88.2
+                label: value for title
+                endDateTime: '2023-12-15T05:40:07Z'
+                resourceLinkId: 0d5efeae-6f80-4d75-bb26-d2998fb105e9
+                tag: some_tag
+        '404':
+          description: responds with 404 if the course does not exist
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        message:
+                          type: string
+                      required:
+                      - message
+                required:
+                - errors
+              example:
+                errors:
+                - message: The specified resource does not exist.
+        '412':
+          description: returns a precondition_failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+                required:
+                - errors
+              example: {}
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 authentication
+      flows:
+        authorizationCode:
+          authorizationUrl: https://{canvas_domain}/login/oauth2/auth
+          tokenUrl: https://{canvas_domain}/login/oauth2/token
+          scopes: {}
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Bearer token (access token)

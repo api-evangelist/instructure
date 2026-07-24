@@ -1,0 +1,332 @@
+openapi: 3.0.3
+info:
+  title: Canvas LMS LTI ExternalTool Lti::DataService API
+  description: Canvas LTI 1.3 API endpoints including Dynamic Registration, IMS Names and Roles, Line Items, Data Services, and Security endpoints.
+  version: 1.0.0
+  contact:
+    name: Instructure Support
+    url: https://developerdocs.instructure.com/
+    email: support@instructure.com
+  license:
+    name: AGPL-3.0
+    url: https://github.com/instructure/canvas-lms/blob/master/LICENSE
+servers:
+- url: https://{canvas_domain}
+  description: Canvas institution domain
+  variables:
+    canvas_domain:
+      default: canvas.instructure.com
+      description: The institution-specific Canvas domain
+tags:
+- name: Lti::DataService
+paths:
+  /api/lti/accounts/{account_id}/data_services:
+    get:
+      summary: index
+      tags:
+      - Lti::DataService
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: string
+        example: 8e3650f3-579f-4388-90f0-71b68ee76a79
+      - name: subscription
+        in: query
+        required: false
+        schema:
+          type: object
+          properties:
+            ContextId:
+              type: string
+            ContextType:
+              type: string
+            EventTypes:
+              type: array
+              items:
+                type: string
+            Format:
+              type: string
+            OwnerId:
+              type: string
+            TransportMetadata:
+              type: object
+              properties:
+                Url:
+                  type: string
+              required:
+              - Url
+            TransportType:
+              type: string
+          required:
+          - ContextId
+          - ContextType
+          - EventTypes
+          - Format
+          - OwnerId
+          - TransportMetadata
+          - TransportType
+        example:
+          ContextId: xCoyrm3KhO7W6h8yizdZrujDf9OATC7AnLKe62DN
+          ContextType: root_account
+          EventTypes:
+          - discussion_topic_created
+          Format: live-event
+          OwnerId: '196495'
+          TransportMetadata:
+            Url: sqs.example
+          TransportType: sqs
+      responses:
+        '200':
+          description: returns 200 success
+          content:
+            application/vnd.canvas.dataservices+json:
+              schema:
+                type: string
+              example: '{"ContextId":"xCoyrm3KhO7W6h8yizdZrujDf9OATC7AnLKe62DN","ContextType":"root_account","EventTypes":["discussion_topic_created"],"Format":"live-event","TransportMetadata":{"Url":"sqs.example"},"TransportType":"sqs"}'
+        '401':
+          description: does not return ims mime_type
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                    - type
+                    - message
+                required:
+                - errors
+              example:
+                errors:
+                  type: unauthorized
+                  message: Invalid access token format
+        '500':
+          description: adds OwnerId and OwnerType if passed in for a person
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        message:
+                          type: string
+                        error_code:
+                          type: string
+                      required:
+                      - message
+                      - error_code
+                  error_report_id:
+                    type: integer
+                required:
+                - errors
+                - error_report_id
+              example:
+                errors:
+                - message: An error occurred.
+                  error_code: internal_server_error
+                error_report_id: 127940
+        '404':
+          description: raises a 404
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        message:
+                          type: string
+                      required:
+                      - message
+                required:
+                - errors
+              example:
+                errors:
+                - message: The specified resource does not exist.
+        '422':
+          description: raises an unprocessable_entity
+          content:
+            text/html:
+              schema:
+                type: string
+              example: ''
+  /api/lti/accounts/{account_id}/data_services/{id}:
+    get:
+      summary: show
+      tags:
+      - Lti::DataService
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: string
+        example: 71527019-2da4-49e3-b4e3-de2e55f04a85
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        example: testid
+      - name: subscription
+        in: query
+        required: false
+        schema:
+          type: object
+          properties:
+            ContextId:
+              type: string
+            ContextType:
+              type: string
+            EventTypes:
+              type: array
+              items:
+                type: string
+            Format:
+              type: string
+            TransportMetadata:
+              type: object
+              properties:
+                Url:
+                  type: string
+              required:
+              - Url
+            TransportType:
+              type: string
+            UpdatedBy:
+              type: string
+          required:
+          - ContextId
+          - ContextType
+          - EventTypes
+          - Format
+          - TransportMetadata
+          - TransportType
+          - UpdatedBy
+        example:
+          ContextId: xCoyrm3KhO7W6h8yizdZrujDf9OATC7AnLKe62DN
+          ContextType: root_account
+          EventTypes:
+          - discussion_topic_created
+          Format: live-event
+          TransportMetadata:
+            Url: sqs.example
+          TransportType: sqs
+          UpdatedBy: '196493'
+      responses:
+        '200':
+          description: returns 200 success
+          content:
+            application/vnd.canvas.dataservices+json:
+              schema:
+                type: string
+              example: '{"ContextId":"xCoyrm3KhO7W6h8yizdZrujDf9OATC7AnLKe62DN","ContextType":"root_account","EventTypes":["discussion_topic_created"],"Format":"live-event","TransportMetadata":{"Url":"sqs.example"},"TransportType":"sqs"}'
+        '401':
+          description: does not return ims mime_type
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                    - type
+                    - message
+                required:
+                - errors
+              example:
+                errors:
+                  type: unauthorized
+                  message: Invalid access token format
+        '500':
+          description: does not return ims mime_type
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        message:
+                          type: string
+                        error_code:
+                          type: string
+                      required:
+                      - message
+                      - error_code
+                  error_report_id:
+                    type: integer
+                required:
+                - errors
+                - error_report_id
+              example:
+                errors:
+                - message: An error occurred.
+                  error_code: internal_server_error
+                error_report_id: 127908
+        '404':
+          description: raises a 404
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        message:
+                          type: string
+                      required:
+                      - message
+                required:
+                - errors
+              example:
+                errors:
+                - message: The specified resource does not exist.
+        '422':
+          description: raises an unprocessable_entity
+          content:
+            text/html:
+              schema:
+                type: string
+              example: ''
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 authentication
+      flows:
+        authorizationCode:
+          authorizationUrl: https://{canvas_domain}/login/oauth2/auth
+          tokenUrl: https://{canvas_domain}/login/oauth2/token
+          scopes: {}
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Bearer token (access token)

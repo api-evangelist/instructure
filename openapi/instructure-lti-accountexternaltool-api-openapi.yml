@@ -1,0 +1,919 @@
+openapi: 3.0.3
+info:
+  title: Canvas LMS LTI ExternalTool Lti::AccountExternalTool API
+  description: Canvas LTI 1.3 API endpoints including Dynamic Registration, IMS Names and Roles, Line Items, Data Services, and Security endpoints.
+  version: 1.0.0
+  contact:
+    name: Instructure Support
+    url: https://developerdocs.instructure.com/
+    email: support@instructure.com
+  license:
+    name: AGPL-3.0
+    url: https://github.com/instructure/canvas-lms/blob/master/LICENSE
+servers:
+- url: https://{canvas_domain}
+  description: Canvas institution domain
+  variables:
+    canvas_domain:
+      default: canvas.instructure.com
+      description: The institution-specific Canvas domain
+tags:
+- name: Lti::AccountExternalTool
+paths:
+  /api/lti/accounts/{account_id}/external_tools:
+    get:
+      summary: index
+      tags:
+      - Lti::AccountExternalTool
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: string
+        example: af01ae7a-c877-4297-a581-d63c1a6701de
+      - name: client_id
+        in: query
+        required: false
+        schema:
+          type: string
+        example: bad client id
+      - name: verify_uniqueness
+        in: query
+        required: false
+        schema:
+          type: string
+        example: 'true'
+      responses:
+        '200':
+          description: returns id, domain, and other fields on account
+          content:
+            application/vnd.canvas.contextexternaltools+json:
+              schema:
+                type: array
+                properties:
+                  id:
+                    type: integer
+                  domain:
+                    type: string
+                  url:
+                    type: string
+                  consumer_key:
+                    type: string
+                  name:
+                    type: string
+                  description:
+                    type: string
+                  created_at:
+                    type: string
+                  updated_at:
+                    type: string
+                  privacy_level:
+                    type: string
+                  custom_fields:
+                    type: object
+                    properties:
+                      no_expansion:
+                        type: string
+                      has_expansion:
+                        type: string
+                    required:
+                    - no_expansion
+                    - has_expansion
+                  workflow_state:
+                    type: string
+                  account_navigation:
+                    type: object
+                    properties:
+                      enabled:
+                        type: boolean
+                      text:
+                        type: string
+                      icon_url:
+                        type: string
+                      placement:
+                        type: string
+                      message_type:
+                        type: string
+                      target_link_uri:
+                        type: string
+                      canvas_icon_class:
+                        type: string
+                      label:
+                        type: string
+                      selection_width:
+                        type: integer
+                      selection_height:
+                        type: integer
+                    required:
+                    - enabled
+                    - text
+                    - icon_url
+                    - placement
+                    - message_type
+                    - target_link_uri
+                    - canvas_icon_class
+                    - label
+                    - selection_width
+                    - selection_height
+                  assignment_edit:
+                    nullable: true
+                  assignment_group_menu:
+                    nullable: true
+                  assignment_index_menu:
+                    nullable: true
+                  assignment_menu:
+                    nullable: true
+                  assignment_selection:
+                    nullable: true
+                  assignment_view:
+                    nullable: true
+                  collaboration:
+                    nullable: true
+                  course_assignments_menu:
+                    nullable: true
+                  course_home_sub_navigation:
+                    nullable: true
+                  course_navigation:
+                    type: object
+                    properties:
+                      enabled:
+                        type: boolean
+                      text:
+                        type: string
+                      icon_url:
+                        type: string
+                      placement:
+                        type: string
+                      message_type:
+                        type: string
+                      target_link_uri:
+                        type: string
+                      canvas_icon_class:
+                        type: string
+                      label:
+                        type: string
+                      selection_width:
+                        type: integer
+                      selection_height:
+                        type: integer
+                    required:
+                    - enabled
+                    - text
+                    - icon_url
+                    - placement
+                    - message_type
+                    - target_link_uri
+                    - canvas_icon_class
+                    - label
+                    - selection_width
+                    - selection_height
+                  course_settings_sub_navigation:
+                    nullable: true
+                  discussion_topic_index_menu:
+                    nullable: true
+                  discussion_topic_menu:
+                    nullable: true
+                  file_index_menu:
+                    nullable: true
+                  file_menu:
+                    nullable: true
+                  global_navigation:
+                    nullable: true
+                  homework_submission:
+                    nullable: true
+                  link_selection:
+                    nullable: true
+                  migration_selection:
+                    nullable: true
+                  module_group_menu:
+                    nullable: true
+                  module_index_menu:
+                    nullable: true
+                  module_index_menu_modal:
+                    nullable: true
+                  module_menu_modal:
+                    nullable: true
+                  module_menu:
+                    nullable: true
+                  post_grades:
+                    nullable: true
+                  quiz_index_menu:
+                    nullable: true
+                  quiz_menu:
+                    nullable: true
+                  resource_selection:
+                    nullable: true
+                  similarity_detection:
+                    nullable: true
+                  student_context_card:
+                    nullable: true
+                  submission_type_selection:
+                    nullable: true
+                  tool_configuration:
+                    nullable: true
+                  user_navigation:
+                    nullable: true
+                  wiki_index_menu:
+                    nullable: true
+                  wiki_page_menu:
+                    nullable: true
+                  editor_button:
+                    nullable: true
+                  selection_width:
+                    type: integer
+                  selection_height:
+                    type: integer
+                  icon_url:
+                    type: string
+                  not_selectable:
+                    type: boolean
+                  version:
+                    type: string
+                  developer_key_id:
+                    type: integer
+                  deployment_id:
+                    type: string
+                required:
+                - id
+                - domain
+                - url
+                - consumer_key
+                - name
+                - description
+                - created_at
+                - updated_at
+                - privacy_level
+                - custom_fields
+                - workflow_state
+                - account_navigation
+                - assignment_edit
+                - assignment_group_menu
+                - assignment_index_menu
+                - assignment_menu
+                - assignment_selection
+                - assignment_view
+                - collaboration
+                - course_assignments_menu
+                - course_home_sub_navigation
+                - course_navigation
+                - course_settings_sub_navigation
+                - discussion_topic_index_menu
+                - discussion_topic_menu
+                - file_index_menu
+                - file_menu
+                - global_navigation
+                - homework_submission
+                - link_selection
+                - migration_selection
+                - module_group_menu
+                - module_index_menu
+                - module_index_menu_modal
+                - module_menu_modal
+                - module_menu
+                - post_grades
+                - quiz_index_menu
+                - quiz_menu
+                - resource_selection
+                - similarity_detection
+                - student_context_card
+                - submission_type_selection
+                - tool_configuration
+                - user_navigation
+                - wiki_index_menu
+                - wiki_page_menu
+                - editor_button
+                - selection_width
+                - selection_height
+                - icon_url
+                - not_selectable
+                - version
+                - developer_key_id
+                - deployment_id
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    domain:
+                      nullable: true
+                    url:
+                      type: string
+                    consumer_key:
+                      type: string
+                    name:
+                      type: string
+                    description:
+                      nullable: true
+                    created_at:
+                      type: string
+                    updated_at:
+                      type: string
+                    privacy_level:
+                      type: string
+                    custom_fields:
+                      nullable: true
+                    workflow_state:
+                      type: string
+                    account_navigation:
+                      nullable: true
+                    assignment_edit:
+                      nullable: true
+                    assignment_group_menu:
+                      nullable: true
+                    assignment_index_menu:
+                      nullable: true
+                    assignment_menu:
+                      nullable: true
+                    assignment_selection:
+                      nullable: true
+                    assignment_view:
+                      nullable: true
+                    collaboration:
+                      nullable: true
+                    course_assignments_menu:
+                      nullable: true
+                    course_home_sub_navigation:
+                      nullable: true
+                    course_navigation:
+                      nullable: true
+                    course_settings_sub_navigation:
+                      nullable: true
+                    discussion_topic_index_menu:
+                      nullable: true
+                    discussion_topic_menu:
+                      nullable: true
+                    file_index_menu:
+                      nullable: true
+                    file_menu:
+                      nullable: true
+                    global_navigation:
+                      nullable: true
+                    homework_submission:
+                      nullable: true
+                    link_selection:
+                      nullable: true
+                    migration_selection:
+                      nullable: true
+                    module_group_menu:
+                      nullable: true
+                    module_index_menu:
+                      nullable: true
+                    module_index_menu_modal:
+                      nullable: true
+                    module_menu_modal:
+                      nullable: true
+                    module_menu:
+                      nullable: true
+                    post_grades:
+                      nullable: true
+                    quiz_index_menu:
+                      nullable: true
+                    quiz_menu:
+                      nullable: true
+                    resource_selection:
+                      nullable: true
+                    similarity_detection:
+                      nullable: true
+                    student_context_card:
+                      nullable: true
+                    submission_type_selection:
+                      nullable: true
+                    tool_configuration:
+                      nullable: true
+                    user_navigation:
+                      nullable: true
+                    wiki_index_menu:
+                      nullable: true
+                    wiki_page_menu:
+                      nullable: true
+                    editor_button:
+                      nullable: true
+                    not_selectable:
+                      type: boolean
+                    version:
+                      type: string
+                    developer_key_id:
+                      type: integer
+                    deployment_id:
+                      type: string
+                  required:
+                  - id
+                  - domain
+                  - url
+                  - consumer_key
+                  - name
+                  - description
+                  - created_at
+                  - updated_at
+                  - privacy_level
+                  - custom_fields
+                  - workflow_state
+                  - account_navigation
+                  - assignment_edit
+                  - assignment_group_menu
+                  - assignment_index_menu
+                  - assignment_menu
+                  - assignment_selection
+                  - assignment_view
+                  - collaboration
+                  - course_assignments_menu
+                  - course_home_sub_navigation
+                  - course_navigation
+                  - course_settings_sub_navigation
+                  - discussion_topic_index_menu
+                  - discussion_topic_menu
+                  - file_index_menu
+                  - file_menu
+                  - global_navigation
+                  - homework_submission
+                  - link_selection
+                  - migration_selection
+                  - module_group_menu
+                  - module_index_menu
+                  - module_index_menu_modal
+                  - module_menu_modal
+                  - module_menu
+                  - post_grades
+                  - quiz_index_menu
+                  - quiz_menu
+                  - resource_selection
+                  - similarity_detection
+                  - student_context_card
+                  - submission_type_selection
+                  - tool_configuration
+                  - user_navigation
+                  - wiki_index_menu
+                  - wiki_page_menu
+                  - editor_button
+                  - not_selectable
+                  - version
+                  - developer_key_id
+                  - deployment_id
+              example:
+              - id: 407149
+                domain: null
+                url: http://www.tool.com/launch
+                consumer_key: key
+                name: test tool
+                description: null
+                created_at: '2023-12-15T05:37:54Z'
+                updated_at: '2023-12-15T05:37:54Z'
+                privacy_level: public
+                custom_fields: null
+                workflow_state: public
+                account_navigation: null
+                assignment_edit: null
+                assignment_group_menu: null
+                assignment_index_menu: null
+                assignment_menu: null
+                assignment_selection: null
+                assignment_view: null
+                collaboration: null
+                course_assignments_menu: null
+                course_home_sub_navigation: null
+                course_navigation: null
+                course_settings_sub_navigation: null
+                discussion_topic_index_menu: null
+                discussion_topic_menu: null
+                file_index_menu: null
+                file_menu: null
+                global_navigation: null
+                homework_submission: null
+                link_selection: null
+                migration_selection: null
+                module_group_menu: null
+                module_index_menu: null
+                module_index_menu_modal: null
+                module_menu_modal: null
+                module_menu: null
+                post_grades: null
+                quiz_index_menu: null
+                quiz_menu: null
+                resource_selection: null
+                similarity_detection: null
+                student_context_card: null
+                submission_type_selection: null
+                tool_configuration: null
+                user_navigation: null
+                wiki_index_menu: null
+                wiki_page_menu: null
+                editor_button: null
+                not_selectable: false
+                version: '1.3'
+                developer_key_id: 142141
+                deployment_id: 407149:af01ae7a-c877-4297-a581-d63c1a6701de
+        '401':
+          description: does not return ims mime_type
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                    - type
+                    - message
+                required:
+                - errors
+              example:
+                errors:
+                  type: unauthorized
+                  message: Missing access token
+            text/html:
+              schema:
+                type: string
+              example: ''
+        '500':
+          description: does not return ims mime_type
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        message:
+                          type: string
+                        error_code:
+                          type: string
+                      required:
+                      - message
+                      - error_code
+                  error_report_id:
+                    type: integer
+                required:
+                - errors
+                - error_report_id
+              example:
+                errors:
+                - message: An error occurred.
+                  error_code: internal_server_error
+                error_report_id: 127850
+        '400':
+          description: return 400
+          content:
+            application/vnd.canvas.contextexternaltools+json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      tool_currently_installed:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            attribute:
+                              type: string
+                            type:
+                              type: string
+                            message:
+                              type: string
+                          required:
+                          - attribute
+                          - type
+                          - message
+                    required:
+                    - tool_currently_installed
+                required:
+                - errors
+              example:
+                errors:
+                  tool_currently_installed:
+                  - attribute: tool_currently_installed
+                    type: The tool is already installed in this context.
+                    message: The tool is already installed in this context.
+        '404':
+          description: return 404
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        message:
+                          type: string
+                      required:
+                      - message
+                required:
+                - errors
+              example:
+                errors:
+                - message: The specified resource does not exist.
+  /api/lti/accounts/{account_id}/external_tools/{external_tool_id}:
+    get:
+      summary: show
+      tags:
+      - Lti::AccountExternalTool
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: string
+        example: 37f51bde-5842-4dae-a8e4-4c99ce9e967e
+      - name: external_tool_id
+        in: path
+        required: true
+        schema:
+          type: integer
+        example: 407209
+      responses:
+        '200':
+          description: returns 200 success
+          content:
+            application/vnd.canvas.contextexternaltools+json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  domain:
+                    nullable: true
+                  url:
+                    type: string
+                  consumer_key:
+                    type: string
+                  name:
+                    type: string
+                  description:
+                    nullable: true
+                  created_at:
+                    type: string
+                  updated_at:
+                    type: string
+                  privacy_level:
+                    type: string
+                  custom_fields:
+                    nullable: true
+                  workflow_state:
+                    type: string
+                  account_navigation:
+                    nullable: true
+                  assignment_edit:
+                    nullable: true
+                  assignment_group_menu:
+                    nullable: true
+                  assignment_index_menu:
+                    nullable: true
+                  assignment_menu:
+                    nullable: true
+                  assignment_selection:
+                    nullable: true
+                  assignment_view:
+                    nullable: true
+                  collaboration:
+                    nullable: true
+                  course_assignments_menu:
+                    nullable: true
+                  course_home_sub_navigation:
+                    nullable: true
+                  course_navigation:
+                    nullable: true
+                  course_settings_sub_navigation:
+                    nullable: true
+                  discussion_topic_index_menu:
+                    nullable: true
+                  discussion_topic_menu:
+                    nullable: true
+                  file_index_menu:
+                    nullable: true
+                  file_menu:
+                    nullable: true
+                  global_navigation:
+                    nullable: true
+                  homework_submission:
+                    nullable: true
+                  link_selection:
+                    nullable: true
+                  migration_selection:
+                    nullable: true
+                  module_group_menu:
+                    nullable: true
+                  module_index_menu:
+                    nullable: true
+                  module_index_menu_modal:
+                    nullable: true
+                  module_menu_modal:
+                    nullable: true
+                  module_menu:
+                    nullable: true
+                  post_grades:
+                    nullable: true
+                  quiz_index_menu:
+                    nullable: true
+                  quiz_menu:
+                    nullable: true
+                  resource_selection:
+                    nullable: true
+                  similarity_detection:
+                    nullable: true
+                  student_context_card:
+                    nullable: true
+                  submission_type_selection:
+                    nullable: true
+                  tool_configuration:
+                    nullable: true
+                  user_navigation:
+                    nullable: true
+                  wiki_index_menu:
+                    nullable: true
+                  wiki_page_menu:
+                    nullable: true
+                  editor_button:
+                    nullable: true
+                  not_selectable:
+                    type: boolean
+                  version:
+                    type: string
+                  developer_key_id:
+                    type: integer
+                  deployment_id:
+                    type: string
+                required:
+                - domain
+                - name
+                - url
+                - consumer_key
+                - description
+                - id
+                - created_at
+                - updated_at
+                - privacy_level
+                - custom_fields
+                - workflow_state
+                - account_navigation
+                - assignment_edit
+                - assignment_group_menu
+                - assignment_index_menu
+                - assignment_menu
+                - assignment_selection
+                - assignment_view
+                - collaboration
+                - course_assignments_menu
+                - course_home_sub_navigation
+                - course_navigation
+                - course_settings_sub_navigation
+                - discussion_topic_index_menu
+                - discussion_topic_menu
+                - file_index_menu
+                - file_menu
+                - global_navigation
+                - homework_submission
+                - link_selection
+                - migration_selection
+                - module_group_menu
+                - module_index_menu
+                - module_index_menu_modal
+                - module_menu_modal
+                - module_menu
+                - post_grades
+                - quiz_index_menu
+                - quiz_menu
+                - resource_selection
+                - similarity_detection
+                - student_context_card
+                - submission_type_selection
+                - tool_configuration
+                - user_navigation
+                - wiki_index_menu
+                - wiki_page_menu
+                - editor_button
+                - not_selectable
+                - version
+                - developer_key_id
+                - deployment_id
+              example:
+                id: 407190
+                domain: null
+                url: http://www.tool.com/launch
+                consumer_key: key
+                name: test tool
+                description: null
+                created_at: '2023-12-15T05:37:58Z'
+                updated_at: '2023-12-15T05:37:58Z'
+                privacy_level: deleted
+                custom_fields: null
+                workflow_state: deleted
+                account_navigation: null
+                assignment_edit: null
+                assignment_group_menu: null
+                assignment_index_menu: null
+                assignment_menu: null
+                assignment_selection: null
+                assignment_view: null
+                collaboration: null
+                course_assignments_menu: null
+                course_home_sub_navigation: null
+                course_navigation: null
+                course_settings_sub_navigation: null
+                discussion_topic_index_menu: null
+                discussion_topic_menu: null
+                file_index_menu: null
+                file_menu: null
+                global_navigation: null
+                homework_submission: null
+                link_selection: null
+                migration_selection: null
+                module_group_menu: null
+                module_index_menu: null
+                module_index_menu_modal: null
+                module_menu_modal: null
+                module_menu: null
+                post_grades: null
+                quiz_index_menu: null
+                quiz_menu: null
+                resource_selection: null
+                similarity_detection: null
+                student_context_card: null
+                submission_type_selection: null
+                tool_configuration: null
+                user_navigation: null
+                wiki_index_menu: null
+                wiki_page_menu: null
+                editor_button: null
+                not_selectable: false
+                version: '1.3'
+                developer_key_id: 142141
+                deployment_id: 407190:e77b4d6f-dd33-45b4-945a-4124d3ba646d
+        '500':
+          description: does not return ims mime_type
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        message:
+                          type: string
+                        error_code:
+                          type: string
+                      required:
+                      - message
+                      - error_code
+                  error_report_id:
+                    type: integer
+                required:
+                - errors
+                - error_report_id
+              example:
+                errors:
+                - message: An error occurred.
+                  error_code: internal_server_error
+                error_report_id: 127886
+        '401':
+          description: does not return ims mime_type
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                    - type
+                    - message
+                required:
+                - errors
+              example:
+                errors:
+                  type: unauthorized
+                  message: Unknown or inactive Developer Key
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 authentication
+      flows:
+        authorizationCode:
+          authorizationUrl: https://{canvas_domain}/login/oauth2/auth
+          tokenUrl: https://{canvas_domain}/login/oauth2/token
+          scopes: {}
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Bearer token (access token)

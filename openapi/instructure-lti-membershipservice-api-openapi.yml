@@ -1,0 +1,232 @@
+openapi: 3.0.3
+info:
+  title: Canvas LMS LTI ExternalTool Lti::MembershipService API
+  description: Canvas LTI 1.3 API endpoints including Dynamic Registration, IMS Names and Roles, Line Items, Data Services, and Security endpoints.
+  version: 1.0.0
+  contact:
+    name: Instructure Support
+    url: https://developerdocs.instructure.com/
+    email: support@instructure.com
+  license:
+    name: AGPL-3.0
+    url: https://github.com/instructure/canvas-lms/blob/master/LICENSE
+servers:
+- url: https://{canvas_domain}
+  description: Canvas institution domain
+  variables:
+    canvas_domain:
+      default: canvas.instructure.com
+      description: The institution-specific Canvas domain
+tags:
+- name: Lti::MembershipService
+paths:
+  /api/lti/groups/{group_id}/membership_service:
+    get:
+      summary: group_index
+      tags:
+      - Lti::MembershipService
+      parameters:
+      - name: group_id
+        in: path
+        required: true
+        schema:
+          type: integer
+        example: 716160
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+        example: 2
+      - name: per_page
+        in: query
+        required: false
+        schema:
+          type: integer
+        example: 1
+      - name: role
+        in: query
+        required: false
+        schema:
+          type: string
+        example: Instructor
+      responses:
+        '200':
+          description: outputs the expected data in the expected format at the top level
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  '@id':
+                    nullable: true
+                  '@type':
+                    type: string
+                  '@context':
+                    type: string
+                  differences:
+                    nullable: true
+                  nextPage:
+                    type: string
+                    nullable: true
+                  pageOf:
+                    type: object
+                    properties:
+                      membershipPredicate:
+                        type: string
+                      membershipSubject:
+                        type: object
+                        properties:
+                          '@id':
+                            nullable: true
+                          name:
+                            type: string
+                          '@type':
+                            type: string
+                          contextId:
+                            type: string
+                          membership:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                '@id':
+                                  nullable: true
+                                status:
+                                  type: string
+                                role:
+                                  type: array
+                                  items:
+                                    type: string
+                                member:
+                                  type: object
+                                  properties:
+                                    '@id':
+                                      nullable: true
+                                    name:
+                                      type: string
+                                    img:
+                                      nullable: true
+                                    email:
+                                      type: string
+                                      nullable: true
+                                    familyName:
+                                      type: string
+                                    givenName:
+                                      type: string
+                                    resultSourcedId:
+                                      nullable: true
+                                    sourcedId:
+                                      nullable: true
+                                    userId:
+                                      type: string
+                                  required:
+                                  - '@id'
+                                  - name
+                                  - img
+                                  - email
+                                  - familyName
+                                  - givenName
+                                  - resultSourcedId
+                                  - sourcedId
+                                  - userId
+                              required:
+                              - '@id'
+                              - status
+                              - role
+                              - member
+                        required:
+                        - '@id'
+                        - name
+                        - '@type'
+                        - contextId
+                        - membership
+                      '@id':
+                        nullable: true
+                      '@context':
+                        type: string
+                      '@type':
+                        type: string
+                    required:
+                    - membershipPredicate
+                    - membershipSubject
+                    - '@id'
+                    - '@context'
+                    - '@type'
+                required:
+                - '@id'
+                - '@type'
+                - '@context'
+                - differences
+                - nextPage
+                - pageOf
+              example:
+                '@id': null
+                '@type': Page
+                '@context': http://purl.imsglobal.org/ctx/lis/v2/MembershipContainer
+                differences: null
+                nextPage: null
+                pageOf:
+                  membershipPredicate: http://www.w3.org/ns/org#membership
+                  membershipSubject:
+                    '@id': null
+                    name: Group 1
+                    '@type': Context
+                    contextId: 43849229e5c886f6aafc5bb36fe4c3b33cb3df17
+                    membership:
+                    - '@id': null
+                      status: Active
+                      role:
+                      - urn:lti:role:ims/lis/Member
+                      member:
+                        '@id': null
+                        name: value for name
+                        img: null
+                        email: nobody@example.com
+                        familyName: name
+                        givenName: value for
+                        resultSourcedId: null
+                        sourcedId: null
+                        userId: f911f4d388aeff99d2c123bc20a157eff4ef0430
+                  '@id': null
+                  '@context': http://purl.imsglobal.org/ctx/lis/v2/MembershipContainer
+                  '@type': LISMembershipContainer
+        '401':
+          description: requires a user
+          content:
+            text/html:
+              schema:
+                type: string
+              example: ''
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        message:
+                          type: string
+                      required:
+                      - message
+                required:
+                - errors
+              example:
+                errors:
+                - message: Invalid access token.
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 authentication
+      flows:
+        authorizationCode:
+          authorizationUrl: https://{canvas_domain}/login/oauth2/auth
+          tokenUrl: https://{canvas_domain}/login/oauth2/token
+          scopes: {}
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Bearer token (access token)

@@ -1,0 +1,265 @@
+openapi: 3.0.3
+info:
+  title: Canvas LMS LTI ExternalTool Lti::IMS::Result API
+  description: Canvas LTI 1.3 API endpoints including Dynamic Registration, IMS Names and Roles, Line Items, Data Services, and Security endpoints.
+  version: 1.0.0
+  contact:
+    name: Instructure Support
+    url: https://developerdocs.instructure.com/
+    email: support@instructure.com
+  license:
+    name: AGPL-3.0
+    url: https://github.com/instructure/canvas-lms/blob/master/LICENSE
+servers:
+- url: https://{canvas_domain}
+  description: Canvas institution domain
+  variables:
+    canvas_domain:
+      default: canvas.instructure.com
+      description: The institution-specific Canvas domain
+tags:
+- name: Lti::IMS::Result
+paths:
+  /api/lti/courses/{course_id}/line_items/{line_item_id}/results:
+    get:
+      summary: index
+      tags:
+      - Lti::IMS::Result
+      parameters:
+      - name: course_id
+        in: path
+        required: true
+        schema:
+          type: integer
+        example: 880181
+      - name: line_item_id
+        in: path
+        required: true
+        schema:
+          type: integer
+        example: 1017686
+      - name: user_id
+        in: query
+        required: false
+        schema:
+          type: string
+        example: d527abb3-294a-4afa-a204-9737e00aab3e
+      responses:
+        '200':
+          description: returns 200 and finds the tool associated with the access token's developer key, ignoring other the other developer key and its tool
+          content:
+            application/vnd.ims.lis.v2.resultcontainer+json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    scoreOf:
+                      type: string
+                    userId:
+                      type: string
+                    resultScore:
+                      type: number
+                      format: float
+                    resultMaximum:
+                      type: number
+                      format: float
+                  required:
+                  - id
+                  - scoreOf
+                  - userId
+                  - resultScore
+                  - resultMaximum
+              example:
+              - id: http://test.host/api/lti/courses/880195/line_items/1017686/results/1012373
+                scoreOf: http://test.host/api/lti/courses/880195/line_items/1017686
+                userId: c5ce1e03-a139-4ef4-b772-f5a940e31baf
+                resultScore: 0.5
+                resultMaximum: 1.0
+              - id: http://test.host/api/lti/courses/880195/line_items/1017686/results/1012374
+                scoreOf: http://test.host/api/lti/courses/880195/line_items/1017686
+                userId: 0f1250ca-b41c-42a3-a37c-4eff05e1dacb
+                resultScore: 0.5
+                resultMaximum: 1.0
+              - id: http://test.host/api/lti/courses/880195/line_items/1017686/results/1012375
+                scoreOf: http://test.host/api/lti/courses/880195/line_items/1017686
+                userId: 43238a77-2ecb-4fd4-a87a-e0d18f84af48
+                resultScore: 0.5
+                resultMaximum: 1.0
+              - id: http://test.host/api/lti/courses/880195/line_items/1017686/results/1012376
+                scoreOf: http://test.host/api/lti/courses/880195/line_items/1017686
+                userId: 0233ca3d-809c-4511-a243-94cee32fcef1
+                resultScore: 0.5
+                resultMaximum: 1.0
+              - id: http://test.host/api/lti/courses/880205/line_items/1017686/results/1012373
+                scoreOf: http://test.host/api/lti/courses/880205/line_items/1017686
+                userId: fa27312e-3ae7-4934-9ec4-f7df8f6bffc2
+                resultScore: 0.5
+                resultMaximum: 1.0
+              - id: http://test.host/api/lti/courses/880205/line_items/1017686/results/1012374
+                scoreOf: http://test.host/api/lti/courses/880205/line_items/1017686
+                userId: b294717b-5aa3-413b-a4e2-179a1bc7ee96
+                resultScore: 0.5
+                resultMaximum: 1.0
+              - id: http://test.host/api/lti/courses/880205/line_items/1017686/results/1012375
+                scoreOf: http://test.host/api/lti/courses/880205/line_items/1017686
+                userId: 9821aa6b-231c-4c93-8ff0-bb2379fcc7e7
+                resultScore: 0.5
+                resultMaximum: 1.0
+              - id: http://test.host/api/lti/courses/880205/line_items/1017686/results/1012376
+                scoreOf: http://test.host/api/lti/courses/880205/line_items/1017686
+                userId: babbc1a9-b2f6-464d-9c6a-ab664179c1bb
+                resultScore: 0.5
+                resultMaximum: 1.0
+              - id: http://test.host/api/lti/courses/880146/line_items/1017686/results/1012373
+                scoreOf: http://test.host/api/lti/courses/880146/line_items/1017686
+                userId: d527abb3-294a-4afa-a204-9737e00aab3e
+                resultScore: 0.5
+                resultMaximum: 1.0
+        '401':
+          description: does not return ims mime_type
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                    - type
+                    - message
+                required:
+                - errors
+              example:
+                errors:
+                  type: unauthorized
+                  message: Unknown or inactive Developer Key
+        '404':
+          description: does not return ims mime_type
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        message:
+                          type: string
+                      required:
+                      - message
+                    properties:
+                      type:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                    - type
+                    - message
+                required:
+                - errors
+              example:
+                errors:
+                - message: The specified resource does not exist.
+  /api/lti/courses/{course_id}/line_items/{line_item_id}/results/{id}:
+    get:
+      summary: show
+      tags:
+      - Lti::IMS::Result
+      parameters:
+      - name: course_id
+        in: path
+        required: true
+        schema:
+          type: integer
+        example: 880250
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+        example: 1012374
+      - name: line_item_id
+        in: path
+        required: true
+        schema:
+          type: integer
+        example: 1017690
+      responses:
+        '401':
+          description: returns 401 unauthorized and complains about an incorrect signature
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                    - type
+                    - message
+                required:
+                - errors
+              example:
+                errors:
+                  type: unauthorized
+                  message: Access token invalid - signature likely incorrect
+        '200':
+          description: returns 200 success
+          content:
+            application/vnd.ims.lis.v2.resultcontainer+json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  scoreOf:
+                    type: string
+                  userId:
+                    type: string
+                  resultScore:
+                    type: number
+                    format: float
+                  resultMaximum:
+                    type: number
+                    format: float
+                required:
+                - id
+                - scoreOf
+                - userId
+                - resultScore
+                - resultMaximum
+              example:
+                id: http://test.host/api/lti/courses/880227/line_items/1017687/results/1012374
+                scoreOf: http://test.host/api/lti/courses/880227/line_items/1017687
+                userId: b03618a7-7b58-461d-a894-7e69c6951270
+                resultScore: 0.5
+                resultMaximum: 1.0
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 authentication
+      flows:
+        authorizationCode:
+          authorizationUrl: https://{canvas_domain}/login/oauth2/auth
+          tokenUrl: https://{canvas_domain}/login/oauth2/token
+          scopes: {}
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Bearer token (access token)
