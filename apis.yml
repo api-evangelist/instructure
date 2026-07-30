@@ -10,7 +10,20 @@ description: Instructure is an EdTech company best known for Canvas LMS, a widel
   with per-token dynamic rate limiting, and all API responses are returned in JSON
   over HTTPS.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/instructure.png
 url: https://raw.githubusercontent.com/api-evangelist/instructure/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -29,41 +42,13 @@ tags:
 - LTI
 - Learning Management
 apis:
-- aid: instructure:canvas-lms-rest-api
-  name: Canvas LMS REST API
-  description: The Canvas LMS REST API provides programmatic access to all core LMS
-    functionality including courses, enrollments, assignments, grades, discussions,
-    users, groups, modules, and institutional management. All requests are made over
-    HTTPS against the institution's Canvas domain and responses are returned in JSON
-    format with 64-bit integer IDs.
-  humanURL: https://developerdocs.instructure.com/services/canvas
-  baseURL: https://{canvas_domain}/api/v1
-  tags:
-  - Courses
-  - Enrollments
-  - Assignments
-  - Grades
-  - Users
-  - Groups
-  - Modules
-  - Discussions
-  - Sections
-  - Tabs
-  properties:
-  - type: Documentation
-    url: https://developerdocs.instructure.com/services/canvas
-  - type: OpenAPI
-    url: https://github.com/instructure/canvas-lms/blob/master/public/doc/openapi/canvas.openapi.yaml
-  contact:
-  - FN: Instructure Support
-    email: support@instructure.com
 - aid: instructure:canvas-graphql-api
   name: Canvas GraphQL API
-  description: The Canvas GraphQL API provides a flexible query interface for Canvas
-    LMS data, allowing developers to request exactly the fields they need and reduce
-    over-fetching. It follows the Relay Object Identification spec and includes an
-    interactive GraphiQL browser accessible by appending /graphiql to the Canvas production
-    URL.
+  description: >-
+    The Canvas GraphQL API provides a flexible query interface for Canvas LMS data, allowing developers
+    to request exactly the fields they need and reduce over-fetching. It follows the Relay Object Identification
+    spec and includes an interactive GraphiQL browser accessible by appending /graphiql to the Canvas
+    production URL.
   humanURL: https://developerdocs.instructure.com/services/canvas/basics/file.graphql
   baseURL: https://{canvas_domain}/api/graphql
   tags:
@@ -81,10 +66,11 @@ apis:
     type: GraphQL
 - aid: instructure:data-access-platform-api
   name: Data Access Platform (DAP) API
-  description: The Instructure Data Access Platform API provides bulk data query capabilities
-    for Canvas data, enabling institutions and developers to access large datasets
-    for analytics, reporting, and data warehousing. It includes table listing, schema
-    inspection, and data query endpoints with distinct rate limits per operation type.
+  description: >-
+    The Instructure Data Access Platform API provides bulk data query capabilities for Canvas data, enabling
+    institutions and developers to access large datasets for analytics, reporting, and data warehousing.
+    It includes table listing, schema inspection, and data query endpoints with distinct rate limits per
+    operation type.
   humanURL: https://developerdocs.instructure.com/services/dap
   baseURL: https://api-gateway.instructure.com/dap
   tags:
@@ -100,30 +86,12 @@ apis:
   contact:
   - FN: DAP Support
     email: canvasdatahelp@instructure.com
-- aid: instructure:canvas-lti-api
-  name: Canvas LTI 1.3 API
-  description: Canvas supports Learning Tools Interoperability (LTI) 1.3 integrations,
-    enabling third-party tools to embed securely within the Canvas LMS. The LTI implementation
-    covers deep linking, Names and Roles Provisioning Service, and Assignment and
-    Grades services following 1EdTech specifications.
-  humanURL: https://developerdocs.instructure.com/
-  baseURL: https://{canvas_domain}
-  tags:
-  - LTI
-  - Integrations
-  - Deep Linking
-  - Grades
-  - Names and Roles
-  properties:
-  - type: Documentation
-    url: https://developerdocs.instructure.com/
-  - type: OpenAPI
-    url: openapi/instructure-canvas-lti-openapi.yml
 - aid: instructure:canvas-studio-api
   name: Canvas Studio API
-  description: The Canvas Studio API provides programmatic access to Canvas Studio,
-    Instructure's video and media platform, enabling account administrators and developers
-    to manage media assets, captions, analytics, and user data within the Studio product.
+  description: >-
+    The Canvas Studio API provides programmatic access to Canvas Studio, Instructure's video and media
+    platform, enabling account administrators and developers to manage media assets, captions, analytics,
+    and user data within the Studio product.
   humanURL: https://github.com/instructure/canvas-studio-api-examples
   baseURL: https://{studio_domain}/api
   tags:
@@ -134,6 +102,180 @@ apis:
   properties:
   - type: Documentation
     url: https://github.com/instructure/canvas-studio-api-examples
+- aid: instructure:instructure-externaltool-api
+  name: Instructure ExternalTool API
+  description: The ExternalTool API from Instructure — 1 operation(s) for externaltool.
+  humanURL: https://developerdocs.instructure.com/services/canvas
+  baseURL: https://{canvas_domain}/api/v1
+  tags:
+  - ExternalTool
+  properties:
+  - type: OpenAPI
+    url: openapi/instructure-externaltool-api-openapi.yml
+  - type: Documentation
+    url: https://developerdocs.instructure.com/services/canvas
+  - type: Documentation
+    url: https://developerdocs.instructure.com/
+- aid: instructure:instructure-lti-accountexternaltool-api
+  name: Instructure Lti::AccountExternalTool API
+  description: >-
+    The Lti::AccountExternalTool API from Instructure — 2 operation(s) for lti::accountexternaltool.
+  humanURL: https://developerdocs.instructure.com/services/canvas
+  baseURL: https://{canvas_domain}/api/v1
+  tags:
+  - Lti::AccountExternalTool
+  properties:
+  - type: OpenAPI
+    url: openapi/instructure-lti-accountexternaltool-api-openapi.yml
+  - type: Documentation
+    url: https://developerdocs.instructure.com/services/canvas
+  - type: Documentation
+    url: https://developerdocs.instructure.com/
+- aid: instructure:instructure-lti-accountlookup-api
+  name: Instructure Lti::AccountLookup API
+  description: The Lti::AccountLookup API from Instructure — 1 operation(s) for lti::accountlookup.
+  humanURL: https://developerdocs.instructure.com/services/canvas
+  baseURL: https://{canvas_domain}/api/v1
+  tags:
+  - Lti::AccountLookup
+  properties:
+  - type: OpenAPI
+    url: openapi/instructure-lti-accountlookup-api-openapi.yml
+  - type: Documentation
+    url: https://developerdocs.instructure.com/services/canvas
+  - type: Documentation
+    url: https://developerdocs.instructure.com/
+- aid: instructure:instructure-lti-dataservice-api
+  name: Instructure Lti::DataService API
+  description: The Lti::DataService API from Instructure — 2 operation(s) for lti::dataservice.
+  humanURL: https://developerdocs.instructure.com/services/canvas
+  baseURL: https://{canvas_domain}/api/v1
+  tags:
+  - Lti::DataService
+  properties:
+  - type: OpenAPI
+    url: openapi/instructure-lti-dataservice-api-openapi.yml
+  - type: Documentation
+    url: https://developerdocs.instructure.com/services/canvas
+  - type: Documentation
+    url: https://developerdocs.instructure.com/
+- aid: instructure:instructure-lti-ims-authentication-api
+  name: Instructure Lti::IMS::Authentication API
+  description: >-
+    The Lti::IMS::Authentication API from Instructure — 1 operation(s) for lti::ims::authentication.
+  humanURL: https://developerdocs.instructure.com/services/canvas
+  baseURL: https://{canvas_domain}/api/v1
+  tags:
+  - Lti::IMS::Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/instructure-lti-ims-authentication-api-openapi.yml
+  - type: Documentation
+    url: https://developerdocs.instructure.com/services/canvas
+  - type: Documentation
+    url: https://developerdocs.instructure.com/
+- aid: instructure:instructure-lti-ims-dynamicregistration-api
+  name: Instructure Lti::IMS::DynamicRegistration API
+  description: >-
+    The Lti::IMS::DynamicRegistration API from Instructure — 3 operation(s) for lti::ims::dynamicregistration.
+  humanURL: https://developerdocs.instructure.com/services/canvas
+  baseURL: https://{canvas_domain}/api/v1
+  tags:
+  - Lti::IMS::DynamicRegistration
+  properties:
+  - type: OpenAPI
+    url: openapi/instructure-lti-ims-dynamicregistration-api-openapi.yml
+  - type: Documentation
+    url: https://developerdocs.instructure.com/services/canvas
+  - type: Documentation
+    url: https://developerdocs.instructure.com/
+- aid: instructure:instructure-lti-ims-lineitem-api
+  name: Instructure Lti::IMS::LineItem API
+  description: The Lti::IMS::LineItem API from Instructure — 2 operation(s) for lti::ims::lineitem.
+  humanURL: https://developerdocs.instructure.com/services/canvas
+  baseURL: https://{canvas_domain}/api/v1
+  tags:
+  - Lti::IMS::LineItem
+  properties:
+  - type: OpenAPI
+    url: openapi/instructure-lti-ims-lineitem-api-openapi.yml
+  - type: Documentation
+    url: https://developerdocs.instructure.com/services/canvas
+  - type: Documentation
+    url: https://developerdocs.instructure.com/
+- aid: instructure:instructure-lti-ims-namesandrole-api
+  name: Instructure Lti::IMS::NamesAndRole API
+  description: >-
+    The Lti::IMS::NamesAndRole API from Instructure — 2 operation(s) for lti::ims::namesandrole.
+  humanURL: https://developerdocs.instructure.com/services/canvas
+  baseURL: https://{canvas_domain}/api/v1
+  tags:
+  - Lti::IMS::NamesAndRole
+  properties:
+  - type: OpenAPI
+    url: openapi/instructure-lti-ims-namesandrole-api-openapi.yml
+  - type: Documentation
+    url: https://developerdocs.instructure.com/services/canvas
+  - type: Documentation
+    url: https://developerdocs.instructure.com/
+- aid: instructure:instructure-lti-ims-result-api
+  name: Instructure Lti::IMS::Result API
+  description: The Lti::IMS::Result API from Instructure — 2 operation(s) for lti::ims::result.
+  humanURL: https://developerdocs.instructure.com/services/canvas
+  baseURL: https://{canvas_domain}/api/v1
+  tags:
+  - Lti::IMS::Result
+  properties:
+  - type: OpenAPI
+    url: openapi/instructure-lti-ims-result-api-openapi.yml
+  - type: Documentation
+    url: https://developerdocs.instructure.com/services/canvas
+  - type: Documentation
+    url: https://developerdocs.instructure.com/
+- aid: instructure:instructure-lti-membershipservice-api
+  name: Instructure Lti::MembershipService API
+  description: >-
+    The Lti::MembershipService API from Instructure — 1 operation(s) for lti::membershipservice.
+  humanURL: https://developerdocs.instructure.com/services/canvas
+  baseURL: https://{canvas_domain}/api/v1
+  tags:
+  - Lti::MembershipService
+  properties:
+  - type: OpenAPI
+    url: openapi/instructure-lti-membershipservice-api-openapi.yml
+  - type: Documentation
+    url: https://developerdocs.instructure.com/services/canvas
+  - type: Documentation
+    url: https://developerdocs.instructure.com/
+- aid: instructure:instructure-lti-toolconfigurationsapi-api
+  name: Instructure Lti::ToolConfigurationsApi API
+  description: >-
+    The Lti::ToolConfigurationsApi API from Instructure — 3 operation(s) for lti::toolconfigurationsapi.
+  humanURL: https://developerdocs.instructure.com/services/canvas
+  baseURL: https://{canvas_domain}/api/v1
+  tags:
+  - Lti::ToolConfigurationsApi
+  properties:
+  - type: OpenAPI
+    url: openapi/instructure-lti-toolconfigurationsapi-api-openapi.yml
+  - type: Documentation
+    url: https://developerdocs.instructure.com/services/canvas
+  - type: Documentation
+    url: https://developerdocs.instructure.com/
+- aid: instructure:instructure-security-api
+  name: Instructure Security API
+  description: The Security API from Instructure — 2 operation(s) for security.
+  humanURL: https://developerdocs.instructure.com/services/canvas
+  baseURL: https://{canvas_domain}/api/v1
+  tags:
+  - Security
+  properties:
+  - type: OpenAPI
+    url: openapi/instructure-security-api-openapi.yml
+  - type: Documentation
+    url: https://developerdocs.instructure.com/services/canvas
+  - type: Documentation
+    url: https://developerdocs.instructure.com/
 common:
 - type: AgenticAccess
   url: agentic-access/instructure-agentic-access.yml
