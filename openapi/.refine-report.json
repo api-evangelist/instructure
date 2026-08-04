@@ -1,0 +1,36 @@
+{
+  "provider": "instructure",
+  "sources": [
+    "instructure-externaltool-api-openapi.yml",
+    "instructure-lti-accountexternaltool-api-openapi.yml",
+    "instructure-lti-accountlookup-api-openapi.yml",
+    "instructure-lti-dataservice-api-openapi.yml",
+    "instructure-lti-ims-authentication-api-openapi.yml",
+    "instructure-lti-ims-dynamicregistration-api-openapi.yml",
+    "instructure-lti-ims-lineitem-api-openapi.yml",
+    "instructure-lti-ims-namesandrole-api-openapi.yml",
+    "instructure-lti-ims-result-api-openapi.yml",
+    "instructure-lti-membershipservice-api-openapi.yml",
+    "instructure-lti-toolconfigurationsapi-api-openapi.yml",
+    "instructure-security-api-openapi.yml"
+  ],
+  "outputs": [
+    "instructure-externaltool-api-openapi.yml",
+    "instructure-lti-accountexternaltool-api-openapi.yml",
+    "instructure-lti-accountlookup-api-openapi.yml",
+    "instructure-lti-dataservice-api-openapi.yml",
+    "instructure-lti-ims-authentication-api-openapi.yml",
+    "instructure-lti-ims-dynamicregistration-api-openapi.yml",
+    "instructure-lti-ims-lineitem-api-openapi.yml",
+    "instructure-lti-ims-namesandrole-api-openapi.yml",
+    "instructure-lti-ims-result-api-openapi.yml",
+    "instructure-lti-membershipservice-api-openapi.yml",
+    "instructure-lti-toolconfigurationsapi-api-openapi.yml",
+    "instructure-security-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
