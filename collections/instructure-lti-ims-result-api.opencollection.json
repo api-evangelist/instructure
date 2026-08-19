@@ -1,0 +1,74 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Canvas LMS LTI ExternalTool Lti::IMS::Result API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Lti::IMS::Result",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "index",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{canvas_domain}/api/lti/courses/:course_id/line_items/:line_item_id/results",
+            "params": [
+              {
+                "name": "course_id",
+                "value": "880181",
+                "type": "path"
+              },
+              {
+                "name": "line_item_id",
+                "value": "1017686",
+                "type": "path"
+              },
+              {
+                "name": "user_id",
+                "value": "d527abb3-294a-4afa-a204-9737e00aab3e",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "index"
+        },
+        {
+          "info": {
+            "name": "show",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{canvas_domain}/api/lti/courses/:course_id/line_items/:line_item_id/results/:id",
+            "params": [
+              {
+                "name": "course_id",
+                "value": "880250",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "1012374",
+                "type": "path"
+              },
+              {
+                "name": "line_item_id",
+                "value": "1017690",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "show"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

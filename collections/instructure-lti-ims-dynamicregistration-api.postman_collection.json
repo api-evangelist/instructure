@@ -1,0 +1,972 @@
+{
+  "item": [
+    {
+      "id": "bc95b398-f05c-4ba8-8b5e-32630e1f7438",
+      "name": "Lti::IMS::DynamicRegistration",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c3cc3dcb-cd6b-4c3a-b2f1-b86c950a8ed9",
+          "name": "redirect_to_tool_registration",
+          "request": {
+            "name": "redirect_to_tool_registration",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "lti",
+                "register"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "registration_url",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "The institution-specific Canvas domain",
+                  "type": "any",
+                  "value": "{{canvas_domain}}",
+                  "key": "canvas_domain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/html"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f4a82259-312d-4870-bd0e-5e4e27a55d9d",
+              "name": "supports multiple subdomains in the oidc url",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "registration_url",
+                      "value": "https://example.com"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/html"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Found",
+              "code": 302,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/html"
+                }
+              ],
+              "body": "<html><body>You are being <a href=\"https://example.com?openid_configuration=https%3A%2F%2Fsub.test.host%2Fapi%2Flti%2Fsecurity%2Fopenid-configuration&amp;registration_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiYjA2YTNkMmItYWNkNS00OWNlLWEwZWEtNDFlMjU1NDRmYWJiIiwiaW5pdGlhdGVkX2F0IjoiMjAyMy0xMi0xNVQwMjo0MDozNCswMDowMCIsInVzZXJfaWQiOjE3NjMsInJvb3RfYWNjb3VudF9nbG9iYWxfaWQiOjI4OTEsImV4cCI6MTcwMjYxMTYzNH0.XT7yNB7fZ7pu2uwE_ysWsgv50KTzcujf3RJECbWS1Ho\">redirected</a>.</body></html>",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fd355538-9f24-469d-be7f-cf0ff650445a",
+              "name": "returns a 404",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "registration_url",
+                      "value": "https://example.com"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/html"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/html"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e5197ecb-9bb2-42c4-ba81-10bb0f0cb66d",
+          "name": "registration_token",
+          "request": {
+            "name": "registration_token",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "lti",
+                "registration_token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The institution-specific Canvas domain",
+                  "type": "any",
+                  "value": "{{canvas_domain}}",
+                  "key": "canvas_domain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "26eac477-c813-490c-87b4-eea17f3b8bad",
+              "name": "returns a 200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "registration_token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"uuid\": \"0d3f7978-8635-44dd-aec1-8a63f7520c8f\",\n  \"oidc_configuration_url\": \"https://canvas.instructure.com/api/lti/security/openid-configuration\",\n  \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiMGQzZjc5NzgtODYzNS00NGRkLWFlYzEtOGE2M2Y3NTIwYzhmIiwiaW5pdGlhdGVkX2F0IjoiMjAyMy0xMi0zMVQwNDo1MTo1NyswMDowMCIsInVzZXJfaWQiOjE4NDksInJvb3RfYWNjb3VudF9nbG9iYWxfaWQiOjIwMDAwMDAwMDAwMzA3MywiZXhwIjoxNzA0MDAxOTE3fQ.Q_JjbjAYQZTkacPq64y2qa3PqCCrQhTEKp25RAyNy34\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b920cdef-e6e2-4ed7-b4d7-b1e3c9a53e40",
+          "name": "create",
+          "request": {
+            "name": "create",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "lti",
+                "registrations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The institution-specific Canvas domain",
+                  "type": "any",
+                  "value": "{{canvas_domain}}",
+                  "key": "canvas_domain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "application_type",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "client_name",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "grant_types",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "grant_types",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "claims",
+                  "value": "[\"<string>\",\"<string>\"]",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "domain",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "messages",
+                  "value": "[{\"type\":\"<string>\",\"label\":\"<string>\",\"placements\":[\"<string>\",\"<string>\"],\"target_link_uri\":\"<string>\",\"custom_parameters\":{\"foo\":\"<string>\"},\"roles\":[\"<string>\",\"<string>\"],\"icon_uri\":\"<string>\"},{\"type\":\"<string>\",\"label\":\"<string>\",\"placements\":[\"<string>\",\"<string>\"],\"target_link_uri\":\"<string>\",\"custom_parameters\":{\"foo\":\"<string>\"},\"roles\":[\"<string>\",\"<string>\"],\"icon_uri\":\"<string>\"}]",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "target_link_uri",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "initiate_login_uri",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "jwks_uri",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "redirect_uris",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "redirect_uris",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "registration_token",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "response_types",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "response_types",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "scope",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "token_endpoint_auth_method",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "bc0880f8-fe46-4376-9ffe-6c5551955d31",
+              "name": "fills in values on the developer key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "registrations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "application_type",
+                      "value": "web"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_name",
+                      "value": "the client name"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_types",
+                      "value": "client_credentials"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_types",
+                      "value": "implicit"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "claims",
+                      "value": "[\"iss\",\"sub\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "domain",
+                      "value": "example.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "messages",
+                      "value": "[{\"type\":\"LtiResourceLinkRequest\",\"label\":\"deep link label\",\"placements\":[\"course_navigation\"],\"target_link_uri\":\"https://example.com/launch\",\"custom_parameters\":{\"foo\":\"bar\"},\"roles\":[\"http://purl.imsglobal.org/vocab/lis/v2/membership#ContentDeveloper\",\"http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor\"],\"icon_uri\":\"https://example.com/icon.jpg\"}]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "target_link_uri",
+                      "value": "https://example.com/launch"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "initiate_login_uri",
+                      "value": "https://example.com/login"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "jwks_uri",
+                      "value": "https://example.com/api/jwks"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "redirect_uris",
+                      "value": "https://example.com/launch"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "registration_token",
+                      "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzY4LCJpbml0aWF0ZWRfYXQiOiIyMDIzLTEyLTE1VDAyOjM5OjM3WiIsInJvb3RfYWNjb3VudF9nbG9iYWxfaWQiOjAsInV1aWQiOiIzN2ExN2E2NC03ODlhLTQ5NGYtYjFjNy1lNjllN2I3ZjRlNzIiLCJleHAiOjE3MDI2MTE2Mzd9.Q9mhBLdBY8gXf_cQxB2RYOoPk6_a47gqNLpUXjVnFcc"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "response_types",
+                      "value": "id_token"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "scope",
+                      "value": "https://purl.imsglobal.org/spec/lti-nrps/scope/contextmembership.readonly https://purl.imsglobal.org/spec/lti-ags/scope/score https://purl.imsglobal.org/spec/lti/scope/noticehandlers"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "token_endpoint_auth_method",
+                      "value": "private_key_jwt"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"client_id\": \"941\",\n  \"application_type\": \"web\",\n  \"grant_types\": [\n    \"client_credentials\",\n    \"implicit\"\n  ],\n  \"initiate_login_uri\": \"https://example.com/login\",\n  \"redirect_uris\": [\n    \"https://example.com/launch\"\n  ],\n  \"response_types\": [\n    \"id_token\"\n  ],\n  \"client_name\": \"the client name\",\n  \"jwks_uri\": \"https://example.com/api/jwks\",\n  \"token_endpoint_auth_method\": \"private_key_jwt\",\n  \"scope\": \"https://purl.imsglobal.org/spec/lti-nrps/scope/contextmembership.readonly https://purl.imsglobal.org/spec/lti-ags/scope/score https://purl.imsglobal.org/spec/lti/scope/noticehandlers\",\n  \"https://purl.imsglobal.org/spec/lti-tool-configuration\": {\n    \"domain\": \"example.com\",\n    \"messages\": [\n      {\n        \"type\": \"LtiResourceLinkRequest\",\n        \"target_link_uri\": \"https://example.com/launch\",\n        \"label\": \"deep link label\",\n        \"icon_uri\": \"https://example.com/icon.jpg\",\n        \"custom_parameters\": {\n          \"foo\": \"bar\"\n        },\n        \"roles\": [\n          \"http://purl.imsglobal.org/vocab/lis/v2/membership#ContentDeveloper\",\n          \"http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor\"\n        ],\n        \"placements\": [\n          \"course_navigation\"\n        ]\n      }\n    ],\n    \"claims\": [\n      \"iss\",\n      \"sub\"\n    ],\n    \"target_link_uri\": \"https://example.com/launch\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6b95a3ba-3a18-442e-bed9-491a1b38e20b",
+              "name": "returns a 401",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "registrations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "application_type",
+                      "value": "web"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_name",
+                      "value": "the client name"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_types",
+                      "value": "client_credentials"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_types",
+                      "value": "implicit"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "claims",
+                      "value": "[\"iss\",\"sub\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "domain",
+                      "value": "example.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "messages",
+                      "value": "[{\"type\":\"LtiResourceLinkRequest\",\"label\":\"deep link label\",\"placements\":[\"course_navigation\"],\"target_link_uri\":\"https://example.com/launch\",\"custom_parameters\":{\"foo\":\"bar\"},\"roles\":[\"http://purl.imsglobal.org/vocab/lis/v2/membership#ContentDeveloper\",\"http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor\"],\"icon_uri\":\"https://example.com/icon.jpg\"}]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "target_link_uri",
+                      "value": "https://example.com/launch"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "initiate_login_uri",
+                      "value": "https://example.com/login"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "jwks_uri",
+                      "value": "https://example.com/api/jwks"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "redirect_uris",
+                      "value": "https://example.com/launch"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "registration_token",
+                      "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzY4LCJpbml0aWF0ZWRfYXQiOiIyMDIzLTEyLTE1VDAyOjM5OjM3WiIsInJvb3RfYWNjb3VudF9nbG9iYWxfaWQiOjAsInV1aWQiOiIzN2ExN2E2NC03ODlhLTQ5NGYtYjFjNy1lNjllN2I3ZjRlNzIiLCJleHAiOjE3MDI2MTE2Mzd9.Q9mhBLdBY8gXf_cQxB2RYOoPk6_a47gqNLpUXjVnFcc"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "response_types",
+                      "value": "id_token"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "scope",
+                      "value": "https://purl.imsglobal.org/spec/lti-nrps/scope/contextmembership.readonly https://purl.imsglobal.org/spec/lti-ags/scope/score https://purl.imsglobal.org/spec/lti/scope/noticehandlers"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "token_endpoint_auth_method",
+                      "value": "private_key_jwt"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"message\": \"An error occurred.\",\n      \"error_code\": \"unauthorized\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e0c9d4fe-384f-4646-ad10-be7d77b09fff",
+              "name": "returns a 422 with validation errors",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "registrations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "application_type",
+                      "value": "web"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_name",
+                      "value": "the client name"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_types",
+                      "value": "client_credentials"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_types",
+                      "value": "implicit"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "claims",
+                      "value": "[\"iss\",\"sub\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "domain",
+                      "value": "example.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "messages",
+                      "value": "[{\"type\":\"LtiResourceLinkRequest\",\"label\":\"deep link label\",\"placements\":[\"course_navigation\"],\"target_link_uri\":\"https://example.com/launch\",\"custom_parameters\":{\"foo\":\"bar\"},\"roles\":[\"http://purl.imsglobal.org/vocab/lis/v2/membership#ContentDeveloper\",\"http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor\"],\"icon_uri\":\"https://example.com/icon.jpg\"}]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "target_link_uri",
+                      "value": "https://example.com/launch"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "initiate_login_uri",
+                      "value": "https://example.com/login"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "jwks_uri",
+                      "value": "https://example.com/api/jwks"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "redirect_uris",
+                      "value": "https://example.com/launch"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "registration_token",
+                      "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzY4LCJpbml0aWF0ZWRfYXQiOiIyMDIzLTEyLTE1VDAyOjM5OjM3WiIsInJvb3RfYWNjb3VudF9nbG9iYWxfaWQiOjAsInV1aWQiOiIzN2ExN2E2NC03ODlhLTQ5NGYtYjFjNy1lNjllN2I3ZjRlNzIiLCJleHAiOjE3MDI2MTE2Mzd9.Q9mhBLdBY8gXf_cQxB2RYOoPk6_a47gqNLpUXjVnFcc"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "response_types",
+                      "value": "id_token"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "scope",
+                      "value": "https://purl.imsglobal.org/spec/lti-nrps/scope/contextmembership.readonly https://purl.imsglobal.org/spec/lti-ags/scope/score https://purl.imsglobal.org/spec/lti/scope/noticehandlers"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "token_endpoint_auth_method",
+                      "value": "private_key_jwt"
+                    }
+                  ]
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"field\": \"grant_types\",\n      \"message\": \"Must include client_credentials, implicit\",\n      \"error_code\": null\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The institution-specific Canvas domain",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "canvas.instructure.com",
+      "key": "canvas_domain"
+    },
+    {
+      "type": "string",
+      "value": "https://{{canvas_domain}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "fbac90e8-5ad1-4edb-9e90-7ea999cd88f2",
+    "name": "Canvas LMS LTI ExternalTool Lti::IMS::DynamicRegistration API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Canvas LTI 1.3 API endpoints including Dynamic Registration, IMS Names and Roles, Line Items, Data Services, and Security endpoints.\n\nContact Support:\n Name: Instructure Support\n Email: support@instructure.com",
+      "type": "text/plain"
+    }
+  }
+}

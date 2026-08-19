@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Canvas LMS LTI ExternalTool Lti::AccountExternalTool API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Lti::AccountExternalTool",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "index",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{canvas_domain}/api/lti/accounts/:account_id/external_tools",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "af01ae7a-c877-4297-a581-d63c1a6701de",
+                "type": "path"
+              },
+              {
+                "name": "client_id",
+                "value": "bad client id",
+                "type": "query"
+              },
+              {
+                "name": "verify_uniqueness",
+                "value": "true",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "index"
+        },
+        {
+          "info": {
+            "name": "show",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{canvas_domain}/api/lti/accounts/:account_id/external_tools/:external_tool_id",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "37f51bde-5842-4dae-a8e4-4c99ce9e967e",
+                "type": "path"
+              },
+              {
+                "name": "external_tool_id",
+                "value": "407209",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "show"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

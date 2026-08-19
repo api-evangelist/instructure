@@ -1,0 +1,2565 @@
+{
+  "item": [
+    {
+      "id": "d4aeb8ec-5841-405b-b882-3eaacb8afc7c",
+      "name": "Lti::ToolConfigurationsApi",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "74264801-4587-4773-a14d-5925c21d6391",
+          "name": "create",
+          "request": {
+            "name": "create",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "lti",
+                "accounts",
+                ":account_id",
+                "developer_keys",
+                "tool_configuration"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "account_id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "The institution-specific Canvas domain",
+                  "type": "any",
+                  "value": "{{canvas_domain}}",
+                  "key": "canvas_domain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "notes",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "public_jwk_url",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "require_scopes",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "scopes",
+                  "value": "[\"<string>\",\"<string>\"]",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "test_cluster_only",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "redirect_uris",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "privacy_level",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "settings",
+                  "value": "{\"custom_fields\":{\"has_expansion\":\"<string>\",\"no_expansion\":\"<string>\"},\"description\":\"<string>\",\"extensions\":[{\"platform\":\"<string>\",\"privacy_level\":\"<string>\",\"tool_id\":\"<string>\",\"domain\":\"<string>\",\"settings\":{\"icon_url\":\"<string>\",\"selection_height\":\"<string>\",\"selection_width\":\"<string>\",\"text\":\"<string>\",\"placements\":[{\"placement\":\"<string>\",\"message_type\":\"<string>\",\"canvas_icon_class\":\"<string>\",\"icon_url\":\"<string>\",\"text\":\"<string>\",\"target_link_uri\":\"<string>\",\"enabled\":\"<string>\"},{\"placement\":\"<string>\",\"message_type\":\"<string>\",\"canvas_icon_class\":\"<string>\",\"icon_url\":\"<string>\",\"text\":\"<string>\",\"target_link_uri\":\"<string>\",\"enabled\":\"<string>\"}]}},{\"platform\":\"<string>\",\"privacy_level\":\"<string>\",\"tool_id\":\"<string>\",\"domain\":\"<string>\",\"settings\":{\"icon_url\":\"<string>\",\"selection_height\":\"<string>\",\"selection_width\":\"<string>\",\"text\":\"<string>\",\"placements\":[{\"placement\":\"<string>\",\"message_type\":\"<string>\",\"canvas_icon_class\":\"<string>\",\"icon_url\":\"<string>\",\"text\":\"<string>\",\"target_link_uri\":\"<string>\",\"enabled\":\"<string>\"},{\"placement\":\"<string>\",\"message_type\":\"<string>\",\"canvas_icon_class\":\"<string>\",\"icon_url\":\"<string>\",\"text\":\"<string>\",\"target_link_uri\":\"<string>\",\"enabled\":\"<string>\"}]}}],\"oidc_initiation_url\":\"<string>\",\"public_jwk\":{\"alg\":\"<string>\",\"e\":\"<string>\",\"kid\":\"<string>\",\"kty\":\"<string>\",\"n\":\"<string>\",\"use\":\"<string>\"},\"target_link_uri\":\"<string>\",\"title\":\"<string>\",\"public_jwk_url\":\"<string>\"}",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "custom_fields",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "disabled_placements",
+                  "value": "[\"<string>\",\"<string>\"]",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "settings_url",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "developer_key_id",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "adbdc6a8-0c82-4713-b4b0-f1c1989535cf",
+              "name": "is expected to be nil",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "accounts",
+                    ":account_id",
+                    "developer_keys",
+                    "tool_configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "email",
+                      "value": "test@test.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "Test Dev Key"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "notes",
+                      "value": "Some cool notes"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "public_jwk_url",
+                      "value": "https://www.test.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "redirect_uris",
+                      "value": "http://www.test.com\r\nhttp://www.anothertest.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "require_scopes",
+                      "value": "true"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "scopes",
+                      "value": "[\"https://purl.imsglobal.org/spec/lti-ags/scope/lineitem\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "test_cluster_only",
+                      "value": "true"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "developer_key_id",
+                      "value": "142196"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "privacy_level",
+                      "value": "public"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "settings",
+                      "value": "{\"custom_fields\":{\"has_expansion\":\"$Canvas.user.id\",\"no_expansion\":\"foo\"},\"description\":\"1.3 Tool\",\"extensions\":[{\"platform\":\"canvas.instructure.com\",\"privacy_level\":\"public\",\"tool_id\":\"LTI 1.3 Test Tool\",\"domain\":\"http://lti13testtool.docker\",\"settings\":{\"icon_url\":\"https://static.thenounproject.com/png/131630-200.png\",\"selection_height\":\"500\",\"selection_width\":\"500\",\"text\":\"LTI 1.3 Test Tool Extension text\",\"placements\":[{\"placement\":\"course_navigation\",\"message_type\":\"LtiResourceLinkRequest\",\"canvas_icon_class\":\"icon-pdf\",\"icon_url\":\"https://static.thenounproject.com/png/131630-211.png\",\"text\":\"LTI 1.3 Test Tool Course Navigation\",\"target_link_uri\":\"http://lti13testtool.docker/launch?placement=course_navigation\",\"enabled\":\"true\"},{\"placement\":\"account_navigation\",\"message_type\":\"LtiResourceLinkRequest\",\"canvas_icon_class\":\"icon-lti\",\"icon_url\":\"https://static.thenounproject.com/png/131630-211.png\",\"target_link_uri\":\"http://lti13testtool.docker/launch?placement=account_navigation\",\"text\":\"LTI 1.3 Test Tool Course Navigation\",\"enabled\":\"true\"}]}}],\"oidc_initiation_url\":\"http://lti13testtool.docker/blti_launch\",\"public_jwk\":{\"alg\":\"RS256\",\"e\":\"AQAB\",\"kid\":\"2018-09-18T21:55:18Z\",\"kty\":\"RSA\",\"n\":\"2YGluUtCi62Ww_TWB38OE6wTaN...\",\"use\":\"sig\"},\"target_link_uri\":\"http://lti13testtool.docker/blti_launch\",\"title\":\"LTI 1.3 Tool\",\"public_jwk_url\":\"https://test.com\"}"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "custom_fields",
+                      "value": "foo=bar\r\nkey=value"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "disabled_placements",
+                      "value": "[\"course_navigation\",\"account_navigation\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "settings_url",
+                      "value": "https://www.mytool.com/config/json"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tool_configuration\": {\n    \"id\": 938667,\n    \"developer_key_id\": 142208,\n    \"settings\": {\n      \"custom_fields\": {\n        \"has_expansion\": \"$Canvas.user.id\",\n        \"no_expansion\": \"foo\",\n        \"foo\": \"bar\",\n        \"key\": \"value\"\n      },\n      \"description\": \"1.3 Tool\",\n      \"extensions\": [\n        {\n          \"platform\": \"canvas.instructure.com\",\n          \"privacy_level\": \"public\",\n          \"tool_id\": \"LTI 1.3 Test Tool\",\n          \"domain\": \"http://lti13testtool.docker\",\n          \"settings\": {\n            \"icon_url\": \"https://static.thenounproject.com/png/131630-200.png\",\n            \"selection_height\": \"500\",\n            \"selection_width\": \"500\",\n            \"text\": \"LTI 1.3 Test Tool Extension text\",\n            \"placements\": [\n              {\n                \"placement\": \"course_navigation\",\n                \"message_type\": \"LtiResourceLinkRequest\",\n                \"canvas_icon_class\": \"icon-pdf\",\n                \"icon_url\": \"https://static.thenounproject.com/png/131630-211.png\",\n                \"text\": \"LTI 1.3 Test Tool Course Navigation\",\n                \"target_link_uri\": \"http://lti13testtool.docker/launch?placement=course_navigation\",\n                \"enabled\": \"true\"\n              },\n              {\n                \"placement\": \"account_navigation\",\n                \"message_type\": \"LtiResourceLinkRequest\",\n                \"canvas_icon_class\": \"icon-lti\",\n                \"icon_url\": \"https://static.thenounproject.com/png/131630-211.png\",\n                \"target_link_uri\": \"http://lti13testtool.docker/launch?placement=account_navigation\",\n                \"text\": \"LTI 1.3 Test Tool Course Navigation\",\n                \"enabled\": \"true\"\n              }\n            ]\n          }\n        }\n      ],\n      \"oidc_initiation_url\": \"http://lti13testtool.docker/blti_launch\",\n      \"public_jwk\": {\n        \"alg\": \"RS256\",\n        \"e\": \"AQAB\",\n        \"kid\": \"2018-09-18T21:55:18Z\",\n        \"kty\": \"RSA\",\n        \"n\": \"2YGluUtCi62Ww_TWB38OE6wTaN...\",\n        \"use\": \"sig\"\n      },\n      \"target_link_uri\": \"http://lti13testtool.docker/blti_launch\",\n      \"title\": \"LTI 1.3 Tool\",\n      \"scopes\": [],\n      \"public_jwk_url\": \"https://test.com\"\n    },\n    \"created_at\": \"2023-12-15T05:37:19Z\",\n    \"updated_at\": \"2023-12-15T05:37:19Z\",\n    \"disabled_placements\": null,\n    \"privacy_level\": \"public\"\n  },\n  \"developer_key\": {\n    \"email\": \"test@test.com\",\n    \"user_name\": null,\n    \"created_at\": \"2023-12-15T05:37:19Z\",\n    \"user_id\": null,\n    \"name\": \"Test Dev Key\",\n    \"icon_url\": null,\n    \"workflow_state\": \"active\",\n    \"notes\": \"Some cool notes\",\n    \"scopes\": [\n      \"https://purl.imsglobal.org/spec/lti-ags/scope/lineitem\"\n    ],\n    \"require_scopes\": true,\n    \"client_credentials_audience\": null,\n    \"api_key\": \"HfrL9VimHfBkRdyeAF64iIjxqXFQrF9gpac3MsmUXHRMzRW5lFuF0y8zY1bfwsVB\",\n    \"redirect_uri\": null,\n    \"redirect_uris\": \"http://www.test.com\\nhttp://www.anothertest.com\",\n    \"access_token_count\": 0,\n    \"last_used_at\": null,\n    \"vendor_code\": null,\n    \"public_jwk\": {\n      \"alg\": \"RS256\",\n      \"e\": \"AQAB\",\n      \"kid\": \"2018-09-18T21:55:18Z\",\n      \"kty\": \"RSA\",\n      \"n\": \"2YGluUtCi62Ww_TWB38OE6wTaN...\",\n      \"use\": \"sig\"\n    },\n    \"public_jwk_url\": null,\n    \"allow_includes\": false,\n    \"developer_key_account_binding\": {\n      \"id\": 1037219,\n      \"account_id\": 8095,\n      \"developer_key_id\": 142208,\n      \"workflow_state\": \"off\",\n      \"account_owns_binding\": true\n    },\n    \"account_name\": \"value for name\",\n    \"visible\": true,\n    \"is_lti_key\": true,\n    \"is_lti_registration\": false,\n    \"id\": 142208\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e2cc7b29-7407-4abe-bd01-f281e5cd4751",
+              "name": "returns a 400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "accounts",
+                    ":account_id",
+                    "developer_keys",
+                    "tool_configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "email",
+                      "value": "test@test.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "Test Dev Key"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "notes",
+                      "value": "Some cool notes"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "public_jwk_url",
+                      "value": "https://www.test.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "redirect_uris",
+                      "value": "http://www.test.com\r\nhttp://www.anothertest.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "require_scopes",
+                      "value": "true"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "scopes",
+                      "value": "[\"https://purl.imsglobal.org/spec/lti-ags/scope/lineitem\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "test_cluster_only",
+                      "value": "true"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "developer_key_id",
+                      "value": "142196"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "privacy_level",
+                      "value": "public"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "settings",
+                      "value": "{\"custom_fields\":{\"has_expansion\":\"$Canvas.user.id\",\"no_expansion\":\"foo\"},\"description\":\"1.3 Tool\",\"extensions\":[{\"platform\":\"canvas.instructure.com\",\"privacy_level\":\"public\",\"tool_id\":\"LTI 1.3 Test Tool\",\"domain\":\"http://lti13testtool.docker\",\"settings\":{\"icon_url\":\"https://static.thenounproject.com/png/131630-200.png\",\"selection_height\":\"500\",\"selection_width\":\"500\",\"text\":\"LTI 1.3 Test Tool Extension text\",\"placements\":[{\"placement\":\"course_navigation\",\"message_type\":\"LtiResourceLinkRequest\",\"canvas_icon_class\":\"icon-pdf\",\"icon_url\":\"https://static.thenounproject.com/png/131630-211.png\",\"text\":\"LTI 1.3 Test Tool Course Navigation\",\"target_link_uri\":\"http://lti13testtool.docker/launch?placement=course_navigation\",\"enabled\":\"true\"},{\"placement\":\"account_navigation\",\"message_type\":\"LtiResourceLinkRequest\",\"canvas_icon_class\":\"icon-lti\",\"icon_url\":\"https://static.thenounproject.com/png/131630-211.png\",\"target_link_uri\":\"http://lti13testtool.docker/launch?placement=account_navigation\",\"text\":\"LTI 1.3 Test Tool Course Navigation\",\"enabled\":\"true\"}]}}],\"oidc_initiation_url\":\"http://lti13testtool.docker/blti_launch\",\"public_jwk\":{\"alg\":\"RS256\",\"e\":\"AQAB\",\"kid\":\"2018-09-18T21:55:18Z\",\"kty\":\"RSA\",\"n\":\"2YGluUtCi62Ww_TWB38OE6wTaN...\",\"use\":\"sig\"},\"target_link_uri\":\"http://lti13testtool.docker/blti_launch\",\"title\":\"LTI 1.3 Tool\",\"public_jwk_url\":\"https://test.com\"}"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "custom_fields",
+                      "value": "foo=bar\r\nkey=value"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "disabled_placements",
+                      "value": "[\"course_navigation\",\"account_navigation\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "settings_url",
+                      "value": "https://www.mytool.com/config/json"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"message\": \"redirect_uris is missing\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "08b9ec9f-10d5-4f18-a6d8-9660dab5ccb6",
+              "name": "is expected to be unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "accounts",
+                    ":account_id",
+                    "developer_keys",
+                    "tool_configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/html"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "email",
+                      "value": "test@test.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "Test Dev Key"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "notes",
+                      "value": "Some cool notes"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "public_jwk_url",
+                      "value": "https://www.test.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "redirect_uris",
+                      "value": "http://www.test.com\r\nhttp://www.anothertest.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "require_scopes",
+                      "value": "true"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "scopes",
+                      "value": "[\"https://purl.imsglobal.org/spec/lti-ags/scope/lineitem\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "test_cluster_only",
+                      "value": "true"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "developer_key_id",
+                      "value": "142196"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "privacy_level",
+                      "value": "public"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "settings",
+                      "value": "{\"custom_fields\":{\"has_expansion\":\"$Canvas.user.id\",\"no_expansion\":\"foo\"},\"description\":\"1.3 Tool\",\"extensions\":[{\"platform\":\"canvas.instructure.com\",\"privacy_level\":\"public\",\"tool_id\":\"LTI 1.3 Test Tool\",\"domain\":\"http://lti13testtool.docker\",\"settings\":{\"icon_url\":\"https://static.thenounproject.com/png/131630-200.png\",\"selection_height\":\"500\",\"selection_width\":\"500\",\"text\":\"LTI 1.3 Test Tool Extension text\",\"placements\":[{\"placement\":\"course_navigation\",\"message_type\":\"LtiResourceLinkRequest\",\"canvas_icon_class\":\"icon-pdf\",\"icon_url\":\"https://static.thenounproject.com/png/131630-211.png\",\"text\":\"LTI 1.3 Test Tool Course Navigation\",\"target_link_uri\":\"http://lti13testtool.docker/launch?placement=course_navigation\",\"enabled\":\"true\"},{\"placement\":\"account_navigation\",\"message_type\":\"LtiResourceLinkRequest\",\"canvas_icon_class\":\"icon-lti\",\"icon_url\":\"https://static.thenounproject.com/png/131630-211.png\",\"target_link_uri\":\"http://lti13testtool.docker/launch?placement=account_navigation\",\"text\":\"LTI 1.3 Test Tool Course Navigation\",\"enabled\":\"true\"}]}}],\"oidc_initiation_url\":\"http://lti13testtool.docker/blti_launch\",\"public_jwk\":{\"alg\":\"RS256\",\"e\":\"AQAB\",\"kid\":\"2018-09-18T21:55:18Z\",\"kty\":\"RSA\",\"n\":\"2YGluUtCi62Ww_TWB38OE6wTaN...\",\"use\":\"sig\"},\"target_link_uri\":\"http://lti13testtool.docker/blti_launch\",\"title\":\"LTI 1.3 Tool\",\"public_jwk_url\":\"https://test.com\"}"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "custom_fields",
+                      "value": "foo=bar\r\nkey=value"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "disabled_placements",
+                      "value": "[\"course_navigation\",\"account_navigation\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "settings_url",
+                      "value": "https://www.mytool.com/config/json"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/html"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7716c86b-f0c3-4ab5-89ba-fd5b5c734868",
+              "name": "is expected to be present",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "accounts",
+                    ":account_id",
+                    "developer_keys",
+                    "tool_configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "email",
+                      "value": "test@test.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "Test Dev Key"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "notes",
+                      "value": "Some cool notes"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "public_jwk_url",
+                      "value": "https://www.test.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "redirect_uris",
+                      "value": "http://www.test.com\r\nhttp://www.anothertest.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "require_scopes",
+                      "value": "true"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "scopes",
+                      "value": "[\"https://purl.imsglobal.org/spec/lti-ags/scope/lineitem\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "test_cluster_only",
+                      "value": "true"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "developer_key_id",
+                      "value": "142196"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "privacy_level",
+                      "value": "public"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "settings",
+                      "value": "{\"custom_fields\":{\"has_expansion\":\"$Canvas.user.id\",\"no_expansion\":\"foo\"},\"description\":\"1.3 Tool\",\"extensions\":[{\"platform\":\"canvas.instructure.com\",\"privacy_level\":\"public\",\"tool_id\":\"LTI 1.3 Test Tool\",\"domain\":\"http://lti13testtool.docker\",\"settings\":{\"icon_url\":\"https://static.thenounproject.com/png/131630-200.png\",\"selection_height\":\"500\",\"selection_width\":\"500\",\"text\":\"LTI 1.3 Test Tool Extension text\",\"placements\":[{\"placement\":\"course_navigation\",\"message_type\":\"LtiResourceLinkRequest\",\"canvas_icon_class\":\"icon-pdf\",\"icon_url\":\"https://static.thenounproject.com/png/131630-211.png\",\"text\":\"LTI 1.3 Test Tool Course Navigation\",\"target_link_uri\":\"http://lti13testtool.docker/launch?placement=course_navigation\",\"enabled\":\"true\"},{\"placement\":\"account_navigation\",\"message_type\":\"LtiResourceLinkRequest\",\"canvas_icon_class\":\"icon-lti\",\"icon_url\":\"https://static.thenounproject.com/png/131630-211.png\",\"target_link_uri\":\"http://lti13testtool.docker/launch?placement=account_navigation\",\"text\":\"LTI 1.3 Test Tool Course Navigation\",\"enabled\":\"true\"}]}}],\"oidc_initiation_url\":\"http://lti13testtool.docker/blti_launch\",\"public_jwk\":{\"alg\":\"RS256\",\"e\":\"AQAB\",\"kid\":\"2018-09-18T21:55:18Z\",\"kty\":\"RSA\",\"n\":\"2YGluUtCi62Ww_TWB38OE6wTaN...\",\"use\":\"sig\"},\"target_link_uri\":\"http://lti13testtool.docker/blti_launch\",\"title\":\"LTI 1.3 Tool\",\"public_jwk_url\":\"https://test.com\"}"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "custom_fields",
+                      "value": "foo=bar\r\nkey=value"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "disabled_placements",
+                      "value": "[\"course_navigation\",\"account_navigation\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "settings_url",
+                      "value": "https://www.mytool.com/config/json"
+                    }
+                  ]
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"field\": \"lti_key\",\n      \"message\": \"developer key must have public jwk or public jwk url\",\n      \"error_code\": null\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7c7962c6-7098-498f-ada0-d54a39bcf0bb",
+          "name": "show",
+          "request": {
+            "name": "show",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "lti",
+                "accounts",
+                ":account_id",
+                "developer_keys",
+                ":developer_key_id",
+                "tool_configuration"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "notes",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "public_jwk_url",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "redirect_uris",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "require_scopes",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "scopes",
+                  "value": "[\"<string>\",\"<string>\"]"
+                },
+                {
+                  "disabled": false,
+                  "key": "test_cluster_only",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "account_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "developer_key_id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "The institution-specific Canvas domain",
+                  "type": "any",
+                  "value": "{{canvas_domain}}",
+                  "key": "canvas_domain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a2f86b71-2a5d-41f5-84bd-ec989a676db0",
+              "name": "renders the tool configuration",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "accounts",
+                    ":account_id",
+                    "developer_keys",
+                    ":developer_key_id",
+                    "tool_configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "notes",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "public_jwk_url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "redirect_uris",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "require_scopes",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "scopes",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "test_cluster_only",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "developer_key_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tool_configuration\": {\n    \"id\": 938648,\n    \"developer_key_id\": 142176,\n    \"settings\": {\n      \"title\": \"LTI 1.3 Tool\",\n      \"scopes\": [],\n      \"extensions\": [\n        {\n          \"domain\": \"http://lti13testtool.docker\",\n          \"tool_id\": \"LTI 1.3 Test Tool\",\n          \"platform\": \"canvas.instructure.com\",\n          \"settings\": {\n            \"text\": \"LTI 1.3 Test Tool Extension text\",\n            \"icon_url\": \"https://static.thenounproject.com/png/131630-200.png\",\n            \"placements\": [\n              {\n                \"text\": \"LTI 1.3 Test Tool Course Navigation\",\n                \"enabled\": true,\n                \"icon_url\": \"https://static.thenounproject.com/png/131630-211.png\",\n                \"placement\": \"course_navigation\",\n                \"message_type\": \"LtiResourceLinkRequest\",\n                \"target_link_uri\": \"http://lti13testtool.docker/launch?placement=course_navigation\",\n                \"canvas_icon_class\": \"icon-pdf\"\n              },\n              {\n                \"text\": \"LTI 1.3 Test Tool Course Navigation\",\n                \"enabled\": true,\n                \"icon_url\": \"https://static.thenounproject.com/png/131630-211.png\",\n                \"placement\": \"account_navigation\",\n                \"message_type\": \"LtiResourceLinkRequest\",\n                \"target_link_uri\": \"http://lti13testtool.docker/launch?placement=account_navigation\",\n                \"canvas_icon_class\": \"icon-lti\"\n              }\n            ],\n            \"selection_width\": 500,\n            \"selection_height\": 500\n          },\n          \"privacy_level\": \"public\"\n        }\n      ],\n      \"public_jwk\": {\n        \"e\": \"AQAB\",\n        \"n\": \"2YGluUtCi62Ww_TWB38OE6wTaN...\",\n        \"alg\": \"RS256\",\n        \"kid\": \"2018-09-18T21:55:18Z\",\n        \"kty\": \"RSA\",\n        \"use\": \"sig\"\n      },\n      \"description\": \"1.3 Tool\",\n      \"custom_fields\": {\n        \"no_expansion\": \"foo\",\n        \"has_expansion\": \"$Canvas.user.id\"\n      },\n      \"target_link_uri\": \"http://lti13testtool.docker/blti_launch\",\n      \"oidc_initiation_url\": \"http://lti13testtool.docker/blti_launch\"\n    },\n    \"created_at\": \"2023-12-15T05:37:07Z\",\n    \"updated_at\": \"2023-12-15T05:37:07Z\",\n    \"disabled_placements\": [],\n    \"privacy_level\": \"public\"\n  },\n  \"developer_key\": {\n    \"email\": null,\n    \"user_name\": null,\n    \"created_at\": \"2023-12-15T05:37:07Z\",\n    \"user_id\": null,\n    \"name\": null,\n    \"icon_url\": null,\n    \"workflow_state\": \"active\",\n    \"notes\": null,\n    \"scopes\": [],\n    \"require_scopes\": false,\n    \"client_credentials_audience\": null,\n    \"api_key\": \"SI3SR1KilXPHrjO2lmsBIRcIYuBAzrRjgvpf2Sagt2IHpn40ISOeJYjBPJwg4R3J\",\n    \"redirect_uri\": null,\n    \"redirect_uris\": \"\",\n    \"access_token_count\": 0,\n    \"last_used_at\": null,\n    \"vendor_code\": null,\n    \"public_jwk\": null,\n    \"public_jwk_url\": null,\n    \"allow_includes\": false,\n    \"developer_key_account_binding\": {\n      \"id\": 1037187,\n      \"account_id\": 8093,\n      \"developer_key_id\": 142176,\n      \"workflow_state\": \"on\",\n      \"account_owns_binding\": true\n    },\n    \"account_name\": \"Default Account\",\n    \"visible\": true,\n    \"is_lti_key\": false,\n    \"is_lti_registration\": false,\n    \"id\": 142176\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c9f930b7-bde4-43af-aca1-0dda250020bb",
+              "name": "responds with \"unauthorized\"",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "accounts",
+                    ":account_id",
+                    "developer_keys",
+                    ":developer_key_id",
+                    "tool_configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "notes",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "public_jwk_url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "redirect_uris",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "require_scopes",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "scopes",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "test_cluster_only",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "developer_key_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/html"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/html"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8a8bbbb8-a98c-48fd-9152-4b892366b2fa",
+              "name": "is expected to be not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "accounts",
+                    ":account_id",
+                    "developer_keys",
+                    ":developer_key_id",
+                    "tool_configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "notes",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "public_jwk_url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "redirect_uris",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "require_scopes",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "scopes",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "test_cluster_only",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "developer_key_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/html"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/html"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "efa68eff-0c8b-467a-9824-f32b1e797861",
+          "name": "update",
+          "request": {
+            "name": "update",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "lti",
+                "developer_keys",
+                ":developer_key_id",
+                "tool_configuration"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "developer_key_id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "The institution-specific Canvas domain",
+                  "type": "any",
+                  "value": "{{canvas_domain}}",
+                  "key": "canvas_domain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "account_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "notes",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "public_jwk_url",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "redirect_uris",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "require_scopes",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "scopes",
+                  "value": "[\"<string>\",\"<string>\"]",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "test_cluster_only",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "privacy_level",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "settings",
+                  "value": "{\"custom_fields\":{\"has_expansion\":\"<string>\",\"no_expansion\":\"<string>\"},\"description\":\"<string>\",\"extensions\":[{\"platform\":\"<string>\",\"privacy_level\":\"<string>\",\"tool_id\":\"<string>\",\"domain\":\"<string>\",\"settings\":{\"icon_url\":\"<string>\",\"selection_height\":\"<string>\",\"selection_width\":\"<string>\",\"text\":\"<string>\",\"placements\":[{\"placement\":\"<string>\",\"message_type\":\"<string>\",\"canvas_icon_class\":\"<string>\",\"icon_url\":\"<string>\",\"text\":\"<string>\",\"target_link_uri\":\"<string>\",\"enabled\":\"<string>\"},{\"placement\":\"<string>\",\"message_type\":\"<string>\",\"canvas_icon_class\":\"<string>\",\"icon_url\":\"<string>\",\"text\":\"<string>\",\"target_link_uri\":\"<string>\",\"enabled\":\"<string>\"}]}},{\"platform\":\"<string>\",\"privacy_level\":\"<string>\",\"tool_id\":\"<string>\",\"domain\":\"<string>\",\"settings\":{\"icon_url\":\"<string>\",\"selection_height\":\"<string>\",\"selection_width\":\"<string>\",\"text\":\"<string>\",\"placements\":[{\"placement\":\"<string>\",\"message_type\":\"<string>\",\"canvas_icon_class\":\"<string>\",\"icon_url\":\"<string>\",\"text\":\"<string>\",\"target_link_uri\":\"<string>\",\"enabled\":\"<string>\"},{\"placement\":\"<string>\",\"message_type\":\"<string>\",\"canvas_icon_class\":\"<string>\",\"icon_url\":\"<string>\",\"text\":\"<string>\",\"target_link_uri\":\"<string>\",\"enabled\":\"<string>\"}]}}],\"oidc_initiation_url\":\"<string>\",\"public_jwk\":{\"alg\":\"<string>\",\"e\":\"<string>\",\"kid\":\"<string>\",\"kty\":\"<string>\",\"n\":\"<string>\",\"use\":\"<string>\"},\"target_link_uri\":\"<string>\",\"title\":\"<string>\",\"public_jwk_url\":\"<string>\"}",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a3ff7acc-4893-4501-9e43-e9ffc2c9f143",
+              "name": "is expected to be ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "developer_keys",
+                    ":developer_key_id",
+                    "tool_configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "developer_key_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "account_id",
+                      "value": "8095"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "email",
+                      "value": "test@test.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "Test Dev Key"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "notes",
+                      "value": "Some cool notes"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "public_jwk_url",
+                      "value": "https://www.test.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "redirect_uris",
+                      "value": "http://www.test.com\r\nhttp://www.anothertest.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "require_scopes",
+                      "value": "true"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "scopes",
+                      "value": "[\"https://purl.imsglobal.org/spec/lti-ags/scope/lineitem\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "test_cluster_only",
+                      "value": "true"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "privacy_level",
+                      "value": "public"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "settings",
+                      "value": "{\"custom_fields\":{\"has_expansion\":\"$Canvas.user.id\",\"no_expansion\":\"foo\"},\"description\":\"1.3 Tool\",\"extensions\":[{\"platform\":\"canvas.instructure.com\",\"privacy_level\":\"public\",\"tool_id\":\"LTI 1.3 Test Tool\",\"domain\":\"http://lti13testtool.docker\",\"settings\":{\"icon_url\":\"https://static.thenounproject.com/png/131630-200.png\",\"selection_height\":\"500\",\"selection_width\":\"500\",\"text\":\"LTI 1.3 Test Tool Extension text\",\"placements\":[{\"placement\":\"course_navigation\",\"message_type\":\"LtiResourceLinkRequest\",\"canvas_icon_class\":\"icon-pdf\",\"icon_url\":\"https://static.thenounproject.com/png/131630-211.png\",\"text\":\"LTI 1.3 Test Tool Course Navigation\",\"target_link_uri\":\"http://lti13testtool.docker/launch?placement=course_navigation\",\"enabled\":\"true\"},{\"placement\":\"account_navigation\",\"message_type\":\"LtiResourceLinkRequest\",\"canvas_icon_class\":\"icon-lti\",\"icon_url\":\"https://static.thenounproject.com/png/131630-211.png\",\"target_link_uri\":\"http://lti13testtool.docker/launch?placement=account_navigation\",\"text\":\"LTI 1.3 Test Tool Course Navigation\",\"enabled\":\"true\"}]}}],\"oidc_initiation_url\":\"http://lti13testtool.docker/blti_launch\",\"public_jwk\":{\"alg\":\"RS256\",\"e\":\"AQAB\",\"kid\":\"2018-09-18T21:55:18Z\",\"kty\":\"RSA\",\"n\":\"2YGluUtCi62Ww_TWB38OE6wTaN...\",\"use\":\"sig\"},\"target_link_uri\":\"https://www.new-url.com/test\",\"title\":\"LTI 1.3 Tool\",\"public_jwk_url\":\"https://test.com\"}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tool_configuration\": {\n    \"developer_key_id\": 142164,\n    \"disabled_placements\": null,\n    \"privacy_level\": \"public\",\n    \"settings\": {\n      \"custom_fields\": {\n        \"has_expansion\": \"$Canvas.user.id\",\n        \"no_expansion\": \"foo\"\n      },\n      \"description\": \"1.3 Tool\",\n      \"extensions\": [\n        {\n          \"platform\": \"canvas.instructure.com\",\n          \"privacy_level\": \"public\",\n          \"tool_id\": \"LTI 1.3 Test Tool\",\n          \"domain\": \"http://lti13testtool.docker\",\n          \"settings\": {\n            \"icon_url\": \"https://static.thenounproject.com/png/131630-200.png\",\n            \"selection_height\": \"500\",\n            \"selection_width\": \"500\",\n            \"text\": \"LTI 1.3 Test Tool Extension text\",\n            \"placements\": [\n              {\n                \"placement\": \"course_navigation\",\n                \"message_type\": \"LtiResourceLinkRequest\",\n                \"canvas_icon_class\": \"icon-pdf\",\n                \"icon_url\": \"https://static.thenounproject.com/png/131630-211.png\",\n                \"text\": \"LTI 1.3 Test Tool Course Navigation\",\n                \"target_link_uri\": \"http://lti13testtool.docker/launch?placement=course_navigation\",\n                \"enabled\": \"true\"\n              },\n              {\n                \"placement\": \"account_navigation\",\n                \"message_type\": \"LtiResourceLinkRequest\",\n                \"canvas_icon_class\": \"icon-lti\",\n                \"icon_url\": \"https://static.thenounproject.com/png/131630-211.png\",\n                \"target_link_uri\": \"http://lti13testtool.docker/launch?placement=account_navigation\",\n                \"text\": \"LTI 1.3 Test Tool Course Navigation\",\n                \"enabled\": \"true\"\n              }\n            ]\n          }\n        }\n      ],\n      \"oidc_initiation_url\": \"http://lti13testtool.docker/blti_launch\",\n      \"public_jwk\": {\n        \"alg\": \"RS256\",\n        \"e\": \"AQAB\",\n        \"kid\": \"2018-09-18T21:55:18Z\",\n        \"kty\": \"RSA\",\n        \"n\": \"2YGluUtCi62Ww_TWB38OE6wTaN...\",\n        \"use\": \"sig\"\n      },\n      \"target_link_uri\": \"https://www.new-url.com/test\",\n      \"title\": \"LTI 1.3 Tool\",\n      \"public_jwk_url\": \"https://test.com\"\n    },\n    \"id\": 938640,\n    \"created_at\": \"2023-12-15T05:37:03Z\",\n    \"updated_at\": \"2023-12-15T05:37:03Z\"\n  },\n  \"developer_key\": {\n    \"name\": \"Test Dev Key\",\n    \"email\": \"test@test.com\",\n    \"notes\": \"Some cool notes\",\n    \"scopes\": [\n      \"https://purl.imsglobal.org/spec/lti-ags/scope/lineitem\"\n    ],\n    \"workflow_state\": \"active\",\n    \"icon_url\": null,\n    \"require_scopes\": true,\n    \"user_name\": null,\n    \"created_at\": \"2023-12-15T05:37:03Z\",\n    \"user_id\": null,\n    \"client_credentials_audience\": null,\n    \"api_key\": \"IF3ObkUvFd8zLHu0Qee9bXVIAW2KP9G7RLVjSVXepCKJxAnTWg5gLwNEo6bipLqE\",\n    \"redirect_uri\": null,\n    \"redirect_uris\": \"http://www.test.com\\nhttp://www.anothertest.com\",\n    \"access_token_count\": 0,\n    \"last_used_at\": null,\n    \"vendor_code\": null,\n    \"public_jwk\": {\n      \"alg\": \"RS256\",\n      \"e\": \"AQAB\",\n      \"kid\": \"2018-09-18T21:55:18Z\",\n      \"kty\": \"RSA\",\n      \"n\": \"2YGluUtCi62Ww_TWB38OE6wTaN...\",\n      \"use\": \"sig\"\n    },\n    \"public_jwk_url\": null,\n    \"allow_includes\": false,\n    \"developer_key_account_binding\": {\n      \"id\": 1037175,\n      \"account_id\": 8093,\n      \"developer_key_id\": 142164,\n      \"workflow_state\": \"off\",\n      \"account_owns_binding\": true\n    },\n    \"account_name\": \"Default Account\",\n    \"visible\": true,\n    \"is_lti_key\": true,\n    \"is_lti_registration\": false,\n    \"id\": 142164\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4ab2f0ad-dbee-4c8e-9ccb-29f85051dce5",
+              "name": "is expected to be unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "developer_keys",
+                    ":developer_key_id",
+                    "tool_configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "developer_key_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/html"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "account_id",
+                      "value": "8095"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "email",
+                      "value": "test@test.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "Test Dev Key"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "notes",
+                      "value": "Some cool notes"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "public_jwk_url",
+                      "value": "https://www.test.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "redirect_uris",
+                      "value": "http://www.test.com\r\nhttp://www.anothertest.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "require_scopes",
+                      "value": "true"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "scopes",
+                      "value": "[\"https://purl.imsglobal.org/spec/lti-ags/scope/lineitem\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "test_cluster_only",
+                      "value": "true"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "privacy_level",
+                      "value": "public"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "settings",
+                      "value": "{\"custom_fields\":{\"has_expansion\":\"$Canvas.user.id\",\"no_expansion\":\"foo\"},\"description\":\"1.3 Tool\",\"extensions\":[{\"platform\":\"canvas.instructure.com\",\"privacy_level\":\"public\",\"tool_id\":\"LTI 1.3 Test Tool\",\"domain\":\"http://lti13testtool.docker\",\"settings\":{\"icon_url\":\"https://static.thenounproject.com/png/131630-200.png\",\"selection_height\":\"500\",\"selection_width\":\"500\",\"text\":\"LTI 1.3 Test Tool Extension text\",\"placements\":[{\"placement\":\"course_navigation\",\"message_type\":\"LtiResourceLinkRequest\",\"canvas_icon_class\":\"icon-pdf\",\"icon_url\":\"https://static.thenounproject.com/png/131630-211.png\",\"text\":\"LTI 1.3 Test Tool Course Navigation\",\"target_link_uri\":\"http://lti13testtool.docker/launch?placement=course_navigation\",\"enabled\":\"true\"},{\"placement\":\"account_navigation\",\"message_type\":\"LtiResourceLinkRequest\",\"canvas_icon_class\":\"icon-lti\",\"icon_url\":\"https://static.thenounproject.com/png/131630-211.png\",\"target_link_uri\":\"http://lti13testtool.docker/launch?placement=account_navigation\",\"text\":\"LTI 1.3 Test Tool Course Navigation\",\"enabled\":\"true\"}]}}],\"oidc_initiation_url\":\"http://lti13testtool.docker/blti_launch\",\"public_jwk\":{\"alg\":\"RS256\",\"e\":\"AQAB\",\"kid\":\"2018-09-18T21:55:18Z\",\"kty\":\"RSA\",\"n\":\"2YGluUtCi62Ww_TWB38OE6wTaN...\",\"use\":\"sig\"},\"target_link_uri\":\"https://www.new-url.com/test\",\"title\":\"LTI 1.3 Tool\",\"public_jwk_url\":\"https://test.com\"}"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/html"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e909e468-6f58-4381-92e8-b0a55204338d",
+              "name": "is expected to be not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "developer_keys",
+                    ":developer_key_id",
+                    "tool_configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "developer_key_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "account_id",
+                      "value": "8095"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "email",
+                      "value": "test@test.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "Test Dev Key"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "notes",
+                      "value": "Some cool notes"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "public_jwk_url",
+                      "value": "https://www.test.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "redirect_uris",
+                      "value": "http://www.test.com\r\nhttp://www.anothertest.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "require_scopes",
+                      "value": "true"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "scopes",
+                      "value": "[\"https://purl.imsglobal.org/spec/lti-ags/scope/lineitem\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "test_cluster_only",
+                      "value": "true"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "privacy_level",
+                      "value": "public"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "settings",
+                      "value": "{\"custom_fields\":{\"has_expansion\":\"$Canvas.user.id\",\"no_expansion\":\"foo\"},\"description\":\"1.3 Tool\",\"extensions\":[{\"platform\":\"canvas.instructure.com\",\"privacy_level\":\"public\",\"tool_id\":\"LTI 1.3 Test Tool\",\"domain\":\"http://lti13testtool.docker\",\"settings\":{\"icon_url\":\"https://static.thenounproject.com/png/131630-200.png\",\"selection_height\":\"500\",\"selection_width\":\"500\",\"text\":\"LTI 1.3 Test Tool Extension text\",\"placements\":[{\"placement\":\"course_navigation\",\"message_type\":\"LtiResourceLinkRequest\",\"canvas_icon_class\":\"icon-pdf\",\"icon_url\":\"https://static.thenounproject.com/png/131630-211.png\",\"text\":\"LTI 1.3 Test Tool Course Navigation\",\"target_link_uri\":\"http://lti13testtool.docker/launch?placement=course_navigation\",\"enabled\":\"true\"},{\"placement\":\"account_navigation\",\"message_type\":\"LtiResourceLinkRequest\",\"canvas_icon_class\":\"icon-lti\",\"icon_url\":\"https://static.thenounproject.com/png/131630-211.png\",\"target_link_uri\":\"http://lti13testtool.docker/launch?placement=account_navigation\",\"text\":\"LTI 1.3 Test Tool Course Navigation\",\"enabled\":\"true\"}]}}],\"oidc_initiation_url\":\"http://lti13testtool.docker/blti_launch\",\"public_jwk\":{\"alg\":\"RS256\",\"e\":\"AQAB\",\"kid\":\"2018-09-18T21:55:18Z\",\"kty\":\"RSA\",\"n\":\"2YGluUtCi62Ww_TWB38OE6wTaN...\",\"use\":\"sig\"},\"target_link_uri\":\"https://www.new-url.com/test\",\"title\":\"LTI 1.3 Tool\",\"public_jwk_url\":\"https://test.com\"}"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"message\": \"The specified resource does not exist.\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "726b6db3-7172-475c-b468-8f906a8614bb",
+              "name": "is expected to be present",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "developer_keys",
+                    ":developer_key_id",
+                    "tool_configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "developer_key_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "account_id",
+                      "value": "8095"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "email",
+                      "value": "test@test.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "Test Dev Key"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "notes",
+                      "value": "Some cool notes"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "public_jwk_url",
+                      "value": "https://www.test.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "redirect_uris",
+                      "value": "http://www.test.com\r\nhttp://www.anothertest.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "require_scopes",
+                      "value": "true"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "scopes",
+                      "value": "[\"https://purl.imsglobal.org/spec/lti-ags/scope/lineitem\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "test_cluster_only",
+                      "value": "true"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "privacy_level",
+                      "value": "public"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "settings",
+                      "value": "{\"custom_fields\":{\"has_expansion\":\"$Canvas.user.id\",\"no_expansion\":\"foo\"},\"description\":\"1.3 Tool\",\"extensions\":[{\"platform\":\"canvas.instructure.com\",\"privacy_level\":\"public\",\"tool_id\":\"LTI 1.3 Test Tool\",\"domain\":\"http://lti13testtool.docker\",\"settings\":{\"icon_url\":\"https://static.thenounproject.com/png/131630-200.png\",\"selection_height\":\"500\",\"selection_width\":\"500\",\"text\":\"LTI 1.3 Test Tool Extension text\",\"placements\":[{\"placement\":\"course_navigation\",\"message_type\":\"LtiResourceLinkRequest\",\"canvas_icon_class\":\"icon-pdf\",\"icon_url\":\"https://static.thenounproject.com/png/131630-211.png\",\"text\":\"LTI 1.3 Test Tool Course Navigation\",\"target_link_uri\":\"http://lti13testtool.docker/launch?placement=course_navigation\",\"enabled\":\"true\"},{\"placement\":\"account_navigation\",\"message_type\":\"LtiResourceLinkRequest\",\"canvas_icon_class\":\"icon-lti\",\"icon_url\":\"https://static.thenounproject.com/png/131630-211.png\",\"target_link_uri\":\"http://lti13testtool.docker/launch?placement=account_navigation\",\"text\":\"LTI 1.3 Test Tool Course Navigation\",\"enabled\":\"true\"}]}}],\"oidc_initiation_url\":\"http://lti13testtool.docker/blti_launch\",\"public_jwk\":{\"alg\":\"RS256\",\"e\":\"AQAB\",\"kid\":\"2018-09-18T21:55:18Z\",\"kty\":\"RSA\",\"n\":\"2YGluUtCi62Ww_TWB38OE6wTaN...\",\"use\":\"sig\"},\"target_link_uri\":\"https://www.new-url.com/test\",\"title\":\"LTI 1.3 Tool\",\"public_jwk_url\":\"https://test.com\"}"
+                    }
+                  ]
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"field\": \"configuration\",\n      \"message\": \"The following fields are required: kty, e, n, kid, alg, use\",\n      \"error_code\": null\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f7caff5a-62cc-47fc-9928-af5294c68428",
+          "name": "destroy",
+          "request": {
+            "name": "destroy",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "lti",
+                "developer_keys",
+                ":developer_key_id",
+                "tool_configuration"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "developer_key_id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "The institution-specific Canvas domain",
+                  "type": "any",
+                  "value": "{{canvas_domain}}",
+                  "key": "canvas_domain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": ""
+              }
+            ],
+            "method": "DELETE",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "account_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "notes",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "public_jwk_url",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "redirect_uris",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "require_scopes",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "scopes",
+                  "value": "[\"<string>\",\"<string>\"]",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "test_cluster_only",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b702be26-1542-492f-be10-7f621bbf7c0b",
+              "name": "is expected to be no content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "developer_keys",
+                    ":developer_key_id",
+                    "tool_configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "developer_key_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": ""
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "account_id",
+                      "value": "8095"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "email",
+                      "value": "test@test.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "Test Dev Key"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "notes",
+                      "value": "Some cool notes"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "public_jwk_url",
+                      "value": "https://www.test.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "redirect_uris",
+                      "value": "http://www.test.com\r\nhttp://www.anothertest.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "require_scopes",
+                      "value": "true"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "scopes",
+                      "value": "[\"https://purl.imsglobal.org/spec/lti-ags/scope/lineitem\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "test_cluster_only",
+                      "value": "true"
+                    }
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": ""
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "211d0ac1-2bea-42fd-8106-a411fb5f9f7c",
+              "name": "is expected to be unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "developer_keys",
+                    ":developer_key_id",
+                    "tool_configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "developer_key_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/html"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "account_id",
+                      "value": "8095"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "email",
+                      "value": "test@test.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "Test Dev Key"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "notes",
+                      "value": "Some cool notes"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "public_jwk_url",
+                      "value": "https://www.test.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "redirect_uris",
+                      "value": "http://www.test.com\r\nhttp://www.anothertest.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "require_scopes",
+                      "value": "true"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "scopes",
+                      "value": "[\"https://purl.imsglobal.org/spec/lti-ags/scope/lineitem\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "test_cluster_only",
+                      "value": "true"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/html"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7b4446f7-0c69-46eb-be0b-17004673d954",
+              "name": "is expected to be not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "developer_keys",
+                    ":developer_key_id",
+                    "tool_configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "developer_key_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "account_id",
+                      "value": "8095"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "email",
+                      "value": "test@test.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "Test Dev Key"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "notes",
+                      "value": "Some cool notes"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "public_jwk_url",
+                      "value": "https://www.test.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "redirect_uris",
+                      "value": "http://www.test.com\r\nhttp://www.anothertest.com"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "require_scopes",
+                      "value": "true"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "scopes",
+                      "value": "[\"https://purl.imsglobal.org/spec/lti-ags/scope/lineitem\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "test_cluster_only",
+                      "value": "true"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"message\": \"The specified resource does not exist.\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The institution-specific Canvas domain",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "canvas.instructure.com",
+      "key": "canvas_domain"
+    },
+    {
+      "type": "string",
+      "value": "https://{{canvas_domain}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7041657c-44bc-4f64-954a-15f29feab2e7",
+    "name": "Canvas LMS LTI ExternalTool Lti::ToolConfigurationsApi API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Canvas LTI 1.3 API endpoints including Dynamic Registration, IMS Names and Roles, Line Items, Data Services, and Security endpoints.\n\nContact Support:\n Name: Instructure Support\n Email: support@instructure.com",
+      "type": "text/plain"
+    }
+  }
+}

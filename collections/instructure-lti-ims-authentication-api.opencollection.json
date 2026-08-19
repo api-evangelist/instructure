@@ -1,0 +1,74 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Canvas LMS LTI ExternalTool Lti::IMS::Authentication API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Lti::IMS::Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "authorize_redirect",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{canvas_domain}/api/lti/authorize_redirect",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "client_id",
+                  "value": ""
+                },
+                {
+                  "name": "login_hint",
+                  "value": ""
+                },
+                {
+                  "name": "lti_message_hint",
+                  "value": ""
+                },
+                {
+                  "name": "nonce",
+                  "value": ""
+                },
+                {
+                  "name": "prompt",
+                  "value": ""
+                },
+                {
+                  "name": "redirect_uri",
+                  "value": ""
+                },
+                {
+                  "name": "response_mode",
+                  "value": ""
+                },
+                {
+                  "name": "response_type",
+                  "value": ""
+                },
+                {
+                  "name": "scope",
+                  "value": ""
+                },
+                {
+                  "name": "state",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "authorize_redirect"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

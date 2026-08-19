@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Canvas LMS LTI ExternalTool Lti::MembershipService API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Lti::MembershipService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "group_index",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{canvas_domain}/api/lti/groups/:group_id/membership_service",
+            "params": [
+              {
+                "name": "group_id",
+                "value": "716160",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "2",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "role",
+                "value": "Instructor",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "group_index"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

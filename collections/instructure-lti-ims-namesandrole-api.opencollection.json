@@ -1,0 +1,104 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Canvas LMS LTI ExternalTool Lti::IMS::NamesAndRole API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Lti::IMS::NamesAndRole",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "course_index",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{canvas_domain}/api/lti/courses/:course_id/names_and_roles",
+            "params": [
+              {
+                "name": "course_id",
+                "value": "880160",
+                "type": "path"
+              },
+              {
+                "name": "rlid",
+                "value": "4301c27b219f264f9dca9566f96a4095",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "2",
+                "type": "query"
+              },
+              {
+                "name": "pass",
+                "value": "thru",
+                "type": "query"
+              },
+              {
+                "name": "role",
+                "value": "http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "2",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "course_index"
+        },
+        {
+          "info": {
+            "name": "group_index",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{canvas_domain}/api/lti/groups/:group_id/names_and_roles",
+            "params": [
+              {
+                "name": "group_id",
+                "value": "716163",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "2",
+                "type": "query"
+              },
+              {
+                "name": "pass",
+                "value": "thru",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "2",
+                "type": "query"
+              },
+              {
+                "name": "rlid",
+                "value": "194bad1fb03db0e9e2e556629a4ca4f7",
+                "type": "query"
+              },
+              {
+                "name": "role",
+                "value": "http://purl.imsglobal.org/vocab/lis/v2/membership#Manager",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "group_index"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

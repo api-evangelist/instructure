@@ -1,0 +1,147 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Canvas LMS LTI ExternalTool Lti::ToolConfigurationsApi API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Lti::ToolConfigurationsApi",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{canvas_domain}/api/lti/accounts/:account_id/developer_keys/tool_configuration",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "8095",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "developer_key",
+                  "value": ""
+                },
+                {
+                  "name": "developer_key_id",
+                  "value": ""
+                },
+                {
+                  "name": "tool_configuration",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "create"
+        },
+        {
+          "info": {
+            "name": "show",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{canvas_domain}/api/lti/accounts/:account_id/developer_keys/:developer_key_id/tool_configuration",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "8095",
+                "type": "path"
+              },
+              {
+                "name": "developer_key",
+                "value": "[object Object]",
+                "type": "query"
+              },
+              {
+                "name": "developer_key_id",
+                "value": "142176",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "show"
+        },
+        {
+          "info": {
+            "name": "update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{canvas_domain}/api/lti/developer_keys/:developer_key_id/tool_configuration",
+            "params": [
+              {
+                "name": "developer_key_id",
+                "value": "142164",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "account_id",
+                  "value": ""
+                },
+                {
+                  "name": "developer_key",
+                  "value": ""
+                },
+                {
+                  "name": "tool_configuration",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "update"
+        },
+        {
+          "info": {
+            "name": "destroy",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{canvas_domain}/api/lti/developer_keys/:developer_key_id/tool_configuration",
+            "params": [
+              {
+                "name": "developer_key_id",
+                "value": "142171",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "account_id",
+                  "value": ""
+                },
+                {
+                  "name": "developer_key",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "destroy"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

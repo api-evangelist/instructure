@@ -1,0 +1,46 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Canvas LMS LTI ExternalTool API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ExternalTool",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "jwt_token",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{canvas_domain}/api/lti/courses/:course_id/jwt_token",
+            "params": [
+              {
+                "name": "course_id",
+                "value": "880104",
+                "type": "path"
+              },
+              {
+                "name": "tool_id",
+                "value": "407124",
+                "type": "query"
+              },
+              {
+                "name": "tool_launch_url",
+                "value": "http://www.example.com/basic_lti",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "jwt_token"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Canvas LMS LTI ExternalTool Security API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Security",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "jwks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{canvas_domain}/api/lti/security/jwks",
+            "params": [
+              {
+                "name": "rotation_check",
+                "value": "1",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "jwks"
+        },
+        {
+          "info": {
+            "name": "openid_configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{canvas_domain}/api/lti/security/openid-configuration",
+            "params": [
+              {
+                "name": "registration_token",
+                "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJyb290X2FjY291bnRfZ2xvYmFsX2lkIjo4MTI0LCJleHAiOjE3MDI2MTkwMTd9.r67qwILzqa5w14gpAbwZOopmt7ZZuPoJrcVE1vgphp8",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "openid_configuration"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

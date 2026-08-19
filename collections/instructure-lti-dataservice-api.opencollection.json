@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Canvas LMS LTI ExternalTool Lti::DataService API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Lti::DataService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "index",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{canvas_domain}/api/lti/accounts/:account_id/data_services",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "8e3650f3-579f-4388-90f0-71b68ee76a79",
+                "type": "path"
+              },
+              {
+                "name": "subscription",
+                "value": "[object Object]",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "index"
+        },
+        {
+          "info": {
+            "name": "show",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{canvas_domain}/api/lti/accounts/:account_id/data_services/:id",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "71527019-2da4-49e3-b4e3-de2e55f04a85",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "testid",
+                "type": "path"
+              },
+              {
+                "name": "subscription",
+                "value": "[object Object]",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "show"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

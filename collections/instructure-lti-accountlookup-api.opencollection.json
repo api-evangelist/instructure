@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Canvas LMS LTI ExternalTool Lti::AccountLookup API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Lti::AccountLookup",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "show",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{canvas_domain}/api/lti/accounts/:account_id",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "1987650000000008200",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "show"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

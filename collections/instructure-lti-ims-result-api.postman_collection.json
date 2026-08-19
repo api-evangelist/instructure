@@ -1,0 +1,514 @@
+{
+  "item": [
+    {
+      "id": "0eebcc2c-44b0-4bcd-836a-dc04fc0e3d0a",
+      "name": "Lti::IMS::Result",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d3528121-fdce-48c5-b7ee-30f397ed7482",
+          "name": "index",
+          "request": {
+            "name": "index",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "lti",
+                "courses",
+                ":course_id",
+                "line_items",
+                ":line_item_id",
+                "results"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "user_id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "course_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "line_item_id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "The institution-specific Canvas domain",
+                  "type": "any",
+                  "value": "{{canvas_domain}}",
+                  "key": "canvas_domain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.ims.lis.v2.resultcontainer+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ee575719-57ef-44dd-8667-6c40d13ce596",
+              "name": "returns 200 and finds the tool associated with the access token's developer key, ignoring other the other developer key and its tool",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "courses",
+                    ":course_id",
+                    "line_items",
+                    ":line_item_id",
+                    "results"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user_id",
+                      "value": "d527abb3-294a-4afa-a204-9737e00aab3e"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "course_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "line_item_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.ims.lis.v2.resultcontainer+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.ims.lis.v2.resultcontainer+json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"http://test.host/api/lti/courses/880195/line_items/1017686/results/1012373\",\n    \"scoreOf\": \"http://test.host/api/lti/courses/880195/line_items/1017686\",\n    \"userId\": \"c5ce1e03-a139-4ef4-b772-f5a940e31baf\",\n    \"resultScore\": 0.5,\n    \"resultMaximum\": 1\n  },\n  {\n    \"id\": \"http://test.host/api/lti/courses/880195/line_items/1017686/results/1012374\",\n    \"scoreOf\": \"http://test.host/api/lti/courses/880195/line_items/1017686\",\n    \"userId\": \"0f1250ca-b41c-42a3-a37c-4eff05e1dacb\",\n    \"resultScore\": 0.5,\n    \"resultMaximum\": 1\n  },\n  {\n    \"id\": \"http://test.host/api/lti/courses/880195/line_items/1017686/results/1012375\",\n    \"scoreOf\": \"http://test.host/api/lti/courses/880195/line_items/1017686\",\n    \"userId\": \"43238a77-2ecb-4fd4-a87a-e0d18f84af48\",\n    \"resultScore\": 0.5,\n    \"resultMaximum\": 1\n  },\n  {\n    \"id\": \"http://test.host/api/lti/courses/880195/line_items/1017686/results/1012376\",\n    \"scoreOf\": \"http://test.host/api/lti/courses/880195/line_items/1017686\",\n    \"userId\": \"0233ca3d-809c-4511-a243-94cee32fcef1\",\n    \"resultScore\": 0.5,\n    \"resultMaximum\": 1\n  },\n  {\n    \"id\": \"http://test.host/api/lti/courses/880205/line_items/1017686/results/1012373\",\n    \"scoreOf\": \"http://test.host/api/lti/courses/880205/line_items/1017686\",\n    \"userId\": \"fa27312e-3ae7-4934-9ec4-f7df8f6bffc2\",\n    \"resultScore\": 0.5,\n    \"resultMaximum\": 1\n  },\n  {\n    \"id\": \"http://test.host/api/lti/courses/880205/line_items/1017686/results/1012374\",\n    \"scoreOf\": \"http://test.host/api/lti/courses/880205/line_items/1017686\",\n    \"userId\": \"b294717b-5aa3-413b-a4e2-179a1bc7ee96\",\n    \"resultScore\": 0.5,\n    \"resultMaximum\": 1\n  },\n  {\n    \"id\": \"http://test.host/api/lti/courses/880205/line_items/1017686/results/1012375\",\n    \"scoreOf\": \"http://test.host/api/lti/courses/880205/line_items/1017686\",\n    \"userId\": \"9821aa6b-231c-4c93-8ff0-bb2379fcc7e7\",\n    \"resultScore\": 0.5,\n    \"resultMaximum\": 1\n  },\n  {\n    \"id\": \"http://test.host/api/lti/courses/880205/line_items/1017686/results/1012376\",\n    \"scoreOf\": \"http://test.host/api/lti/courses/880205/line_items/1017686\",\n    \"userId\": \"babbc1a9-b2f6-464d-9c6a-ab664179c1bb\",\n    \"resultScore\": 0.5,\n    \"resultMaximum\": 1\n  },\n  {\n    \"id\": \"http://test.host/api/lti/courses/880146/line_items/1017686/results/1012373\",\n    \"scoreOf\": \"http://test.host/api/lti/courses/880146/line_items/1017686\",\n    \"userId\": \"d527abb3-294a-4afa-a204-9737e00aab3e\",\n    \"resultScore\": 0.5,\n    \"resultMaximum\": 1\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0403d7b1-bf6f-426f-8231-61662d26a64b",
+              "name": "does not return ims mime_type",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "courses",
+                    ":course_id",
+                    "line_items",
+                    ":line_item_id",
+                    "results"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user_id",
+                      "value": "d527abb3-294a-4afa-a204-9737e00aab3e"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "course_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "line_item_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": {\n    \"type\": \"unauthorized\",\n    \"message\": \"Unknown or inactive Developer Key\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f5c1dc31-99a3-4b46-8f2e-e4c671090023",
+              "name": "does not return ims mime_type",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "courses",
+                    ":course_id",
+                    "line_items",
+                    ":line_item_id",
+                    "results"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user_id",
+                      "value": "d527abb3-294a-4afa-a204-9737e00aab3e"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "course_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "line_item_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"message\": \"The specified resource does not exist.\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0bb10cde-59e7-4fa3-8783-3cf147cad71c",
+          "name": "show",
+          "request": {
+            "name": "show",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "lti",
+                "courses",
+                ":course_id",
+                "line_items",
+                ":line_item_id",
+                "results",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "course_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "line_item_id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "The institution-specific Canvas domain",
+                  "type": "any",
+                  "value": "{{canvas_domain}}",
+                  "key": "canvas_domain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.ims.lis.v2.resultcontainer+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a5784ea0-d4cc-4aa6-84c2-5c3c8d0f0c62",
+              "name": "returns 200 success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "courses",
+                    ":course_id",
+                    "line_items",
+                    ":line_item_id",
+                    "results",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "course_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "line_item_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.ims.lis.v2.resultcontainer+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.ims.lis.v2.resultcontainer+json"
+                }
+              ],
+              "body": "{\n  \"id\": \"http://test.host/api/lti/courses/880227/line_items/1017687/results/1012374\",\n  \"scoreOf\": \"http://test.host/api/lti/courses/880227/line_items/1017687\",\n  \"userId\": \"b03618a7-7b58-461d-a894-7e69c6951270\",\n  \"resultScore\": 0.5,\n  \"resultMaximum\": 1\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "10726368-b743-4972-98aa-5a851ea154cd",
+              "name": "returns 401 unauthorized and complains about an incorrect signature",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "courses",
+                    ":course_id",
+                    "line_items",
+                    ":line_item_id",
+                    "results",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "course_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "line_item_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": {\n    \"type\": \"unauthorized\",\n    \"message\": \"Access token invalid - signature likely incorrect\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The institution-specific Canvas domain",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "canvas.instructure.com",
+      "key": "canvas_domain"
+    },
+    {
+      "type": "string",
+      "value": "https://{{canvas_domain}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "34215588-09c4-47da-a1de-79992013f177",
+    "name": "Canvas LMS LTI ExternalTool Lti::IMS::Result API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Canvas LTI 1.3 API endpoints including Dynamic Registration, IMS Names and Roles, Line Items, Data Services, and Security endpoints.\n\nContact Support:\n Name: Instructure Support\n Email: support@instructure.com",
+      "type": "text/plain"
+    }
+  }
+}

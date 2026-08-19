@@ -1,0 +1,298 @@
+{
+  "item": [
+    {
+      "id": "7883c0b9-5568-4aea-9743-bd1fe3921f69",
+      "name": "Lti::AccountLookup",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3dcb7c2c-2013-43de-8d0e-803b6d6efa57",
+          "name": "show",
+          "request": {
+            "name": "show",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "lti",
+                "accounts",
+                ":account_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "account_id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "The institution-specific Canvas domain",
+                  "type": "any",
+                  "value": "{{canvas_domain}}",
+                  "key": "canvas_domain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.canvas.accountlookup+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b910ae12-0cec-4390-a571-41122809ee91",
+              "name": "returns id, uuid, and other fields on account",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "accounts",
+                    ":account_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.canvas.accountlookup+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.canvas.accountlookup+json"
+                }
+              ],
+              "body": "{\n  \"id\": 8145,\n  \"name\": \"Default Account\",\n  \"workflow_state\": \"active\",\n  \"parent_account_id\": null,\n  \"root_account_id\": null,\n  \"uuid\": \"vYmDAUennzTRV43z1Oo4v0MYaY2pMJ3Dr1GaH3Mn\",\n  \"default_time_zone\": \"Etc/UTC\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4349428e-d086-434f-962a-fc680ad989fc",
+              "name": "does not return ims mime_type",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "accounts",
+                    ":account_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": {\n    \"type\": \"unauthorized\",\n    \"message\": \"Unknown or inactive Developer Key\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0bc3219f-1dc2-4580-a1b4-3b0641131220",
+              "name": "returns a 404",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "accounts",
+                    ":account_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"message\": \"The specified resource does not exist.\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d580aad8-95ab-4cd1-9f75-57e1d5b771fe",
+              "name": "does not return ims mime_type",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "lti",
+                    "accounts",
+                    ":account_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The institution-specific Canvas domain",
+                      "type": "any",
+                      "value": "{{canvas_domain}}",
+                      "key": "canvas_domain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"message\": \"An error occurred.\",\n      \"error_code\": \"internal_server_error\"\n    }\n  ],\n  \"error_report_id\": 127858\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The institution-specific Canvas domain",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "canvas.instructure.com",
+      "key": "canvas_domain"
+    },
+    {
+      "type": "string",
+      "value": "https://{{canvas_domain}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1c094862-269d-40e1-a41f-776f8809135b",
+    "name": "Canvas LMS LTI ExternalTool Lti::AccountLookup API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Canvas LTI 1.3 API endpoints including Dynamic Registration, IMS Names and Roles, Line Items, Data Services, and Security endpoints.\n\nContact Support:\n Name: Instructure Support\n Email: support@instructure.com",
+      "type": "text/plain"
+    }
+  }
+}

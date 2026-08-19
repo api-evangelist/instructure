@@ -1,0 +1,107 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Canvas LMS LTI ExternalTool Lti::IMS::DynamicRegistration API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Lti::IMS::DynamicRegistration",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "redirect_to_tool_registration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{canvas_domain}/api/lti/register",
+            "params": [
+              {
+                "name": "registration_url",
+                "value": "https://example.com",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "redirect_to_tool_registration"
+        },
+        {
+          "info": {
+            "name": "registration_token",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{canvas_domain}/api/lti/registration_token"
+          },
+          "docs": "registration_token"
+        },
+        {
+          "info": {
+            "name": "create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{canvas_domain}/api/lti/registrations",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "application_type",
+                  "value": ""
+                },
+                {
+                  "name": "client_name",
+                  "value": ""
+                },
+                {
+                  "name": "grant_types",
+                  "value": ""
+                },
+                {
+                  "name": "https://purl.imsglobal.org/spec/lti-tool-configuration",
+                  "value": ""
+                },
+                {
+                  "name": "initiate_login_uri",
+                  "value": ""
+                },
+                {
+                  "name": "jwks_uri",
+                  "value": ""
+                },
+                {
+                  "name": "redirect_uris",
+                  "value": ""
+                },
+                {
+                  "name": "registration_token",
+                  "value": ""
+                },
+                {
+                  "name": "response_types",
+                  "value": ""
+                },
+                {
+                  "name": "scope",
+                  "value": ""
+                },
+                {
+                  "name": "token_endpoint_auth_method",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "create"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

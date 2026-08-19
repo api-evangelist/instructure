@@ -1,0 +1,99 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Canvas LMS LTI ExternalTool Lti::IMS::LineItem API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Lti::IMS::LineItem",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "index",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{canvas_domain}/api/lti/courses/:course_id/line_items",
+            "params": [
+              {
+                "name": "course_id",
+                "value": "880330",
+                "type": "path"
+              },
+              {
+                "name": "endDateTime",
+                "value": "2023-12-15T05:40:07Z",
+                "type": "query"
+              },
+              {
+                "name": "https://canvas.instructure.com/lti/submission_type",
+                "value": "[object Object]",
+                "type": "query"
+              },
+              {
+                "name": "label",
+                "value": "Originality Score",
+                "type": "query"
+              },
+              {
+                "name": "resourceId",
+                "value": "orig-123",
+                "type": "query"
+              },
+              {
+                "name": "resourceLinkId",
+                "value": "d46ef8af-a2ce-486d-8891-d3115bff947e",
+                "type": "query"
+              },
+              {
+                "name": "scoreMaximum",
+                "value": "50",
+                "type": "query"
+              },
+              {
+                "name": "tag",
+                "value": "some_tag",
+                "type": "query"
+              },
+              {
+                "name": "resource_id",
+                "value": "orig-123",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "index"
+        },
+        {
+          "info": {
+            "name": "show",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{canvas_domain}/api/lti/courses/:course_id/line_items/:id",
+            "params": [
+              {
+                "name": "course_id",
+                "value": "880199",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "1017689",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "show"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
