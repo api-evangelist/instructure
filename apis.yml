@@ -54,6 +54,12 @@ apis:
   tags:
   - GraphQL
   - Courses
+  - User
+  - Assignments
+  - Grades
+  tags_raw:
+  - GraphQL
+  - Courses
   - Users
   - Assignments
   - Grades
