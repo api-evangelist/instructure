@@ -10,6 +10,18 @@ description: Instructure is an EdTech company best known for Canvas LMS, a widel
   with per-token dynamic rate limiting, and all API responses are returned in JSON
   over HTTPS.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: self-serve
