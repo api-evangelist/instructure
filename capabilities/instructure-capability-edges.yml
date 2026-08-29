@@ -1,0 +1,24 @@
+slug: instructure
+provider: Instructure
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Education
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Lti::IMS::Result
+  spec_file: instructure-lti-ims-result-api-openapi.yml
+  capability_id: BC-4740.30
+  capability_id_l1: BC-4740
+  capability_name: Marking & Grading Operations
+  confidence: 0.7
+  evidence: GET /api/lti/courses/{course_id}/line_items/{line_item_id}/results  index
+  reason: LTI AGS results expose scores/grades recorded against a gradebook line item, which is grading
+    operations for student work.

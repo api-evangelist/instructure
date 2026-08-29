@@ -295,6 +295,9 @@ apis:
   - type: Documentation
     url: https://developerdocs.instructure.com/
 common:
+- type: CapabilityMap
+  url: capabilities/instructure-capability-edges.yml
+  name: Instructure Business Capability Map
 - type: AgenticAccess
   url: agentic-access/instructure-agentic-access.yml
 - type: TrustCenter
