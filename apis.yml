@@ -53,6 +53,7 @@ tags:
 - GraphQL
 - LTI
 - Learning Management
+- Instructure
 apis:
 - aid: instructure:canvas-graphql-api
   name: Canvas GraphQL API
