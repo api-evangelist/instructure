@@ -46,6 +46,21 @@ tags:
 - LMS
 - Canvas
 - Courses
+- Enrollment
+- Assignments
+- Grades
+- Discussions
+- GraphQL
+- LTI
+- Learning Management
+tags_raw:
+- Enrollments
+- Instructure
+- EdTech
+- Education
+- LMS
+- Canvas
+- Courses
 - Enrollments
 - Assignments
 - Grades
@@ -53,7 +68,6 @@ tags:
 - GraphQL
 - LTI
 - Learning Management
-- Instructure
 apis:
 - aid: instructure:canvas-graphql-api
   name: Canvas GraphQL API
