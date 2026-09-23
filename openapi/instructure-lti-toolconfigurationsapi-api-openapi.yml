@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Canvas LMS LTI ExternalTool Lti::ToolConfigurationsApi API
+  title: Canvas LMS LTI Lti::Tool Configurations API
   description: Canvas LTI 1.3 API endpoints including Dynamic Registration, IMS Names and Roles, Line Items, Data Services, and Security endpoints.
   version: 1.0.0
   contact:
@@ -209,7 +209,9 @@ paths:
                 name: Test Dev Key
                 notes: Some cool notes
                 public_jwk_url: https://www.test.com
-                redirect_uris: "http://www.test.com\r\nhttp://www.anothertest.com"
+                redirect_uris: 'http://www.test.com
+
+                  http://www.anothertest.com'
                 require_scopes: 'true'
                 scopes:
                 - https://purl.imsglobal.org/spec/lti-ags/scope/lineitem
@@ -258,7 +260,9 @@ paths:
                   target_link_uri: http://lti13testtool.docker/blti_launch
                   title: LTI 1.3 Tool
                   public_jwk_url: https://test.com
-                custom_fields: "foo=bar\r\nkey=value"
+                custom_fields: 'foo=bar
+
+                  key=value'
                 disabled_placements:
                 - course_navigation
                 - account_navigation
@@ -406,8 +410,9 @@ paths:
                       updated_at:
                         type: string
                       disabled_placements:
-                        nullable: true
-                        type: array
+                        type:
+                        - array
+                        - 'null'
                         items:
                           type: string
                       privacy_level:
@@ -425,16 +430,13 @@ paths:
                     properties:
                       email:
                         type: string
-                      user_name:
-                        nullable: true
+                      user_name: {}
                       created_at:
                         type: string
-                      user_id:
-                        nullable: true
+                      user_id: {}
                       name:
                         type: string
-                      icon_url:
-                        nullable: true
+                      icon_url: {}
                       workflow_state:
                         type: string
                       notes:
@@ -445,20 +447,16 @@ paths:
                           type: string
                       require_scopes:
                         type: boolean
-                      client_credentials_audience:
-                        nullable: true
+                      client_credentials_audience: {}
                       api_key:
                         type: string
-                      redirect_uri:
-                        nullable: true
+                      redirect_uri: {}
                       redirect_uris:
                         type: string
                       access_token_count:
                         type: integer
-                      last_used_at:
-                        nullable: true
-                      vendor_code:
-                        nullable: true
+                      last_used_at: {}
+                      vendor_code: {}
                       public_jwk:
                         type: object
                         properties:
@@ -482,8 +480,9 @@ paths:
                         - n
                         - use
                       public_jwk_url:
-                        nullable: true
-                        type: string
+                        type:
+                        - string
+                        - 'null'
                       allow_includes:
                         type: boolean
                       developer_key_account_binding:
@@ -682,8 +681,7 @@ paths:
                           type: string
                         message:
                           type: string
-                        error_code:
-                          nullable: true
+                        error_code: {}
                       required:
                       - field
                       - message
@@ -695,6 +693,8 @@ paths:
                 - field: lti_key
                   message: developer key must have public jwk or public jwk url
                   error_code: null
+      operationId: postApiLtiAccountsByAccountIdDeveloperKeysToolConfiguration
+      x-operation-id-source: derived
   /api/lti/accounts/{account_id}/developer_keys/{developer_key_id}/tool_configuration:
     get:
       summary: show
@@ -745,7 +745,9 @@ paths:
           name: Test Dev Key
           notes: Some cool notes
           public_jwk_url: https://www.test.com
-          redirect_uris: "http://www.test.com\r\nhttp://www.anothertest.com"
+          redirect_uris: 'http://www.test.com
+
+            http://www.anothertest.com'
           require_scopes: 'true'
           scopes:
           - https://purl.imsglobal.org/spec/lti-ags/scope/lineitem
@@ -923,45 +925,33 @@ paths:
                   developer_key:
                     type: object
                     properties:
-                      email:
-                        nullable: true
-                      user_name:
-                        nullable: true
+                      email: {}
+                      user_name: {}
                       created_at:
                         type: string
-                      user_id:
-                        nullable: true
-                      name:
-                        nullable: true
-                      icon_url:
-                        nullable: true
+                      user_id: {}
+                      name: {}
+                      icon_url: {}
                       workflow_state:
                         type: string
-                      notes:
-                        nullable: true
+                      notes: {}
                       scopes:
                         type: array
                         items: {}
                       require_scopes:
                         type: boolean
-                      client_credentials_audience:
-                        nullable: true
+                      client_credentials_audience: {}
                       api_key:
                         type: string
-                      redirect_uri:
-                        nullable: true
+                      redirect_uri: {}
                       redirect_uris:
                         type: string
                       access_token_count:
                         type: integer
-                      last_used_at:
-                        nullable: true
-                      vendor_code:
-                        nullable: true
-                      public_jwk:
-                        nullable: true
-                      public_jwk_url:
-                        nullable: true
+                      last_used_at: {}
+                      vendor_code: {}
+                      public_jwk: {}
+                      public_jwk_url: {}
                       allow_includes:
                         type: boolean
                       developer_key_account_binding:
@@ -1104,6 +1094,8 @@ paths:
                   is_lti_key: false
                   is_lti_registration: false
                   id: 142176
+      operationId: getApiLtiAccountsByAccountIdDeveloperKeysByDeveloperKeyIdToolConfiguration
+      x-operation-id-source: derived
   /api/lti/developer_keys/{developer_key_id}/tool_configuration:
     put:
       summary: update
@@ -1289,7 +1281,9 @@ paths:
                 name: Test Dev Key
                 notes: Some cool notes
                 public_jwk_url: https://www.test.com
-                redirect_uris: "http://www.test.com\r\nhttp://www.anothertest.com"
+                redirect_uris: 'http://www.test.com
+
+                  http://www.anothertest.com'
                 require_scopes: 'true'
                 scopes:
                 - https://purl.imsglobal.org/spec/lti-ags/scope/lineitem
@@ -1350,8 +1344,7 @@ paths:
                     properties:
                       developer_key_id:
                         type: integer
-                      disabled_placements:
-                        nullable: true
+                      disabled_placements: {}
                       privacy_level:
                         type: string
                       settings:
@@ -1499,30 +1492,23 @@ paths:
                           type: string
                       workflow_state:
                         type: string
-                      icon_url:
-                        nullable: true
+                      icon_url: {}
                       require_scopes:
                         type: boolean
-                      user_name:
-                        nullable: true
+                      user_name: {}
                       created_at:
                         type: string
-                      user_id:
-                        nullable: true
-                      client_credentials_audience:
-                        nullable: true
+                      user_id: {}
+                      client_credentials_audience: {}
                       api_key:
                         type: string
-                      redirect_uri:
-                        nullable: true
+                      redirect_uri: {}
                       redirect_uris:
                         type: string
                       access_token_count:
                         type: integer
-                      last_used_at:
-                        nullable: true
-                      vendor_code:
-                        nullable: true
+                      last_used_at: {}
+                      vendor_code: {}
                       public_jwk:
                         type: object
                         properties:
@@ -1546,8 +1532,9 @@ paths:
                         - n
                         - use
                       public_jwk_url:
-                        nullable: true
-                        type: string
+                        type:
+                        - string
+                        - 'null'
                       allow_includes:
                         type: boolean
                       developer_key_account_binding:
@@ -1715,8 +1702,7 @@ paths:
                           type: string
                         message:
                           type: string
-                        error_code:
-                          nullable: true
+                        error_code: {}
                       required:
                       - field
                       - message
@@ -1756,6 +1742,8 @@ paths:
               example:
                 errors:
                 - message: The specified resource does not exist.
+      operationId: putApiLtiDeveloperKeysByDeveloperKeyIdToolConfiguration
+      x-operation-id-source: derived
     delete:
       summary: destroy
       tags:
@@ -1855,11 +1843,15 @@ paths:
                 name: Test Dev Key
                 notes: Some cool notes
                 public_jwk_url: https://www.test.com
-                redirect_uris: "http://www.test.com\r\nhttp://www.anothertest.com"
+                redirect_uris: 'http://www.test.com
+
+                  http://www.anothertest.com'
                 require_scopes: 'true'
                 scopes:
                 - https://purl.imsglobal.org/spec/lti-ags/scope/lineitem
                 test_cluster_only: 'true'
+      operationId: deleteApiLtiDeveloperKeysByDeveloperKeyIdToolConfiguration
+      x-operation-id-source: derived
 components:
   securitySchemes:
     oauth2:

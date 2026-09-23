@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Canvas LMS LTI ExternalTool Lti::IMS::Authentication API
+  title: Canvas LMS LTI Lti::IMS::Authentication API
   description: Canvas LTI 1.3 API endpoints including Dynamic Registration, IMS Names and Roles, Line Items, Data Services, and Security endpoints.
   version: 1.0.0
   contact:
@@ -98,6 +98,8 @@ paths:
               response_type: id_token
               scope: openid
               state: 260c4430-5641-4a2f-b1be-75e0ca6c1ff9
+      operationId: postApiLtiAuthorizeRedirect
+      x-operation-id-source: derived
 components:
   securitySchemes:
     oauth2:

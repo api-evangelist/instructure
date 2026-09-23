@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Canvas LMS LTI ExternalTool Lti::MembershipService API
+  title: Canvas LMS LTI Lti::Membership Service API
   description: Canvas LTI 1.3 API endpoints including Dynamic Registration, IMS Names and Roles, Line Items, Data Services, and Security endpoints.
   version: 1.0.0
   contact:
@@ -58,17 +58,16 @@ paths:
               schema:
                 type: object
                 properties:
-                  '@id':
-                    nullable: true
+                  '@id': {}
                   '@type':
                     type: string
                   '@context':
                     type: string
-                  differences:
-                    nullable: true
+                  differences: {}
                   nextPage:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                   pageOf:
                     type: object
                     properties:
@@ -77,8 +76,7 @@ paths:
                       membershipSubject:
                         type: object
                         properties:
-                          '@id':
-                            nullable: true
+                          '@id': {}
                           name:
                             type: string
                           '@type':
@@ -90,8 +88,7 @@ paths:
                             items:
                               type: object
                               properties:
-                                '@id':
-                                  nullable: true
+                                '@id': {}
                                 status:
                                   type: string
                                 role:
@@ -101,23 +98,20 @@ paths:
                                 member:
                                   type: object
                                   properties:
-                                    '@id':
-                                      nullable: true
+                                    '@id': {}
                                     name:
                                       type: string
-                                    img:
-                                      nullable: true
+                                    img: {}
                                     email:
-                                      type: string
-                                      nullable: true
+                                      type:
+                                      - string
+                                      - 'null'
                                     familyName:
                                       type: string
                                     givenName:
                                       type: string
-                                    resultSourcedId:
-                                      nullable: true
-                                    sourcedId:
-                                      nullable: true
+                                    resultSourcedId: {}
+                                    sourcedId: {}
                                     userId:
                                       type: string
                                   required:
@@ -141,8 +135,7 @@ paths:
                         - '@type'
                         - contextId
                         - membership
-                      '@id':
-                        nullable: true
+                      '@id': {}
                       '@context':
                         type: string
                       '@type':
@@ -216,6 +209,8 @@ paths:
               example:
                 errors:
                 - message: Invalid access token.
+      operationId: getApiLtiGroupsByGroupIdMembershipService
+      x-operation-id-source: derived
 components:
   securitySchemes:
     oauth2:

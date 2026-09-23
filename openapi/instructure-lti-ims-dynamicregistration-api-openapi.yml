@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Canvas LMS LTI ExternalTool Lti::IMS::DynamicRegistration API
+  title: Canvas LMS LTI Lti::IMS::Dynamic Registration API
   description: Canvas LTI 1.3 API endpoints including Dynamic Registration, IMS Names and Roles, Line Items, Data Services, and Security endpoints.
   version: 1.0.0
   contact:
@@ -47,6 +47,8 @@ paths:
               schema:
                 type: string
               example: ''
+      operationId: getApiLtiRegister
+      x-operation-id-source: derived
   /api/lti/registration_token:
     get:
       summary: registration_token
@@ -74,6 +76,8 @@ paths:
                 uuid: 0d3f7978-8635-44dd-aec1-8a63f7520c8f
                 oidc_configuration_url: https://canvas.instructure.com/api/lti/security/openid-configuration
                 token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiMGQzZjc5NzgtODYzNS00NGRkLWFlYzEtOGE2M2Y3NTIwYzhmIiwiaW5pdGlhdGVkX2F0IjoiMjAyMy0xMi0zMVQwNDo1MTo1NyswMDowMCIsInVzZXJfaWQiOjE4NDksInJvb3RfYWNjb3VudF9nbG9iYWxfaWQiOjIwMDAwMDAwMDAwMzA3MywiZXhwIjoxNzA0MDAxOTE3fQ.Q_JjbjAYQZTkacPq64y2qa3PqCCrQhTEKp25RAyNy34
+      operationId: getApiLtiRegistrationToken
+      x-operation-id-source: derived
   /api/lti/registrations:
     post:
       summary: create
@@ -251,8 +255,7 @@ paths:
                           type: string
                         message:
                           type: string
-                        error_code:
-                          nullable: true
+                        error_code: {}
                       required:
                       - field
                       - message
@@ -393,6 +396,8 @@ paths:
               - id_token
               scope: https://purl.imsglobal.org/spec/lti-nrps/scope/contextmembership.readonly https://purl.imsglobal.org/spec/lti-ags/scope/score https://purl.imsglobal.org/spec/lti/scope/noticehandlers
               token_endpoint_auth_method: private_key_jwt
+      operationId: postApiLtiRegistrations
+      x-operation-id-source: derived
 components:
   securitySchemes:
     oauth2:

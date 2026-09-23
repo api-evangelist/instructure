@@ -1,18 +1,7 @@
 {
   "provider": "instructure",
   "sources": [
-    "instructure-externaltool-api-openapi.yml",
-    "instructure-lti-accountexternaltool-api-openapi.yml",
-    "instructure-lti-accountlookup-api-openapi.yml",
-    "instructure-lti-dataservice-api-openapi.yml",
-    "instructure-lti-ims-authentication-api-openapi.yml",
-    "instructure-lti-ims-dynamicregistration-api-openapi.yml",
-    "instructure-lti-ims-lineitem-api-openapi.yml",
-    "instructure-lti-ims-namesandrole-api-openapi.yml",
-    "instructure-lti-ims-result-api-openapi.yml",
-    "instructure-lti-membershipservice-api-openapi.yml",
-    "instructure-lti-toolconfigurationsapi-api-openapi.yml",
-    "instructure-security-api-openapi.yml"
+    "_original/instructure-canvas-lti-openapi.yml"
   ],
   "outputs": [
     "instructure-externaltool-api-openapi.yml",
@@ -31,6 +20,23 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "instructure-canvas-lti-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "instructure-externaltool-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "instructure-lti-accountexternaltool-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "instructure-lti-accountlookup-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "instructure-lti-dataservice-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "instructure-lti-ims-authentication-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "instructure-lti-ims-dynamicregistration-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "instructure-lti-ims-lineitem-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "instructure-lti-ims-namesandrole-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "instructure-lti-ims-result-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "instructure-lti-membershipservice-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "instructure-lti-toolconfigurationsapi-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "instructure-security-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
