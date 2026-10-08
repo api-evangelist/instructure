@@ -83,3 +83,27 @@ addons:
     url: https://www.instructure.com/k-12/products/mastery/mastery-connect
 contactSales: https://www.instructure.com/contact
 pricingPage: https://www.instructure.com/canvas/pricing
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models: []
+  units: []
+  plans:
+  - name: Canvas Core
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Canvas Plus
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Canvas Next
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
