@@ -150,7 +150,7 @@
     app_slug: instructure
     beta: false
     builder: unknown (not in the directory record)
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: instructure-uk-g-cloud-15-digital-marketplace
   label: UK G-Cloud 15 (Digital Marketplace)
