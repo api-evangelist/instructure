@@ -202,5 +202,5 @@
     - connectors/applications/canvas-data-2-by-instructure
     vendor_link: https://www.instructure.com/canvas
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
