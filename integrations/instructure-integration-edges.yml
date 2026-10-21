@@ -215,6 +215,37 @@ edges:
     detected: '2026-10-20'
   detected_by: sweep-compliance-assurance.py
   first_seen: '2026-10-20'
+- partner_name: Zoom Partner Program
+  partner: zoom
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://partner.zoom.com/solutions/instructure/
+  category: Zoom technology partner
+  partner_tier:
+  - Technology Alliances
+  contract_reference:
+    register: Zoom Partner Solutions (partner.zoom.com/solutions; /wp-json/wp/v2/isvsolution)
+    standard: Zoom Partner Program
+    spec_file: null
+    role: zoom-technology-partner
+    registered_name: Instructure
+    register_id: https://partner.zoom.com/solutions/instructure/
+    matched_domain: instructure.com
+    matched_by: domain+name-among-holders
+    identity_source: a link on the partner page to the partner's own site (name-gated)
+    signal_note: 'participation only: partner type / program tier is partner_tier, never counted; no Zoom certification
+      is printed on the register, so no certified_products'
+    detected_by: sweep-zoom-app-marketplace.py
+    detected: '2026-10-21'
+    context:
+      products:
+      - Developer Platform
+      - Meetings
+  detected_by: sweep-zoom-app-marketplace.py
+  first_seen: '2026-10-21'
 generated: '2026-10-14'
 method: searched
 checked:
@@ -227,6 +258,13 @@ checked:
 - https://site.imsglobal.org/certifications
 - https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud-15/suppliers
 - https://zapier.com/api/v4/apps/
+- https://marketplace.zoom.us/
+- https://marketplace.zoom.us/api/v1/apps/search
+- https://partner.zoom.com/partner-locator/
+- https://partner.zoom.com/solutions/
+- https://partner.zoom.com/wp-json/wp/v2/isvsolution
+- https://partner.zoom.com/wp-json/wp/v2/partner
+- https://partners.zoom.us/
 source:
 - https://fivetran.com/docs-sitemap.xml
 - https://fivetran.com/docs/connectors/partner-built-program
